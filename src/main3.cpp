@@ -4,6 +4,6 @@
 
 int main() {
     DateTime curtim;
-    std::cout << curtim.time_info << std::endl;
+    std::cout << curtim.getDifference() << std::endl;
     return 0;
 }

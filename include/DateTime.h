@@ -8,6 +8,7 @@
 #include <iostream>
 #include <ctime>
 #include <string>
+#include <time.h>
 
 class DateTime {
 private:
@@ -22,7 +23,7 @@ public:
 //  Constructors
     DateTime(){    // -> default initialisation
          time_t _timer;
-         time(nullptr);
+         time(&_timer);
          time_info = localtime(&_timer);
         mktime(time_info);
      }
@@ -33,7 +34,7 @@ public:
     }
     explicit DateTime(size_t day,size_t month,size_t year){
         time_t _timer;
-        time(nullptr);
+        time(&_timer);
         time_info = localtime(&_timer);
         time_info->tm_year = size_t(year - 1900);
         time_info->tm_mon = size_t(month - 1);

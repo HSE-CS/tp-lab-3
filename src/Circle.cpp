@@ -3,24 +3,24 @@
 //
 
 #include "Circle.h"
-#include <cmath>
+#include <math.h>
 
 void Circle::setRadius(double R) {
-    radius = R;
-    ference = 2 * M_PI * radius;
-    area = M_PI * radius * radius;
+    this->radius = R;
+    this->ference = 2 * M_PI * radius;
+    this->area = M_PI * radius * radius;
 }
 
 void Circle::setFerence(double F) {
-    radius = F / (2 * M_PI);
-    ference = F;
-    area = M_PI * radius * radius;
+    this->radius = F / (2 * M_PI);
+    this->ference = F;
+    this->area = M_PI * radius * radius;
 }
 
 void Circle::setArea(double A) {
-    radius = sqrt(A / (M_PI));
-    ference = 2 * M_PI * radius;
-    area = A;
+    this->radius = sqrt(A / (M_PI));
+    this->ference = 2 * M_PI * radius;
+    this->area = A;
 }
 
 double Circle::getRadius() {
