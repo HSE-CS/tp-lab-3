@@ -11,40 +11,21 @@
 class Circle {
 private:
     double radius, ference, area;
+
 public:
-    Circle(double _radius) {
-        Circle::setRadius(_radius);
-    }
+    Circle(double _radius);
 
-    double getRadius() const{
-        return radius;
-    }
+    double getRadius() const;
 
-    void setRadius(double _radius) {
-        Circle::radius = _radius;
-        Circle::ference = 2 * M_PI * radius;
-        Circle::area = M_PI * pow(radius, 2);
-    }
+    void setRadius(double _radius);
 
-    double getFerence() const {
-        return ference;
-    }
+    double getFerence() const;
 
-    void setFerence(double _ference) {
-        Circle::ference = _ference;
-        Circle::radius = ference / (2 * M_PI);
-        Circle::area = M_PI * pow(Circle::radius, 2);
-    }
+    void setFerence(double _ference);
 
-    double getArea() const {
-        return area;
-    }
+    double getArea() const;
 
-    void setArea(double _area){
-        Circle::area = _area;
-        Circle::radius = pow(area / M_PI, 0.5);
-        Circle::ference = 2 * M_PI * Circle::radius;
-    }
+    void setArea(double _area);
 };
 
 
