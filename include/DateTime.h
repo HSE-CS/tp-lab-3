@@ -20,18 +20,18 @@ public:
     std::string  getFuture(unsigned int);
     std::string  getPast(unsigned int);
 //  Constructors
-     DateTime(){    // -> default initialisation
+    DateTime(){    // -> default initialisation
          time_t _timer;
          time(nullptr);
          time_info = localtime(&_timer);
         mktime(time_info);
      }
-    DateTime(const DateTime& previous_DT){
+    explicit DateTime(const DateTime& previous_DT){
         time_t previous_time = mktime(previous_DT.time_info);
         time_info = localtime(&previous_time);
         mktime(time_info);
     }
-    DateTime(size_t day,size_t month,size_t year){
+    explicit DateTime(size_t day,size_t month,size_t year){
         time_t _timer;
         time(nullptr);
         time_info = localtime(&_timer);

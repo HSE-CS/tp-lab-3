@@ -3,8 +3,7 @@
 #include "task1.h"
 
 int main() {
-
-    std::cout <<  << std::endl;
-    std::cout <<  << std::endl;
+    DateTime curtim;
+    std::cout << curtim.time_info << std::endl;
     return 0;
 }
