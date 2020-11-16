@@ -5,4 +5,9 @@
 #ifndef TASK1_TASK1_H
 #define TASK1_TASK1_H
 
+
+double calcDelta(Circle &earth, Circle &rope);
+
+double calcCost(Circle &pool, Circle &walkway);
+
 #endif //TASK1_TASK1_H

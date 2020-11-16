@@ -6,6 +6,7 @@
 #include <cmath>
 #include <iomanip>
 #include "Circle.h"
+#include "task1.h"
 
 
 using namespace std;
@@ -14,7 +15,7 @@ int main(){
     Circle pool(3);
     Circle walkway(pool.getRadius() + 1);
 
-    double price = (walkway.getArea() - pool.getArea()) * 1000 + (walkway.getRadius() * 2000);
+    std::cout << std::setprecision(17);
 
-    cout << "price: " << price << " rubles";
+    cout << "price: " << calcCost(pool, walkway) << " rubles";
 }

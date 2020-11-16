@@ -6,6 +6,7 @@
 #include <cmath>
 #include <iomanip>
 #include "Circle.h"
+#include "task1.h"
 
 
 using namespace std;
@@ -22,7 +23,6 @@ int main(){
 
     Circle earth(6378.1);
     Circle rope;
-    rope.setFerence(earth.getFerence() + 1);
 
     /*cout << earth.getFerence() << endl;
     cout << rope.getFerence() << endl;
@@ -30,7 +30,7 @@ int main(){
     cout << rope.getArea() << endl;
     cout << earth.getArea() << endl;*/
 
-    cout << rope.getArea() - earth.getArea();
+    cout << calcDelta(earth, rope);
 
 
 
