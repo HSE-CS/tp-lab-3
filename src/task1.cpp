@@ -5,11 +5,11 @@
 #include "task1.h"
 #include "Circle.h"
 
-double calcDelta(Circle& obj1, Circle& obj2){
-    return obj1.getRadius() - obj2.getRadius();
+double calcDelta(Circle& obj1, Circle& obj2) {
+    return (obj1.getRadius() - obj2.getRadius()); // if km / 1000
 }
 
-double countRoad(Circle& road, Circle& pool, double cost){
+double countRoad(Circle& road, Circle& pool, double cost) {
     return (road.getArea() - pool.getArea()) * cost;
 }
 
@@ -17,6 +17,6 @@ double countFence(Circle& road, double cost) {
     return road.getFerence() * cost;
 }
 
-double calcCost(double costRoad, double costFence){
+double calcCost(double costRoad, double costFence) {
     return costFence + costRoad;
 }

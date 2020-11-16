@@ -7,21 +7,22 @@
 
 
 class Circle {
+private:
+    double radius;
+    double ference;
+    double area;
 public:
-    void setRadius(double x);
-    void setFerence(double x);
-    void setArea(double x);
+    void setRadius(double);
+    void setFerence(double);
+    void setArea(double);
     double getRadius();
     double getFerence();
     double getArea();
+//  Constructors
     Circle() = default;
     explicit Circle(double R) {
         setRadius(R);
     }
-private:
-    double radius{};
-    double ference{};
-    double area{};
 };
 
 

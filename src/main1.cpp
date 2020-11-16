@@ -13,9 +13,12 @@
 
 int main() {
     double RadiusEarth = 6378000; // meter
+
     Circle oldEarth(RadiusEarth);
     Circle newEarth;
+
     newEarth.setFerence(oldEarth.getFerence() + 1);
+
     std::cout << calcDelta(newEarth, oldEarth) << std::endl;
     return 0;
 }

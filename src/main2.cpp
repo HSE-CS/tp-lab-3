@@ -11,10 +11,11 @@
 // Радиус бассейна 3 м. Ширина бетонной дорожки вокруг бассейна 1 м.
 
 int main() {
-    double costConcrete= 1000;  // rub per metre^2
-    double costFence= 2000;     // rub per metre
+    double costConcrete = 1000;  // rub per metre^2
+    double costFence = 2000;     // rub per metre
     double radiusPool = 3;      // meter
     double widthRoad = 1;       // meter
+
     Circle pool(radiusPool);
     Circle road(radiusPool + widthRoad);
 

@@ -7,10 +7,10 @@
 #ifndef LAB3TEST_TASK1_H
 #define LAB3TEST_TASK1_H
 
-double calcDelta(Circle& obj1, Circle& obj2);
+double calcDelta(Circle&, Circle&);
 
-double calcCost(double costRoad, double costFence);
-double countRoad(Circle& temp1, Circle& temp2, double cost);
-double countFence(Circle& road, double cost);
+double calcCost(double, double);
+double countRoad(Circle&, Circle&, double);
+double countFence(Circle&, double);
 
 #endif //LAB3TEST_TASK1_H
