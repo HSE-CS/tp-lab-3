@@ -125,5 +125,18 @@ string DateTime::getTomorrow(){
 }
 
 int DateTime::getDifference(DateTime &dt) {
-    return (max(dt.day, this->day) - min(dt.day, this->day));
+    int days1 = 0;
+    int days2 = 0;
+
+    for (int i = 1; i <= this->month; ++i) {
+        days1 += daysInMonth(i);
+    }
+    days1 += this->day;
+
+    for (int i = 1; i <= dt.month; ++i) {
+        days2 += daysInMonth(i);
+    }
+    days2 += dt.day;
+
+    return (max(days1, days2) - min(days1, days2));
 }
