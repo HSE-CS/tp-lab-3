@@ -13,7 +13,7 @@ void Circle::setRadius(double rad)
 void Circle::setFerence(double fer)
 {
 	this->ference = fer;
-	this->radius = fer/(2*M_PI);
+	this->radius = fer / M_PI / 2;
 	this->area = (fer*this->radius)/2;
 }
 void Circle::setArea(double area)
