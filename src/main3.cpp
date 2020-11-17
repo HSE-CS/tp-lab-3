@@ -2,28 +2,43 @@
 
 int main(){
 
-    DateTime pupa(1,11,2018);
-    DateTime dt;
-    DateTime cap(dt);
+    DateTime timeOne(1,11,2018);
+    DateTime timeTwo;
+    DateTime timeThree(timeTwo);
 
-    DateTime pupa1(pupa);
-    DateTime dt1(dt);
-    DateTime cap1(cap);
+    DateTime timeOne1(timeOne);
+    DateTime timeTwo1(timeTwo);
+    DateTime timeThree1(timeThree);
 
     std::cout<<std::endl<<"getToday() check"<<std::endl;
-    std::cout<<pupa.getToday()<<std::endl;
-    std::cout<<dt.getToday()<<std::endl;
-    std::cout<<cap.getToday()<<std::endl;
+    std::cout<<timeOne.getToday()<<std::endl;
+    std::cout<<timeTwo.getToday()<<std::endl;
+    std::cout<<timeThree.getToday()<<std::endl;
 
     std::cout<<std::endl<< "getYesterday() check"<<std::endl;
-    std::cout<<pupa.getYesterday()<<std::endl;
-    std::cout<<dt.getYesterday()<<std::endl;
-    std::cout<<cap.getYesterday()<<std::endl;
+    std::cout<<timeOne.getYesterday()<<std::endl;
+    std::cout<<timeTwo.getYesterday()<<std::endl;
+    std::cout<<timeThree.getYesterday()<<std::endl;
 
     std::cout<<std::endl<< "getTomorrow() check"<<std::endl;
-    std::cout<<pupa1.getTomorrow()<<std::endl;
-    std::cout<<dt1.getTomorrow()<<std::endl;
-    std::cout<<cap1.getTomorrow()<<std::endl;
+    std::cout<<timeOne1.getTomorrow()<<std::endl;
+    std::cout<<timeTwo1.getTomorrow()<<std::endl;
+    std::cout<<timeThree1.getTomorrow()<<std::endl;
+
+    std::cout<<std::endl<< "getFuture() check"<<std::endl;
+    std::cout<<"Enter N days to use classObjectName.getFuture()"<<std::endl;
+    unsigned N = 0;
+    std::cin >> N;
+    std::cout<<timeOne1.getFuture(N)<<std::endl;
+    std::cout<<timeTwo1.getFuture(N)<<std::endl;
+    std::cout<<timeThree1.getFuture(N)<<std::endl;
+
+    std::cout<<std::endl<< "getPast() check"<<std::endl;
+    std::cout<<"Enter N days to use classObjectName.getPast()"<<std::endl;
+    std::cin >> N;
+    std::cout<<timeOne1.getPast(N)<<std::endl;
+    std::cout<<timeTwo1.getPast(N)<<std::endl;
+    std::cout<<timeThree1.getPast(N)<<std::endl;
 
     return 0;
 }
