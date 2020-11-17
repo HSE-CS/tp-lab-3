@@ -11,8 +11,8 @@ private:
 	tm date;
 public:
 	DateTime(int day, int month, int year)
-	{ 
-	    date = tm{ 0, 0, 0, day, month-1, year-1900};
+	{
+		date = tm{ 0, 0, 0, day, month - 1, year - 1900 };
 		mktime(&date); 
 	}
 	DateTime()
@@ -34,10 +34,12 @@ public:
 		date = _date.date;
 	}
 	std::string getToday()const; //- возвращение текущей даты в виде строки, с указанием дня недели и названия месяца(например 07 november 2018, wedensday);
-	std::string getYesterday() const; //- возвращение даты вчерашнего дня в виде строки.
-	std::string getTomorrow() const; //- возвращение даты завтрашнего дня в виде строки.
+	std::string getYesterday(); //- возвращение даты вчерашнего дня в виде строки.
+	std::string getTomorrow() ; //- возвращение даты завтрашнего дня в виде строки.
 	DateTime getFuture(unsigned int N) const; //-возвращение даты через N дней в будущем;
-	DateTime getPast(unsigned int N) const; //-возвращение даты через N дней в прошлом;
+	DateTime getPast(unsigned int N); //-возвращение даты через N дней в прошлом;
 	int getDifference(DateTime&); //-для расчёта разницы(в днях) между двумя датами
+	
 };
+std::string lower(char* buffer);
 #endif

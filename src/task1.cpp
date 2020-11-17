@@ -5,11 +5,11 @@
 #include <stdlib.h>
 double calcDelta()
 {
-	Circle earth_0level{ 6378.1 }; //создаем круг с радиусом 6378.1
-	Circle earth_1level{ 6378.1 }; //создаем круг с радиусом 6378.1
-	double new_len = earth_0level.getFerence() + 0.001; //инициализируем новую длину
+	Circle earth_0level{ 6378100 }; //создаем круг с радиусом 6378.1 км 
+	Circle earth_1level{ 6378100 }; //создаем круг с радиусом 6378.1 км
+	double new_len = earth_0level.getFerence() + 1; //инициализируем новую длину
 	earth_1level.setFerence(new_len); //устанавливаем для второго круге
-	return (earth_1level.getRadius() - earth_0level.getRadius())*1000; //находим зазор 
+	return (earth_1level.getRadius() - earth_0level.getRadius()); //находим зазор 
 }
 double calcCost()
 {
