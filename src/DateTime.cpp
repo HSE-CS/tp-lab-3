@@ -1,6 +1,7 @@
 #include "DateTime.h"
 #include "iostream"
 #include <string.h>
+#include <math.h>
 #define _CRT_SECURE_NO_WARNINGS
 
 std::string lower(char* buffer)
@@ -72,5 +73,5 @@ int DateTime::getDifference(DateTime& dt)
 	*x = date;
 	time_t date1 = mktime(x); //Перевод структуры timeptr в time_t
 	time_t date2 = mktime(&dt.date);
-	return difftime(date2, date1) / DAY; //находим разницу в секундах и переводим в дни
+	return abs(difftime(date2, date1)) / DAY; //находим разницу в секундах и переводим в дни
 }
