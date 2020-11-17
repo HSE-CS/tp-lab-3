@@ -2,8 +2,8 @@
  * @author Stanislav Stoianov
  */
 
-#include <Circle.h>
 #include <iostream>
+#include "../include/task1.h"
 
 /*
  * Земля и верёвка. Решить с использованием класса `Circle` следующую задачу:
@@ -16,9 +16,6 @@
  */
 
 int main() {
-    Circle circle(6378100);
-    Circle circle1(6378100);
-    circle1.setFerence(circle1.getFerence() + 1);
-    std::cout << circle1.getArea() - circle.getArea();
+    std::cout << calcDelta() << std::endl;
     return 0;
 }

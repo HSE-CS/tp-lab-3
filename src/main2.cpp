@@ -2,8 +2,8 @@
  * @author Stanislav Stoianov
  */
 
-#include <Circle.h>
 #include <iostream>
+#include "../include/task1.h"
 
 /*
  * Бассейн. Решить с помощью класса `Circle` следующую задачу:
@@ -15,11 +15,7 @@
  */
 
 int main() {
-    const int costConcrete = 1000;
-    const int costFence = 2000;
-    Circle pool(3);
-    Circle path(4);
-    std::cout << costFence * path.getFerence() + costConcrete * (path.getArea() - pool.getArea());
+    std::cout << calcCost() << std::endl;
     return 0;
 }
 
