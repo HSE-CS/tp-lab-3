@@ -119,5 +119,5 @@ DateTime DateTime::getPast(unsigned int N){
 int DateTime::getDifference(DateTime &dateTime) {
     std::time_t x = std::mktime(&dt);
     std::time_t y = std::mktime(&dateTime.dt);
-    return (int) std::abs(std::difftime(y, x) / (60 * 60 * 24));
+    return abs((int) (difftime(y, x) / (60 * 60 * 24)));
 }
