@@ -16,21 +16,21 @@ public:
 		time_t rawtime;
 		struct tm* timeinfo;
 
-		time(&rawtime);  // получить текущую дату, выраженную в секундах
-		timeinfo = localtime(&rawtime);  // текущее локальное время, представленное в структуре
+		time(&rawtime);  // РїРѕР»СѓС‡РёС‚СЊ С‚РµРєСѓС‰СѓСЋ РґР°С‚Сѓ, РІС‹СЂР°Р¶РµРЅРЅСѓСЋ РІ СЃРµРєСѓРЅРґР°С…
+		timeinfo = localtime(&rawtime);  // С‚РµРєСѓС‰РµРµ Р»РѕРєР°Р»СЊРЅРѕРµ РІСЂРµРјСЏ, РїСЂРµРґСЃС‚Р°РІР»РµРЅРЅРѕРµ РІ СЃС‚СЂСѓРєС‚СѓСЂРµ
 
 		date.tm_mday = timeinfo->tm_mday;
 		date.tm_mon = timeinfo->tm_mon;
 		date.tm_year = timeinfo->tm_year;
 		date.tm_wday = timeinfo->tm_wday;
-		mktime(&date);  //Перевод структуры timeptr в time_t
+		mktime(&date);  //РџРµСЂРµРІРѕРґ СЃС‚СЂСѓРєС‚СѓСЂС‹ timeptr РІ time_t
 	}
 	DateTime(const DateTime &_date):date{_date.date}{}
-	std::string getToday()const; //- возвращение текущей даты в виде строки, с указанием дня недели и названия месяца(например 07 november 2018, wedensday);
-	std::string getYesterday() const; //- возвращение даты вчерашнего дня в виде строки.
-	std::string getTomorrow() const; //- возвращение даты завтрашнего дня в виде строки.
-	DateTime getFuture(unsigned int N) const; //-возвращение даты через N дней в будущем;
-	DateTime getPast(unsigned int N) const; //-возвращение даты через N дней в прошлом;
-	int getDifference(DateTime&); //-для расчёта разницы(в днях) между двумя датами
+	std::string getToday()const; //- РІРѕР·РІСЂР°С‰РµРЅРёРµ С‚РµРєСѓС‰РµР№ РґР°С‚С‹ РІ РІРёРґРµ СЃС‚СЂРѕРєРё, СЃ СѓРєР°Р·Р°РЅРёРµРј РґРЅСЏ РЅРµРґРµР»Рё Рё РЅР°Р·РІР°РЅРёСЏ РјРµСЃСЏС†Р°(РЅР°РїСЂРёРјРµСЂ 07 november 2018, wedensday);
+	std::string getYesterday() const; //- РІРѕР·РІСЂР°С‰РµРЅРёРµ РґР°С‚С‹ РІС‡РµСЂР°С€РЅРµРіРѕ РґРЅСЏ РІ РІРёРґРµ СЃС‚СЂРѕРєРё.
+	std::string getTomorrow() const; //- РІРѕР·РІСЂР°С‰РµРЅРёРµ РґР°С‚С‹ Р·Р°РІС‚СЂР°С€РЅРµРіРѕ РґРЅСЏ РІ РІРёРґРµ СЃС‚СЂРѕРєРё.
+	DateTime getFuture(unsigned int N) const; //-РІРѕР·РІСЂР°С‰РµРЅРёРµ РґР°С‚С‹ С‡РµСЂРµР· N РґРЅРµР№ РІ Р±СѓРґСѓС‰РµРј;
+	DateTime getPast(unsigned int N) const; //-РІРѕР·РІСЂР°С‰РµРЅРёРµ РґР°С‚С‹ С‡РµСЂРµР· N РґРЅРµР№ РІ РїСЂРѕС€Р»РѕРј;
+	int getDifference(DateTime&); //-РґР»СЏ СЂР°СЃС‡С‘С‚Р° СЂР°Р·РЅРёС†С‹(РІ РґРЅСЏС…) РјРµР¶РґСѓ РґРІСѓРјСЏ РґР°С‚Р°РјРё
 };
 #endif

@@ -7,9 +7,9 @@
 class Circle
 {
 private:
-	double radius = 0.0; //- радиус
-	double ference = 0.0; //- длина окружности
-	double area = 0.0; //- площадь круга
+	double radius = 0.0; //- СЂР°РґРёСѓСЃ
+	double ference = 0.0; //- РґР»РёРЅР° РѕРєСЂСѓР¶РЅРѕСЃС‚Рё
+	double area = 0.0; //- РїР»РѕС‰Р°РґСЊ РєСЂСѓРіР°
 public:
 	Circle(const double _radius):radius{_radius}{
 

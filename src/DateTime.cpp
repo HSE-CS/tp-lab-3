@@ -8,8 +8,8 @@ std::string DateTime::getToday() const
 {
     char buffer[80];
 	char result[80] = {'\0'};
-	strftime(buffer, 80, "%d %B %Y %A", &date); //переводим в строчку вида  07 November 2018, Wedensday
-	for (int i = 0;i < strlen(buffer);i++) //понижаем регистр
+	strftime(buffer, 80, "%d %B %Y %A", &date); //РїРµСЂРµРІРѕРґРёРј РІ СЃС‚СЂРѕС‡РєСѓ РІРёРґР°  07 November 2018, Wedensday
+	for (int i = 0;i < strlen(buffer);i++) //РїРѕРЅРёР¶Р°РµРј СЂРµРіРёСЃС‚СЂ
 	{
 		if ('A' <= buffer[i] && buffer[i] <= 'Z')
 			result[i] = buffer[i] - 'A' + 'a';
@@ -29,12 +29,12 @@ std::string DateTime::getTomorrow() const
 DateTime DateTime::getFuture(unsigned int N) const
 {
 	struct tm* x;
-	const time_t timer = time(NULL); //обнуляем
-	x = localtime(&timer); //принимаем значение текущего времени в секундах и инициализирует
-	                       //структуру в местном формате времени.
-	x->tm_mday += N; //к дня добавляем N
-	time_t next = mktime(x); //Перевод структуры timeptr в time_t
-	x = localtime(&next); //опять в местный формат
+	const time_t timer = time(NULL); //РѕР±РЅСѓР»СЏРµРј
+	x = localtime(&timer); //РїСЂРёРЅРёРјР°РµРј Р·РЅР°С‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ РІСЂРµРјРµРЅРё РІ СЃРµРєСѓРЅРґР°С… Рё РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚
+	                       //СЃС‚СЂСѓРєС‚СѓСЂСѓ РІ РјРµСЃС‚РЅРѕРј С„РѕСЂРјР°С‚Рµ РІСЂРµРјРµРЅРё.
+	x->tm_mday += N; //Рє РґРЅСЏ РґРѕР±Р°РІР»СЏРµРј N
+	time_t next = mktime(x); //РџРµСЂРµРІРѕРґ СЃС‚СЂСѓРєС‚СѓСЂС‹ timeptr РІ time_t
+	x = localtime(&next); //РѕРїСЏС‚СЊ РІ РјРµСЃС‚РЅС‹Р№ С„РѕСЂРјР°С‚
 	DateTime future{ x->tm_mday, x->tm_mon + 1, x->tm_year + 1900 };
 	return future;
 }
@@ -52,12 +52,12 @@ DateTime DateTime::getPast(unsigned int N) const
 }
 int DateTime::getDifference(DateTime& dt)
 {
-	int DAY = 86400; //секунд в дне
-	struct tm* x; //создаем структуру
-	const time_t timer = time(NULL); //обнуляем 
-	x = localtime(&timer); //принимаем значение текущего времени в секундах
-	                       //и инициализирует структуру в местном формате времени.
-	time_t date1 = mktime(x); //Перевод структуры timeptr в time_t
+	int DAY = 86400; //СЃРµРєСѓРЅРґ РІ РґРЅРµ
+	struct tm* x; //СЃРѕР·РґР°РµРј СЃС‚СЂСѓРєС‚СѓСЂСѓ
+	const time_t timer = time(NULL); //РѕР±РЅСѓР»СЏРµРј 
+	x = localtime(&timer); //РїСЂРёРЅРёРјР°РµРј Р·РЅР°С‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ РІСЂРµРјРµРЅРё РІ СЃРµРєСѓРЅРґР°С…
+	                       //Рё РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ СЃС‚СЂСѓРєС‚СѓСЂСѓ РІ РјРµСЃС‚РЅРѕРј С„РѕСЂРјР°С‚Рµ РІСЂРµРјРµРЅРё.
+	time_t date1 = mktime(x); //РџРµСЂРµРІРѕРґ СЃС‚СЂСѓРєС‚СѓСЂС‹ timeptr РІ time_t
 	time_t date2 = mktime(&dt.date);
-	return difftime(date2, date1) / DAY; //находим разницу в секундах и переводим в дни
+	return difftime(date2, date1) / DAY; //РЅР°С…РѕРґРёРј СЂР°Р·РЅРёС†Сѓ РІ СЃРµРєСѓРЅРґР°С… Рё РїРµСЂРµРІРѕРґРёРј РІ РґРЅРё
 }
