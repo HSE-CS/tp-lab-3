@@ -6,7 +6,7 @@
 double calcDelta()
 {
 	Circle earth_0level{ 6378.1 }; //создаем круг с радиусом 6378.1 км 
-	Circle earth_1level;
+	Circle earth_1level{ 6378.1 };
 	double new_len = earth_0level.getFerence() + 1; //инициализируем новую длину
 	earth_1level.setFerence(new_len); //устанавливаем для второго круге
 	double result = earth_1level.getRadius() - earth_0level.getRadius(); //находим зазор 
