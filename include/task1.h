@@ -7,8 +7,11 @@
 
 #include "Circle.h"
 
-double calcDelta(Circle &earth, Circle &rope);
+double calcDelta();
 
-double calcCost(Circle &pool, Circle &walkway);
+double calcCost();
+
+
+
 
 #endif //TASK1_TASK1_H

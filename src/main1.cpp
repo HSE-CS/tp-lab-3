@@ -21,8 +21,8 @@ int main(){
 
     //--------------------------------------------------------------------------------------------
 
-    Circle earth(6378.1);
-    Circle rope;
+    /*Circle earth(6378.1);
+    Circle rope;*/
 
     /*cout << earth.getFerence() << endl;
     cout << rope.getFerence() << endl;
@@ -30,7 +30,9 @@ int main(){
     cout << rope.getArea() << endl;
     cout << earth.getArea() << endl;*/
 
-    cout << calcDelta(earth, rope);
+
+    cout << calcDelta() << endl;
+
 
 
 
