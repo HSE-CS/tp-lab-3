@@ -5,12 +5,10 @@
 #include "Circle.h"
 
 double calcDelta(){
-double earth=6378100;
-Circle a(earth);
-double f=a.getFerence();
-a.setFerence(f+1);
-double r=a.getRadius();
-return r-earth;
+Circle a(6378.1);
+Circle b(0);
+b.setFerence(a.getFerence()+1);
+return b.getRadius()-a.getRadius();
 }
 
 double calcCost(){

@@ -42,9 +42,11 @@ mktime(&savetime);
 
 
 time_t DateTime::_getmktime() const{
-struct tm * ret;
-tmcpy(ret,&savetime);
-return mktime(ret);
+struct tm  ret;
+tmcpy(&ret,&savetime);
+time_t x;
+x=mktime(&ret);
+return x;
 }
 
 DateTime::DateTime(const DateTime& tm){
@@ -107,6 +109,6 @@ int buff3=0;
 buff1=_getmktime();
 buff2=x._getmktime();
 buff3=abs(buff1-buff2);
-return buff3;
+return buff3/ONE_DAY;
 }
 
