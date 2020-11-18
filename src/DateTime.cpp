@@ -40,7 +40,7 @@ DateTime::DateTime(DateTime& dataTime)
 std::string DateTime::getToday()
 {
 	char result[100];
-	strftime(result, 100, "%d %B %Y %A", &(this->date));
+	strftime(result, 100, "%d %B %Y, %A", &(this->date));
 	char* res = toLower(result);
 	return res;
 }

@@ -2,7 +2,7 @@
 #include "task1.h"
 
 double calcDelta() {
-	Circle earth(6378100.0);
+	Circle earth(6378.1);
 	Circle rope(0.0);
 	rope.setFerence(earth.getFerence() + 1);
 	return rope.getRadius() - earth.getRadius();
