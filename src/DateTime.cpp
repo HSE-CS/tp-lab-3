@@ -56,7 +56,7 @@ string DateTime::getFuture(unsigned int days) {
     return futur.getToday();
 }
 
-string DateTime::getFuture(unsigned int days) {
+string DateTime::getPast(unsigned int days) {
     DateTime past(*this);
     past.raw_time -= 3600 * 24 * days;
     return past.getToday();
