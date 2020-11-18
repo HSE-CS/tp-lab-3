@@ -6,9 +6,9 @@
 #include "Circle.h"
 
 double earth_and_rope(double _radius){
-    Circle earth{_radius};
-    earth.setFerence(earth.getFerence() + 1);
-    return earth.getRadius() - _radius;
+    Circle earth(6378.1),  rope{6378.1};
+    rope.setFerence(earth.getFerence() + 1);
+    return rope.getRadius() - earth.getRadius();
 }
 
 double swimming_pool(double  _radius, double track_width, double coverage_cost, double fence_cost){

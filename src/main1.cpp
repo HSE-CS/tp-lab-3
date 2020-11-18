@@ -6,5 +6,6 @@
 #include "task1.h"
 
 int main() {
-//    std::cout << calcDelta();
+//    std::cout.precision(17);
+//    std::cout << calcDelta() << std::endl << 0.15915494309228961;
 }
