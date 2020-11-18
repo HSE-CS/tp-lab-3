@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include "../include/Circle.h"
-constexpr double pi = 3.1415926535;
+constexpr double pi = 3.14159265358;
 
 Circle::Circle(double radius){
 	setRadius(radius);
