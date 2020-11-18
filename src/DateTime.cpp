@@ -2,6 +2,7 @@
 #include "DateTime.h"
 #include <iostream>
 #include <cmath>
+#include <string>
 
 DateTime::DateTime(int day, int mounth, int year)
 {
