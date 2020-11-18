@@ -1,11 +1,37 @@
+#include <cstdlib>
 #include "../include/Circle.h"
+constexpr double pi = 3.1415926535;
 
-Circle::Circle()
-{
-
+Circle::Circle(double radius){
+	setRadius(radius);
 }
 
-Circle::~Circle() {
-
+void Circle::setRadius(double radius) {
+	this->radius = radius;
+	this->ference = 2 * pi * this->radius;
+	this->area = pi * pow(this->radius, 2);
 }
 
+void Circle::setFerence(double ference) {
+	this->ference = ference;
+	this->radius = this->ference / (2 * pi);
+	this->area = pi * pow(this->radius, 2);
+}
+
+void Circle::setArea(double area) {
+	this->area = area;
+	this->radius = sqrt(this->area / pi);
+	this->ference = 2 * pi * this->radius;
+}
+
+double Circle::getRadius() {
+	return this->radius;
+}
+
+double Circle::getFerence() {
+	return this->ference;
+}
+
+double Circle::getArea() {
+	return this->area;
+}

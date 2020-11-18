@@ -3,9 +3,9 @@
 class Circle
 {
 private:
-	double radius = 0;
-	double ference = 0;
-	double area = 0;
+	double radius = 0.0;
+	double ference = 0.0;
+	double area = 0.0;
 public:
 	Circle(double);
 	void setRadius(double);
