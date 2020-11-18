@@ -8,3 +8,10 @@ double calcDelta()
 	Rope.setFerence(Earth.getFerence() + 1);
 	return (Rope.getRadius() - Earth.getRadius());
 }
+
+double calcCost()
+{
+	Circle Pool(3.0);
+	Circle Pool_with_Fence(3.0 + 1.0);
+	return (1000 * (Pool_with_Fence.getArea() - Pool.getArea()) + 2000 * Pool_with_Fence.getFerence());
+}
