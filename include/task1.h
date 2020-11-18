@@ -1,0 +1,2 @@
+double calcDelta();
+double calcCost();
