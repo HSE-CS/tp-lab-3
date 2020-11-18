@@ -1,0 +1,9 @@
+.idea
+.travis
+cmake-build-debug
+ext
+img
+
+.travis.yml
+CMakeLists.txt
+README.md
