@@ -9,7 +9,7 @@ using namespace std;
 class DateTime
 {
 private:
- struct tm * savetime;
+ struct tm  savetime;
 public:
   DateTime();
   DateTime(size_t,size_t,size_t);
