@@ -5,22 +5,22 @@
 void Circle::setRadius(double new_radius)
 {
   radius = new_radius;
-  ference = 3.14 * 2 * radius;
-  area = 3.14 * radius * radius;
+  ference = 3.14159265 * 2 * radius;
+  area = 3.14159265 * radius * radius;
 }
 
 void Circle::setFerence(double new_ference)
 {
   ference = new_ference;
-  radius = ference / (2 * 3.14);
-  area = 3.14 * radius * radius;
+  radius = ference / (2 * 3.14159265);
+  area = 3.14159265 * radius * radius;
 }
 
 void Circle::setArea(double new_area)
 {
   area = new_area;
-  radius = sqrt(area / 3.14);
-  ference = 3.14 * 2 * radius;
+  radius = sqrt(area / 3.14159265);
+  ference = 3.14159265 * 2 * radius;
 }
 
 double Circle::getRadius()
