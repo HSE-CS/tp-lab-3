@@ -1,6 +1,4 @@
 #pragma once
-#ifndef TASK1_CIRCLE_H
-#define TASK1_CIRCLE_H
 
 using namespace std;
 
@@ -26,5 +24,3 @@ public:
 	
 	double getRadius();
 };
-
-#endif //TASK1_CIRCLE_H
