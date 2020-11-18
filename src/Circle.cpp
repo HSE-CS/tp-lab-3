@@ -3,45 +3,32 @@
 #include <iostream>
 #include <cmath>
 
-void Circle::setRadius() {
-	std::cin >> radius;
-
-	ference = getFerence(radius);
-	area = getArea(radius);
+void Circle::setRadius(double r) {
+	radius = r;
+	ference = 2 * M_PI * r;
+	area = M_PI * r * r;
 }
 
-void Circle::setFerence() {
-	std::cin >> ference;
-
-	radius = getRadius(ference, area, 1);
-	area = getArea(radius);
+void Circle::setFerence(double f) {
+	radius = f/M_PI;
+	ference = f;
+	area = M_PI * radius * radius;
 }
 
-void Circle::setArea(){
-	std::cin >> area;
-
-	radius = getRadius(ference, area, 2);
-	ference = getFerence(radius);
+void Circle::setArea(double a){
+	radius = sqrt(a/M_PI);
+	ference = 2 * M_PI * radius;
+	area = a;
 }
 
-double Circle::getRadius(double ference, double area, int key) {
-	switch (key) {
-	case 1:
-		radius = ference / (2 * 3.14);
-		break;
-	case 2:
-		radius = sqrt(area / 3.14);
-		break;
-	}
+double Circle::getRadius() {
 	return radius;
 }
 
-double Circle::getFerence(double radius){
-	ference = 2 * 3.14 * radius;
+double Circle::getFerence(){
 	return ference;
 }
 
-double Circle::getArea(double radius){
-	area = 3.14 * radius * radius;
+double Circle::getArea(){
 	return area;
 }

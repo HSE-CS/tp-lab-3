@@ -4,8 +4,13 @@
 
 int main() {
 	double earth_rad = 6378.1;
+	Circle earth;
 	Circle rope;
-	double diff = rope.getRadius(rope.getFerence(earth_rad) + 1, 0, 1) - earth_rad;
-	std::cout << "%l" << diff;
+
+	earth.setRadius(earth_rad);
+	double new_ference = earth.getFerence + 1;
+	rope.setFerence(new_ference);
+	double diff = rope.getRadius - earth_rad;
+	std::cout << diff << std::endl;
 	return 0;
 }

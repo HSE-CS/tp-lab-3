@@ -8,11 +8,11 @@ private:
 	double ference;
 	double area;
 public:
-	void setRadius();
-	void setFerence();
-	void setArea();
-	double getRadius(double ference, double area, int key);
-	double getFerence(double rad);
-	double getArea(double rad);
+	void setRadius(double r);
+	void setFerence(double f);
+	void setArea(double a);
+	double getRadius();
+	double getFerence();
+	double getArea();
 };
 #endif
