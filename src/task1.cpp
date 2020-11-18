@@ -11,6 +11,6 @@ double calcDelta() {
 double calcCost() {
 	double cost_1{ 1000 }, cost_2{ 2000 }, rad_pool{ 3 }, rad_road{ 1 };
 	Circle pool(rad_pool);
-	Circle with_road(rad_road + rad_road);
+	Circle with_road(rad_road + rad_pool);
 	return (with_road.getArea() - pool.getArea()) * cost_1 + with_road.getFerence() * cost_2;
 }

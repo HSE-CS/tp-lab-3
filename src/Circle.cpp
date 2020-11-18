@@ -1,8 +1,7 @@
+#define _USE_MATH_DEFINES
 #include "Circle.h"
 #include <cmath>
 using namespace std;
-
-const double PI = 3.14159265;
 
 Circle::Circle(double new_radius) {
 	setRadius(new_radius);
@@ -36,16 +35,16 @@ double Circle::getArea() {
 }
 
 void Circle::calcByRadius() {
-	ference = 2 * PI * radius;
-	area = PI * pow(radius, 2);
+	ference = 2 * M_PI * radius;
+	area = M_PI * pow(radius, 2);
 }
 
 void Circle::calcByFerence() {
-	radius = ference / (2 * PI);
-	area = PI * pow(radius, 2);
+	radius = ference / (2 * M_PI);
+	area = M_PI * pow(radius, 2);
 }
 
 void Circle::calcByArea() {
-	radius = sqrt(area / PI);
-	ference = 2 * PI * radius;
+	radius = sqrt(area / M_PI);
+	ference = 2 * M_PI * radius;
 }
