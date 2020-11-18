@@ -1,4 +1,5 @@
 #include "Circle.h"
+#include "task1.h"
 #include <iostream>
 #include <cmath>
 
@@ -10,7 +11,7 @@ int main() {
 	earth.setRadius(earth_rad);
 	double new_ference = earth.getFerence + 1;
 	rope.setFerence(new_ference);
-	double diff = rope.getRadius - earth_rad;
-	std::cout << diff << std::endl;
+	
+	std::cout << calcDelta(rope.getRadius, earth_rad) << std::endl;
 	return 0;
 }
