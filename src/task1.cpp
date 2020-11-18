@@ -3,12 +3,16 @@
 #include <cmath>
 
 
-double calcDelta(Circle c1, Circle c2)
+double calcDelta()
 {
-	return fabs(c1.getArea() - c2.getArea());
+	Circle earth(6378100);
+	Circle rope(earth.getRadius());
+	rope.setFerence(earth.getFerence() + 1);
+	return fabs(earth.getRadius() - rope.getRadius());
 }
 
-double calcCost(Circle in, Circle out)
+double calcCost()
 {
-	return (out.getArea() - in.getArea()) * 1000 + out.getFerence() * 2000;
+	Circle pool(3), fence(4);
+	return (fence.getArea() - pool.getArea()) * 1000 + fence.getFerence() * 2000;
 }

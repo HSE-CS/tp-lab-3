@@ -4,9 +4,9 @@
 
 using namespace std;
 
-/*int main()
+int main()
 {
 	Circle pool(3), fence(4);
-	cout << calcCost(pool, fence) << endl;
+	cout << calcCost() << endl;
 	return 0;
-}*/
+}

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main()
+/*int main()
 {
 	DateTime today,nextweek(2020,11,25);
 	cout << "Today is " << today.getToday() << endl;
@@ -16,4 +16,4 @@ int main()
 	cout << "In week after editing programm, it will be " << nextweek.getToday() << endl;
 	cout << "The difference between first and this date is " << today.getDifference(nextweek) << " days." << endl;
 	return 0;
-}
+}*/

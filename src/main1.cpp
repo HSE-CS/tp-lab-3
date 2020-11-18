@@ -5,7 +5,7 @@
 
 using namespace std;
 
-/*int main()
+int main()
 {
 	Circle earth(6378100);
 	//cout << earth.getRadius() << "\n" << earth.getFerence() << "\n" << earth.getArea() << endl;
@@ -13,6 +13,6 @@ using namespace std;
 	Circle rope(earth.getRadius());
 	rope.setFerence(earth.getFerence() + 1);
 	//cout << earth.getRadius() << "\n" << earth.getFerence() << "\n" << earth.getArea() << endl;
-	cout << "Difference is " << calcDelta(earth,rope) << endl;
+	cout << "Difference is " << calcDelta() << endl;
 	return 0;
-}*/
+}
