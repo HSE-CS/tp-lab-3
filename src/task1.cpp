@@ -3,9 +3,9 @@
 
 double calcDelta() {
 	Circle earth(6378.1);
-	Circle extended_rope(0.159155);
-	extended_rope.setFerence(earth.getFerence() + extended_rope.getFerence());
-	double delta = extended_rope.getRadius() - earth.getRadius();
+	Circle earth_with_new_rope(0.0);
+	earth_with_new_rope.setFerence(earth.getFerence() + 1.0);
+	double delta = earth_with_new_rope.getRadius() - earth.getRadius();
 	return delta;
 }//- расчет зазора между землей и веревкой
 
