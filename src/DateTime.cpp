@@ -356,8 +356,14 @@
                         break;
                 }
                 if (this->day + N > dayCount){
-                    this->day += N-dayCount;
-                    this->month++;
+                    if (this->day + N == dayCount + 1){
+                        this->day = 1;
+                        this->month++;
+                    }
+                    else {
+                        this->day += N-dayCount;
+                        this->month++;
+                    }
                 }
                 else{
                     this->day += N;
@@ -447,10 +453,20 @@
                         this->month = 12;
                     }
                     if (this->month == 1 || this->month == 3 || this->month == 5 || this->month == 7 || this->month == 8 || this->month == 10 || this->month == 12){
-                        this->day = 31 - N;
+                        if (this->day - N == 0){
+                            this->day = 31;
+                        }
+                        else{
+                            this->day = 31 - N;
+                        }
                     }
                     else if (this->month == 4 || this->month == 6 || this->month == 9 || this->month == 11){
-                        this->day = 30 - N;
+                         if (this->day - N == 0){
+                            this->day = 30;
+                        }
+                        else {
+                            this->day = 30 - N;
+                        }
                     }
                 }
             }
@@ -483,7 +499,30 @@
 
         return this->dateInStr;
     };
-    // unsigned DateTime::getDifference(DateTime& structure){
+    double DateTime::getDifference(DateTime& structure){
 
-    // };
+        struct tm thisDateTime;
+        struct tm structureDateTime;
+
+        thisDateTime.tm_mday = this->day;
+        thisDateTime.tm_mon = this->month - 1;
+        thisDateTime.tm_year = this->year;
+        thisDateTime.tm_hour = 0;
+        thisDateTime.tm_min = 0;
+        thisDateTime.tm_sec = 2;
+
+        structureDateTime.tm_mday = structure.day;
+        structureDateTime.tm_mon = structure.month - 1;
+        structureDateTime.tm_year = structure.year;
+        structureDateTime.tm_hour = 0;
+        structureDateTime.tm_min = 0;
+        structureDateTime.tm_sec = 2;
+
+        double secondsBetweenDates = 0;
+        secondsBetweenDates = fabs(difftime(mktime(&thisDateTime), mktime(&structureDateTime)));
+        //std::cout<<secondsBetweenDates<<std::endl;
+        double result = secondsBetweenDates / (60*60*24); // from seconds between dates to days between dates
+        return trunc(result);
+
+    };
 

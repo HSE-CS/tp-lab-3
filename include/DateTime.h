@@ -29,7 +29,7 @@ public:
     std::string getTomorrow();
     std::string getFuture(unsigned int N);
     std::string getPast(unsigned int N);
-    unsigned getDifference(DateTime&);
+    double getDifference(DateTime&);
 
 
 };

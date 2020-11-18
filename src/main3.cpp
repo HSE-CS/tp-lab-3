@@ -27,8 +27,14 @@ int main(){
 
     std::cout<<std::endl<< "getFuture() check"<<std::endl;
     std::cout<<"Enter N days to use classObjectName.getFuture()"<<std::endl;
-    unsigned N = 0;
+    int N = 0;
     std::cin >> N;
+    if (N<0){
+        while (N<0){
+            std::cout<<"Wrong parameter, try again";
+            std::cin >> N;
+        }
+    }
     std::cout<<timeOne1.getFuture(N)<<std::endl;
     std::cout<<timeTwo1.getFuture(N)<<std::endl;
     std::cout<<timeThree1.getFuture(N)<<std::endl;
@@ -36,9 +42,19 @@ int main(){
     std::cout<<std::endl<< "getPast() check"<<std::endl;
     std::cout<<"Enter N days to use classObjectName.getPast()"<<std::endl;
     std::cin >> N;
+    if (N<0){
+        while (N<0){
+            std::cout<<"Wrong parameter, try again";
+            std::cin >> N;
+        }
+    }
     std::cout<<timeOne1.getPast(N)<<std::endl;
     std::cout<<timeTwo1.getPast(N)<<std::endl;
     std::cout<<timeThree1.getPast(N)<<std::endl;
+
+    std::cout<<std::endl<< "getDifference() check"<<std::endl;
+    std::cout<<"There are (is) "<< timeOne1.getDifference(timeTwo1) <<" days (day) between "<< timeOne1.getToday() <<" and "<< timeTwo1.getToday()<<std::endl;
+
 
     return 0;
 }
