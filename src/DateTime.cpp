@@ -8,7 +8,7 @@
 
 using namespace std;
 
-const char* Weeks[] = { "Sunday","Monday", "Tuesday", "Wednesday","Thursday" , "Friday", "Saturday" };
+const char* Weeks[] = { "Sunday", "Monday", "Tuesday", "Wednesday","Thursday" , "Friday", "Saturday" };
 const char* Months[] = { "January", "February", "March", "April", "May", "June","July", "August", "September","October", "November", "December" };
 DateTime::DateTime()
 {
@@ -17,7 +17,7 @@ DateTime::DateTime()
 
 DateTime::DateTime(DateTime& info)
 {
-    this->time_input = info.time_input;
+    this->time_input =info.time_input;
 }
 
 DateTime::DateTime(unsigned day, unsigned month, unsigned year)
@@ -36,13 +36,12 @@ DateTime::DateTime(unsigned day, unsigned month, unsigned year)
 string DateTime::getToday()
 {
     string stroka;
-    stroka += "\t";
     int ind = 0;
     struct tm* time_struct = localtime(&time_input);
-    if (time_struct->tm_mday > 9)
+    if (time_struct->tm_mday > 9) 
     {
         stroka += to_string(time_struct->tm_mday);  //Функция-член to_string преобразует объект типа bitset в объект-строку типа basic_string.
-
+ 
     }
     else
     {
@@ -50,14 +49,13 @@ string DateTime::getToday()
         stroka += (char)(time_struct->tm_mday + 48);
     }
 
-    stroka += '\t';
+    stroka += "  ";
     ind = time_struct->tm_mon;
     stroka += Months[ind];
-    stroka += '\t';
+    stroka += "  ";
 
     stroka += to_string(time_struct->tm_year + 1900);
-    stroka += ",";
-    stroka += '\t';
+    stroka += ", ";
     ind = time_struct->tm_wday;
     stroka += Weeks[ind];
 
@@ -81,14 +79,14 @@ string DateTime::getTomorrow()
 string DateTime::getPast(unsigned int days)
 {
     DateTime tmp(*this);
-    tmp.time_input -= sec * (long)days;
+    tmp.time_input -= sec* (long)days;
     return tmp.getToday();
 }
 
 string DateTime::getFuture(unsigned int days)
 {
     DateTime tmp(*this);
-    tmp.time_input += sec * (long)days;
+    tmp.time_input += sec* (long)days;
     return tmp.getToday();
 }
 
