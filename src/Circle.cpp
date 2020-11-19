@@ -2,6 +2,13 @@
 #include <iostream>
 #include <cmath>
 
+void Circle::Circle(double new_radius)
+{
+  radius = new_radius;
+  ference = 3.14159265 * 2 * radius;
+  area = 3.14159265 * radius * radius;
+}
+
 void Circle::setRadius(double new_radius)
 {
   radius = new_radius;
