@@ -10,9 +10,12 @@
 
 #include "Circle.h"
 
+#define _USE_MATH_DEFINES
+#include <cmath>
+
 #include <iostream>
 #include <cstdlib>
-#include <math.h>
+
 
 Circle::Circle(){
 }
@@ -35,20 +38,20 @@ double Circle::getArea(){
 
 void Circle::setRadius(double radius){
     this->radius = radius;
-    this->area = this->pi * radius * radius;
-    this->ference = this->pi * 2 * radius;
+    this->area = M_PI * radius * radius;
+    this->ference = M_PI * 2 * radius;
 }
 
 void Circle::setFerence(double ference){
     this->ference = ference;
-    this->radius = ference / (this->pi * 2);
-    this->area = this->pi * radius * radius;
+    this->radius = ference / (M_PI * 2);
+    this->area = M_PI * radius * radius;
 }
 
 void Circle::setArea(double area){
     this->area = area;
-    this->radius = sqrt(area/(this->pi));
-    this->ference = this->pi * 2 * radius;
+    this->radius = sqrt(area/(M_PI));
+    this->ference = M_PI * 2 * radius;
 }
 
 //int main(){
