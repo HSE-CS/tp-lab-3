@@ -1,5 +1,5 @@
 #define _USE_MATH_DEFINES 
-#include <cmath>
+#include <math.h>
 #include "Circle.h"
 
 Circle::Circle() {
@@ -9,21 +9,22 @@ Circle::Circle() {
 Circle::Circle(double radius) {
 	setRadius(radius);
 }
+
 void Circle::setRadius(double radius) {
 	this->ference = 2 * M_PI * radius;
-	this->area = M_PI * radius * radius;
+	this->area = M_PI * pow(radius,2);
 	this->radius = radius;
 }
 
 void Circle::setFerence(double ference) {
-    this->radius = ference / (2 * M_PI);
-	this->area = ference * ference  /( 4 * M_PI);
+    this->radius = ference / ( M_PI) / 2;
+	this->area = (ference * this->radius) / 2;
 	this->ference = ference;
 }
 
 void Circle::setArea(double area) {
 	this->radius = sqrt(area / M_PI);
-	this->ference = 2 * M_PI * sqrt(area / M_PI);
+	this->ference = 2 * area / this->radius;
 	this->area = area;
 }
 
