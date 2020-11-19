@@ -6,9 +6,9 @@
 double calcDelta()
 {
   Circle c;
-  c.setFerence(6378.1 * 1000);
+  c.setFerence(6378.1);
   double radius = c.getRadius();
-  c.setFerence(6378.1 * 1000 + 1);
+  c.setFerence(6378.1 + 1);
   return c.getRadius() - radius;
 }
 

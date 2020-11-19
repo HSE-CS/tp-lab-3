@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 
-void Circle::Circle(double new_radius)
+Circle::Circle(double new_radius)
 {
   radius = new_radius;
   ference = 3.14159265 * 2 * radius;
