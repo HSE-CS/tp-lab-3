@@ -15,5 +15,9 @@ int main()
     cout << "15 days ago : " << Good_Day.getPast(15) << endl;
     cout << "Days from my birthday : " << Good_Day.getDifference(BD) << endl;
 
+    DateTime Day(01, 11, 2018);
+    cout << "Today is : " << Day.getToday() << endl;
+    cout << "Tommorow will be : " << Day.getYesterday() << endl;
+    cout << "Tommorow will be : " << Day.getTomorrow() << endl;
     return 0;
 }

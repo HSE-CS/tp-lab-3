@@ -22,10 +22,11 @@ DateTime::DateTime()
 	struct tm* Time;
 	time(&rtime);
 	Time = localtime(&rtime);
-	rdate.tm_mday = Time->tm_mday;
+	rdate = (*Time);
+	/*rdate.tm_mday = Time->tm_mday;
 	rdate.tm_mon = Time->tm_mon;
 	rdate.tm_year = Time->tm_year;
-	rdate.tm_wday = Time->tm_wday;
+	rdate.tm_wday = Time->tm_wday;*/
 	mktime(&rdate);
 }
 
@@ -57,9 +58,8 @@ std::string DateTime::getToday()
 std::string DateTime::getYesterday()
 {
 	DateTime Yesterday;
-	time_t rtime;
+	time_t rtime = mktime(&this->rdate);
 	struct tm* Time;
-	time(&rtime);
 	rtime -= 60 * 60 * 24;
 	Time = localtime(&rtime);
 	Yesterday.rdate = (*Time);
@@ -70,9 +70,8 @@ std::string DateTime::getYesterday()
 std::string DateTime::getTomorrow()
 {
 	DateTime Tomorrow;
-	time_t rtime;
+	time_t rtime = mktime(&this->rdate);
 	struct tm* Time;
-	time(&rtime);
 	rtime += 60 * 60 * 24;
 	Time = localtime(&rtime);
 	Tomorrow.rdate = (*Time);
@@ -82,9 +81,8 @@ std::string DateTime::getTomorrow()
 std::string DateTime::getFuture(unsigned int N)
 {
 	DateTime Future;
-	time_t rtime;
+	time_t rtime = mktime(&this->rdate);
 	struct tm* Time;
-	time(&rtime);
 	rtime += 60 * 60 * 24 * (long long)N;
 	Time = localtime(&rtime);
 	Future.rdate = (*Time);
@@ -94,9 +92,8 @@ std::string DateTime::getFuture(unsigned int N)
 std::string DateTime::getPast(unsigned int N)
 {
 	DateTime Past;
-	time_t rtime;
+	time_t rtime = mktime(&this->rdate);
 	struct tm* Time;
-	time(&rtime);
 	rtime -= 60 * 60 * 24 * (long long)N;
 	Time = localtime(&rtime);
 	Past.rdate = (*Time);
