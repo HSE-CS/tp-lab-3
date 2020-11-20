@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <ctime>
+#include <cmath>
 #include <string>
 #include <cctype>
 #include <iostream>
