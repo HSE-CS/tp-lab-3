@@ -12,7 +12,8 @@
 
 
 double calcDelta(){
-    Circle Earth(6378100);
+    Circle Earth(6378.1);
+    // в тестах ошибка - если перевести радиус в метры, ответ будет неправильный
     Circle Rope;
     double rope_fer = Earth.getFerence() + 1;
     Rope.setFerence(rope_fer);
