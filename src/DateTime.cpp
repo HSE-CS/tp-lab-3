@@ -8,8 +8,8 @@
 
 using namespace std;
 
-const char* Weeks[] = { "Sunday", "Monday", "Tuesday", "Wednesday","Thursday" , "Friday", "Saturday" };
-const char* Months[] = { "January", "February", "March", "April", "May", "June","July", "August", "September","October", "November", "December" };
+const char* Weeks[] = { "sunday", "monday", "tuesday", "wednesday","thursday" , "friday", "saturday" };
+const char* Months[] = { "january", "february", "march", "april", "may", "june","july", "august", "september","october", "november", "december" };
 DateTime::DateTime()
 {
     this->time_input = time(nullptr);
