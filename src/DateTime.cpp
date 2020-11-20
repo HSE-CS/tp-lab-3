@@ -3,8 +3,26 @@
 #include <ctime>
 #include <iostream>
 #include <algorithm>
+//-----------help_func-------------------------------
+struct tm* make_time_struct(int day,int month,int year) {
+	tm time_in = { 0, 0, 0,day ,month - 1, year - 1900 };
 
+	time_t time_temp = mktime(&time_in);
 
+	tm* time_out = localtime(&time_temp);
+	return time_out;
+}
+
+string make_date_string(struct tm * time_out) {
+	char s1[40] = { 0 };
+
+	strftime(s1, 40, "%d %B %Y, %A", time_out);
+
+	string s = s1;
+	for (char& c : s) c = tolower(c);
+	return s;
+}
+//--------------------------methods----------------------------
 
 DateTime::DateTime() {
 	time_t now = time(0);
@@ -24,26 +42,6 @@ DateTime::DateTime(int day, int month, int year) {
 	this->day = day;
 	this->month = month;
 	this->year = year;
-}
-
-struct tm* make_time_struct(int day,int month,int year) {
-	tm time_in = { 0, 0, 0,day ,month - 1, year - 1900 };
-
-	time_t time_temp = mktime(&time_in);
-
-	tm* time_out = localtime(&time_temp);
-	return time_out;
-}
-
-string make_date_string(struct tm * time_out) {
-	char s1[40] = { 0 };
-
-	strftime(s1, 40, "%d %B %Y, %A", time_out);
-
-	std::string s = s1;
-
-	transform(s.begin(), s.end(), s.begin(), tolower);
-	return s;
 }
 
 string DateTime::getToday() {
