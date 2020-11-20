@@ -49,10 +49,10 @@ string DateTime::getToday()
         stroka += (char)(time_struct->tm_mday + 48);
     }
 
-    stroka += "  ";
+    stroka += " ";
     ind = time_struct->tm_mon;
     stroka += Months[ind];
-    stroka += "  ";
+    stroka += " ";
 
     stroka += to_string(time_struct->tm_year + 1900);
     stroka += ", ";
