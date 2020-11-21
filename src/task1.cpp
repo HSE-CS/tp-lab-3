@@ -8,8 +8,7 @@ double calcDelta()
     Circle circle(earthRadius);
     circle.setFerence(circle.getFerence() + elong);
 
-    const double metrInKm = 1000;
-    double delta = (circle.getRadius() - earthRadius) * metrInKm;
+    double delta = (circle.getRadius() - earthRadius);
     return delta;
 }
 
