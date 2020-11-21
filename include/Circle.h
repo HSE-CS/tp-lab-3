@@ -1,20 +1,27 @@
-#ifndef CIRCLE_H
-#define CIRCLE_H
+#ifndef TASK1_CIRCLE_H
+#define TASK1_CIRCLE_H
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 class Circle {
 private:
-	double radius;
-	double ference;
-	double area;
+    double radius;
+    double ference;
+    double area;
+
 public:
-	Circle();
-	Circle(double rad);
-	void setRadius(double rad);
-	void setFerence(double fer);
-	void setArea(double ar);
-	double getRadius();
-	double getFerence();
-	double getArea();
+    explicit Circle(const double r) :radius{ r } {
+        ference = 2 * M_PI * radius;
+        area = M_PI * pow(radius, 2);
+    }
+
+    void setRadius(double r);
+    void setFerence(double f);
+    void setArea(double a);
+    double getRadius();
+    double getFerence();
+    double getArea();
+
 };
 
 #endif

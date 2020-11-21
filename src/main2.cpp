@@ -1,13 +1,8 @@
-#include<iostream>
-#include "Circle.h"
-
+#include <iostream>
+#include "task1.h"
 
 int main() {
-	Circle pool;
-	pool.setRadius(3.);
-	Circle fence;
-	fence.setRadius(4.);
-	double sum = (fence.getArea() - pool.getArea()) * 1000 + fence.getFerence() * 2000;
-	std::cout << sum << " p\n";
-	return 0;
+    std::cout << calcCost() << std::endl;
+
+    return 0;
 }

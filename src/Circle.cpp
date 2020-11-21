@@ -1,58 +1,33 @@
 #include "Circle.h"
-#define _USE_MATH_DEFINES
-#include <math.h>
 
-
-Circle::Circle() {
-	radius = 0.0;
-	ference = 0.0;
-	area = 0.0;
+void Circle::setRadius(double r) {
+    radius = r;
+    //f = 2pi*r
+    ference = 2 * M_PI * radius;
+    //a = pi*r^2
+    area = M_PI * pow(radius, 2);
 }
 
-Circle::Circle(double rad) {
-	setRadius(rad);
+void Circle::setFerence(double f) {
+    ference = f;
+    radius = ference / (2 * M_PI);
+    area = M_PI * pow(radius, 2);
 }
 
-
-void Circle::setRadius(double rad) {
-	radius = rad;
-	double fer = 2 * M_PI * rad;
-	if (fer != ference)
-		setFerence(fer);
-	double ar = M_PI * rad * rad;
-	if (ar != area)
-		setArea(ar);
+void Circle::setArea(double a) {
+    area = a;
+    radius = sqrt(area / M_PI);
+    ference = 2 * M_PI * radius;
 }
-
-
-void Circle::setFerence(double fer) {
-	ference = fer;
-	double rad = fer / (2 * M_PI);
-	if (radius != rad) {
-		setRadius(rad);
-	}
-}
-
-
-void Circle::setArea(double ar) {
-	area = ar;
-	double rad = sqrt(ar / M_PI);
-	if (radius != rad) {
-		setRadius(rad);
-	}
-}
-
 
 double Circle::getRadius() {
-	return radius;
+    return Circle::radius;
 }
-
 
 double Circle::getFerence() {
-	return ference;
+    return Circle::ference;
 }
 
-
 double Circle::getArea() {
-	return area;
+    return Circle::area;
 }
