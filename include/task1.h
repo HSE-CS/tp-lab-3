@@ -1,5 +1,5 @@
 #pragma once
-#include "../include/circle.h"
+#include "../include/Circle.h"
 
 double getDelta(Circle earth, double lenChange);
 double getPoolPrice(double poolRad, double walkWayWidth, double walkWayPrice, double fencePrice);
