@@ -7,3 +7,4 @@ double calcDelta();
 double calcCost();
 
 #endif // TASK1_H_INCLUDED
+

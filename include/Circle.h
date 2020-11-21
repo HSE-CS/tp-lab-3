@@ -2,7 +2,6 @@
 #define CIRCLE_H_INCLUDED
 
 #include <cmath>
-const double PI = acos(-1);
 
 class Circle
 {
@@ -23,3 +22,4 @@ public:
 };
 
 #endif // CIRCLE_H_INCLUDED
+
