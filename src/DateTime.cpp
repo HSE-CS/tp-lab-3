@@ -1,72 +1,76 @@
 #define _CRT_SECURE_NO_WARNINGS
+//#include "../include/DateTime.h"
 #include "DateTime.h"
-#include <time.h>
-#include <string>
-#include <iostream>
-#include <sstream>
-#include <vector>
-#include <cmath>
-#include <iomanip>
-using namespace std;
 
-const double DAY = 3600 * 24;
-
-DateTime::DateTime(unsigned int new_day, unsigned int new_month, unsigned int new_year) {
-	day = new_day;
-	month = new_month - 1;
-	year = new_year;
-}
 
 DateTime::DateTime() {
-	time_t now;
-	time(&now);
-	tm* T = localtime(&now);
-	day = T->tm_mday;
-	month = T->tm_mon;
-	year = 1900 + T->tm_year;
+	time_t time_;
+	time(&time_);
+	tm* timeinfo;
+	timeinfo = localtime(&time_);
+
+	timer.tm_year = timeinfo->tm_year;
+	timer.tm_mon = timeinfo->tm_mon;
+	timer.tm_mday = timeinfo->tm_mday;
+	mktime(&timer);
 }
 
-string DateTime::getToday() {
-	return makeDate(getSec());
+
+DateTime::DateTime(const DateTime& dateToCopy) {
+	timer.tm_year = dateToCopy.timer.tm_year;
+	timer.tm_mon = dateToCopy.timer.tm_mon;
+	timer.tm_mday = dateToCopy.timer.tm_mday;
+	mktime(&timer);
 }
 
-string DateTime::getYesterday() {
-	return makeDate(getSec() - DAY);
+
+DateTime::DateTime(int day, int month, int year) {
+	timer = tm{ 0,0, 0, day, month - 1, year - 1900 };
+	mktime(&timer);
 }
 
-string DateTime::getTomorrow() {
-	return makeDate(getSec() + DAY);
+
+std::string DateTime::getToday() {
+	char buff[100];
+	strftime(buff, 80, "%d %B %Y, %A", &timer);
+	std::string ans = buff;
+	for (size_t i = 0; i < ans.size(); i++) {
+		if (ans[i] >= 'A' && ans[i] <= 'Z') ans[i] += 'a' - 'A';
+	}
+	return ans;
 }
 
-string DateTime::getFuture(unsigned int N) {
-	return makeDate(getSec() + N * DAY);
+
+std::string DateTime::getYesterday() {
+	DateTime yesterday(timer.tm_mday - 1, timer.tm_mon + 1, timer.tm_year + 1900);
+	std::string buff = yesterday.getToday();
+	return buff;
 }
 
-string DateTime::getPast(unsigned int N) {
-	return makeDate(getSec() - N * DAY);
+
+std::string DateTime::getTomorrow() {
+	DateTime tomorrow(timer.tm_mday + 1, timer.tm_mon + 1, timer.tm_year + 1900);
+	std::string buff = tomorrow.getToday();
+	return buff;
 }
 
-unsigned int DateTime::getDifference(DateTime& D) {
-	return abs(getSec() - D.getSec()) / DAY;
+
+std::string DateTime::getFuture(unsigned int N) {
+	DateTime future(timer.tm_mday + N, timer.tm_mon + 1, timer.tm_year + 1900);
+	std::string buff = future.getToday();
+	return buff;
 }
 
-string makeDate(time_t t) {
-	ostringstream date;
-	vector<string> months{ "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" },
-		weekday{ "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday" };
-	tm* T = localtime(&t);
-	//mktime(T);
-	date << setw(2) << setfill('0') << T->tm_mday << " " << months[T->tm_mon] << " " << 1900 + T->tm_year << ", " << weekday[T->tm_wday];
-	return date.str();
+
+std::string DateTime::getPast(unsigned int N) {
+	DateTime past(timer.tm_mday - N, timer.tm_mon + 1, timer.tm_year + 1900);
+	std::string buff = past.getToday();
+	return buff;
 }
 
-time_t DateTime::getSec() {
-	time_t t;
-	time(&t);
-	tm* T = localtime(&t);
-	T->tm_year = year - 1900;
-	T->tm_mon = month;
-	T->tm_mday = day;
-	t = mktime(T);
-	return t;
+
+int DateTime::getDifference(DateTime& diff) {
+	time_t num1 = mktime(&timer);
+	time_t num2 = mktime(&diff.timer);
+	return abs(int(difftime(num1, num2) / (60 * 60 * 24)));
 }

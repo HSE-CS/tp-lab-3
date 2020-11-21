@@ -1,14 +1,17 @@
-#include"DateTime.h"
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <ctime>
+#include "DateTime.h"
 
-#include<iostream>
-using namespace std;
-
-int main() {
-	DateTime Now;
-	cout << Now.getToday() << "; " << Now.getTomorrow() << "; " << Now.getYesterday() << endl;
-	cout << Now.getFuture(10) << "; " << Now.getPast(23) << endl;
-	DateTime Date(18, 12, 2020);
-	cout << Now.getDifference(Date);
-
-	return 0;
+int main()
+{
+    DateTime today(20, 11, 2020);
+    std::cout << today.getToday() << "\n";
+    std::cout << today.getYesterday() << "\n";
+    std::cout << today.getTomorrow() << "\n";
+    std::cout << today.getFuture(14) << "\n";
+    std::cout << today.getPast(50) << "\n";
+    DateTime sessia(21, 12, 2020);
+    std::cout << sessia.getDifference(today) << "\n";
+    return 0;
 }

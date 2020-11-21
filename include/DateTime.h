@@ -1,26 +1,28 @@
-#ifndef DATETIME_H
+#ifndef  DATETIME_H
 #define DATETIME_H
 
-#include <string>
-using namespace std;
+
+#include<string>
+#include<time.h>
+
 
 class DateTime {
 private:
-	unsigned int day, month, year;
+	tm timer;
+
 public:
-	DateTime(unsigned int day, unsigned int month, unsigned int year);
+
 	DateTime();
-	string getToday();
-	string getYesterday();
-	string getTomorrow();
-	string getFuture(unsigned int N);
-	string getPast(unsigned int N);
-	unsigned int getDifference(DateTime& D);
+	DateTime(const DateTime& dateToCopy);
+	DateTime(int day, int month, int year);
 
-	time_t getSec();
+	std::string getToday();
+	std::string getYesterday();
+	std::string getTomorrow();
+	std::string getFuture(unsigned int N);
+	std::string getPast(unsigned int N);
+	int getDifference(DateTime&);
+
 };
-
-string makeDate(time_t t);
-time_t getSec(unsigned int now_day, unsigned int now_month, unsigned int now_year);
 
 #endif

@@ -3,18 +3,18 @@
 
 class Circle {
 private:
-	double radius, ference, area;
+	double radius;
+	double ference;
+	double area;
 public:
-	Circle(double new_radius);
-	void setRadius(double new_radius);
-	void setFerence(double new_ference);
-	void setArea(double new_area);
+	Circle();
+	Circle(double rad);
+	void setRadius(double rad);
+	void setFerence(double fer);
+	void setArea(double ar);
 	double getRadius();
 	double getFerence();
 	double getArea();
-	void calcByRadius();
-	void calcByFerence();
-	void calcByArea();
 };
 
 #endif

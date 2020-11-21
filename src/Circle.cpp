@@ -1,52 +1,58 @@
-#define _USE_MATH_DEFINES
 #include "Circle.h"
-#include <cmath>
-using namespace std;
+#define _USE_MATH_DEFINES
+#include <math.h>
 
-const double PI = 3.14159265;
 
-Circle::Circle(double new_radius) {
-	setRadius(new_radius);
+Circle::Circle() {
+	radius = 0.0;
+	ference = 0.0;
+	area = 0.0;
 }
-void Circle::setRadius(double new_radius) {
-	radius = new_radius;
-	calcByRadius();
+
+Circle::Circle(double rad) {
+	setRadius(rad);
 }
-void Circle::setFerence(double new_ference) {
-	ference = new_ference;
-	calcByFerence();
+
+
+void Circle::setRadius(double rad) {
+	radius = rad;
+	double fer = 2 * M_PI * rad;
+	if (fer != ference)
+		setFerence(fer);
+	double ar = M_PI * rad * rad;
+	if (ar != area)
+		setArea(ar);
 }
-void Circle::setArea(double new_area) {
-	area = new_area;
-	calcByArea();
+
+
+void Circle::setFerence(double fer) {
+	ference = fer;
+	double rad = fer / (2 * M_PI);
+	if (radius != rad) {
+		setRadius(rad);
+	}
 }
+
+
+void Circle::setArea(double ar) {
+	area = ar;
+	double rad = sqrt(ar / M_PI);
+	if (radius != rad) {
+		setRadius(rad);
+	}
+}
+
+
 double Circle::getRadius() {
 	return radius;
 }
+
+
 double Circle::getFerence() {
 	return ference;
 }
+
+
 double Circle::getArea() {
 	return area;
-}
-
-void Circle::calcByRadius() {
-	ference = 2 * PI * radius;
-	area = PI * pow(radius, 2);
-	ference = 2 * M_PI * radius;
-	area = M_PI * pow(radius, 2);
-}
-
-void Circle::calcByFerence() {
-	radius = ference / (2 * PI);
-	area = PI * pow(radius, 2);
-	radius = ference / (2 * M_PI);
-	area = M_PI * pow(radius, 2);
-}
-
-void Circle::calcByArea() {
-	radius = sqrt(area / PI);
-	ference = 2 * PI * radius;
-	radius = sqrt(area / M_PI);
-	ference = 2 * M_PI * radius;
 }
