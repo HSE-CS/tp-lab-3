@@ -9,7 +9,7 @@ double calcDelta() {
     Circle circle(6378100);
     Circle circle1(6378100);
     circle1.setFerence(circle1.getFerence() + 1);
-    return circle1.getArea() - circle.getArea();
+    return circle1.getRadius() - circle.getRadius();
 }
 
 double calcCost() {
