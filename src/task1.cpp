@@ -1,5 +1,5 @@
 //#include "../include/task1.h"
-#//include "../include/Circle.h"
+//#include "../include/Circle.h"
 #include "task1.h"
 #include "Circle.h"
 
@@ -9,7 +9,7 @@ double calcDelta() {
 	Earth.setRadius(6378.1 * 1000);
 	Circle new_Earth;
 	new_Earth.setFerence(Earth.getFerence() + 1);
-	return new_Earth.getRadius() - Earth.getRadius();
+	return double(new_Earth.getRadius() - Earth.getRadius());
 }
 double calcCost() {
 	Circle pool;

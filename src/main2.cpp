@@ -1,7 +1,7 @@
 #include<iostream>
 //#include "../include/Circle.h"
 #include "Circle.h"
-
+//#include "../include/task1.h"
 
 int main() {
 	Circle pool;
@@ -12,3 +12,4 @@ int main() {
 	std::cout << sum << " p\n";
 	return 0;
 }
+//0.15915494309228961
