@@ -17,7 +17,7 @@ double calcCost() { //- расчет стоимости бассейна
     double price1_fence = 2000.0;
 
     Circle Pool(3.0);
-    Circle ConcreteWalkway(1.0);
+    Circle ConcreteWalkway(4.0);
 
     road_price = (ConcreteWalkway.getArea()-Pool.getArea()) * price1_concrete;
     fence_road_price = road_price + (ConcreteWalkway.getFerence() * price1_fence);
