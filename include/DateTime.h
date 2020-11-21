@@ -10,9 +10,13 @@
 class DateTime {
 private:
 
+    time_t raw_time;
+
 public:
 
     DateTime();
+
+    DateTime(unsigned int day, unsigned int month, unsigned int year);
 
     DateTime(DateTime &datetime);
 
@@ -22,11 +26,12 @@ public:
 
     std::string getTomorrow();
 
-    DateTime getFuture(unsigned int N);
+    std::string getFuture(unsigned int days);
 
-    DateTime getPast(unsigned int N);
+    std::string getPast(unsigned int days);
 
-    DateTime getDifference(DateTime &);
+    unsigned int getDifference(DateTime &) const;
+
 };
 
 #endif
