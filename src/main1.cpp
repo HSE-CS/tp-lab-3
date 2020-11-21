@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "../include/Circle.h"
-#include "../include/task1.h"
+#include "Circle.h"
+#include "task1.h"
 #include <iostream>
 
 using namespace std;

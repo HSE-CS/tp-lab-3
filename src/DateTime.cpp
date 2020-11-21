@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "../include/DateTime.h"
+#include "DateTime.h"
 
 #define MAX(a, b) (a) > (b) ? (a) : (b)
 #define MIN(a, b) (a) < (b) ? (a) : (b)

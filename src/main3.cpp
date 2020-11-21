@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "../include/DateTime.h"
+#include "DateTime.h"
 #include <iostream>
 
 using namespace std;
