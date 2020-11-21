@@ -9,22 +9,22 @@ private:
     time_t rawtime;
     struct tm* timeinfo;
 
-	const char* weekday[7] = { "Sunday", "Monday",
-							 "Tuesday", "Wednesday",
-							 "Thursday", "Friday", "Saturday" };
+	const char* weekday[7] = { "sunday", "monday",
+							 "tuesday", "wednesday",
+							 "thursday", "friday", "saturday" };
     const char* months[12] = {
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december"
     };
 public:
     time_t secTime;
