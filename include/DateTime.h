@@ -31,6 +31,7 @@ public:
     }
     
     DateTime(unsigned int day, unsigned int month, unsigned int year){
+        this->current_time = time(nullptr);
         struct tm* builded_time = localtime(&(this->current_time));
         builded_time->tm_mday = day;
         builded_time->tm_mon = month - 1;
