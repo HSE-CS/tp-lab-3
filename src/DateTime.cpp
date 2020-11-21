@@ -65,7 +65,7 @@ int DateTime::getDifference(DateTime & new_date) {
     if ( x != (std::time_t)(-1) && y != (std::time_t)(-1) ) {
         difference = (int)std::difftime(y, x) / (60 * 60 * 24);
     }
-    return difference;
+    return abs(difference);
 }
 
 
