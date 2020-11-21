@@ -14,10 +14,10 @@ private:
     double area;
 public:
 
-    explicit Circle(double radius) {
-        this->radius = radius;
-        this->ference = 2 * M_PI * radius;
-        this->area = M_PI * radius * radius;
+    Circle() : radius{0.0}, ference{0.0}, area{0.0} {};
+
+    Circle(double radius) {
+        this->setRadius(radius);
     }
 
     void setRadius(double radius);

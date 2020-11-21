@@ -6,9 +6,9 @@
 #include <Circle.h>
 
 double calcDelta() {
-    Circle circle(6378100);
-    Circle circle1(6378100);
-    circle1.setFerence(circle1.getFerence() + 1);
+    Circle circle(6378.1); // kilometers
+    Circle circle1;
+    circle1.setFerence(circle.getFerence() + 1.0);
     return circle1.getRadius() - circle.getRadius();
 }
 
