@@ -43,7 +43,7 @@ public:
     string getTomorrow();
     string getFuture(unsigned int);
     string getPast(unsigned int);
-    int getDifference(DateTime&);
+    unsigned int getDifference(DateTime&);
 };
 
 #endif

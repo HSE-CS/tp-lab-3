@@ -61,9 +61,13 @@ string DateTime::getPast(unsigned int days) {
     return past_day.getToday();
 }
 
-int DateTime::getDifference(DateTime& dt)
+unsigned int DateTime::getDifference(DateTime& dt)
 {
-//    return abs(this->current_time - dt.current_time) / 86400;
+//    return abs((int)((difftime(this->current_time, dt.current_time)) / 86400));
+//    unsigned long int dif = abs(current_time - dt.current_time);
+//    unsigned int days = dif / 86400;
+////    return (dif / 86400);
+//    return (int) days;
     return (abs(current_time - dt.current_time) / (3600 * 24));
 }
 
