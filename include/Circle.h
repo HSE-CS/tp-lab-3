@@ -22,7 +22,7 @@ private:
     double radius = 0.0;
     double ference = 0.0;
     double area = 0.0;
-    const double pi = 3.14;
+    const double pi = M_PI;
 };
 
 
