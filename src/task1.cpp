@@ -1,4 +1,3 @@
-/*
 #include "task1.h"
 
 double calcDelta()
@@ -30,4 +29,4 @@ double calcCost()
     totalPr += fenceFer * fencePr;
     return totalPr;
 }
-*/
+
