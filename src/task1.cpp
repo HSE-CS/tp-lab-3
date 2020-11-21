@@ -3,7 +3,7 @@
 double calcDelta()
 {
     const double earthRadius = 6378.1;
-    double elong = 0.001;
+    double elong = 1;
 
     Circle circle(earthRadius);
     circle.setFerence(circle.getFerence() + elong);
