@@ -12,12 +12,12 @@ double calcDelta()
 double calcCost()
 {
 	Circle pool(3);
+	Circle pool_and_road(4);
 	double sum_plitka;
 	double sum_ograda;
 
-	sum_plitka = pool.getFerence() * 1000;
-	pool.setFerence(pool.getFerence() + 1);
-	sum_ograda = pool.getFerence() * 2000;
+	sum_plitka = (pool_and_road.getArea() - pool.getArea()) * 1000;
+	sum_ograda = pool_and_road.getFerence() * 2000;
 
 	return sum_plitka + sum_ograda;
 };
