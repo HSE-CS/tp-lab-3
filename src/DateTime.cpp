@@ -1,9 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DateTime.h"
-using namespace std;
 #include <cstring> 
 #include <string.h>
-
+using namespace std;
 
 string make_low_register(char* buffer)
 {
