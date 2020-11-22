@@ -3,11 +3,26 @@
 using namespace std;
 #include <cstring> 
 #include <string.h>
+
+
+string make_low_register(char* buffer)
+{
+	for (int i = 0; i < strlen(buffer); i++)
+		if (buffer[i] >= 'A' && buffer[i] <= 'Z')
+		{
+			buffer[i] = buffer[i] + 32;
+		}
+		else
+		{
+			buffer[i] = buffer[i];
+		}
+	return buffer;
+}
 string DateTime::getToday()
 {
 	char buffer[80];
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return strlwr(buffer);
+	return make_low_register(buffer);
 };
 
 string DateTime::getYesterday()
@@ -16,7 +31,7 @@ string DateTime::getYesterday()
 	date.tm_mday = date.tm_mday - 1;
 	mktime(&date);
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return strlwr(buffer);
+	return make_low_register(buffer);
 };
 
 string DateTime::getTomorrow()
@@ -25,7 +40,7 @@ string DateTime::getTomorrow()
 	date.tm_mday = date.tm_mday + 1;
 	mktime(&date);
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return strlwr(buffer);
+	return make_low_register(buffer);
 };
 
 string DateTime::getFuture(unsigned int N)
@@ -34,7 +49,7 @@ string DateTime::getFuture(unsigned int N)
 	date.tm_mday = date.tm_mday + N;
 	mktime(&date);
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return strlwr(buffer);
+	return make_low_register(buffer);
 };
 
 string DateTime::getPast(unsigned int N)
@@ -43,7 +58,7 @@ string DateTime::getPast(unsigned int N)
 	date.tm_mday = date.tm_mday - N;
 	mktime(&date);
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return strlwr(buffer);
+	return make_low_register(buffer);
 };
 
 int DateTime::getDifference(DateTime& date_other)
