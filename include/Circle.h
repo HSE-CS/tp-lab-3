@@ -6,6 +6,11 @@ using namespace std;
 class Circle {
 public:
 	Circle(double valueRad);
+	Circle(){
+		radius = 0;
+		ference = 0;
+		area = 0;
+	}
 	void setRadius(double value);
 	void setFerence(double value);
 	void setArea(double value);
@@ -14,7 +19,7 @@ public:
 	double getArea();
 
 private:
-	double radius;//Радиус
-	double ference;//Длина
-	double area;//площадь
+	double radius;//ДђЕ•Г¤ДЌГіЕ„
+	double ference;//Г„Г«ДЌГ­Е•
+	double area;//ДЏГ«Г®ЕЇЕ•Г¤Гј
 };
