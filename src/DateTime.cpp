@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
-#define SIZE 100;
+#define SIZE 100
 
 using namespace std;
 
@@ -18,7 +18,7 @@ string HelPPPP(int day, int month, int year)
     return rez;
 }
 
-DateTime::DateTime(int day, int month, int year) {  //- êîíñòðóêòîð ñ òðåìÿ ÷èñëîâûìè ïàðàìåòðàìè (äåíü, ìåñÿö,ãîä);
+DateTime::DateTime(int day, int month, int year) {  //- ÃªÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° Ã± Ã²Ã°Ã¥Ã¬Ã¿ Ã·Ã¨Ã±Ã«Ã®Ã¢Ã»Ã¬Ã¨ Ã¯Ã Ã°Ã Ã¬Ã¥Ã²Ã°Ã Ã¬Ã¨ (Ã¤Ã¥Ã­Ã¼, Ã¬Ã¥Ã±Ã¿Ã¶,Ã£Ã®Ã¤);
     this->day = day;
     this->month = month;
     this->year = year;
