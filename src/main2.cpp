@@ -4,10 +4,10 @@
 
 using namespace std;
 
-//int main()
-//{
-//	cout.precision(17);
-//	cout << "The cost: " << calcCost() << endl;
-//
-//	return 0;
-//}
+int main()
+{
+	cout.precision(17);
+	cout << "The cost: " << calcCost() << endl;
+
+	return 0;
+}
