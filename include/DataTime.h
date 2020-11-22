@@ -23,10 +23,10 @@
 //Для работы со строками используется тип std::string
 
 
-class DataTime
-{
-private:
-public:
-};
+//class DataTime
+//{
+//private:
+//public:
+//};
 #endif
 

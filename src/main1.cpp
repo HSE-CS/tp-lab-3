@@ -6,6 +6,14 @@ using namespace std;
 
 int main()
 {
+	Circle Earth(637810.0); // в метрах
+	Circle rope(637810.0);
+	cout << "Enter the length of the piece of rope added (metres)" << endl;
+	double add;
+	cin >> add;
+
+
+
 	/*"Земля и верёвка"
 
 		Решить с использованием класса Circle следующую задачу :
