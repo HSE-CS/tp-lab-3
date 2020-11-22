@@ -3,7 +3,7 @@
 
 double calcDelta()
 {
-    Circle Earth(6378100);
+    Circle Earth(6378.1);
     double r1 = Earth.getRadius();
     Earth.setFerence(Earth.getFerence() + 1);
     double r2 = Earth.getRadius();
