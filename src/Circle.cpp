@@ -1,7 +1,7 @@
 #include"Circle.h"
 #include<cmath>
 #define _USE_MATH_DEFINES
-# define PI  3.14159265358979323846  /* pi */
+# define PI  3,14159265358979323846  /* pi */
 Circle::Circle(double valueRad)
 {
 	radius = valueRad;
