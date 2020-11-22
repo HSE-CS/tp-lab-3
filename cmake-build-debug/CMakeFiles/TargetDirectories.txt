@@ -1,0 +1,7 @@
+C:/Users/mushka/Desktop/tp-lab-3/cmake-build-debug/CMakeFiles/task1.dir
+C:/Users/mushka/Desktop/tp-lab-3/cmake-build-debug/CMakeFiles/task1_lib.dir
+C:/Users/mushka/Desktop/tp-lab-3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/mushka/Desktop/tp-lab-3/cmake-build-debug/CMakeFiles/task3.dir
+C:/Users/mushka/Desktop/tp-lab-3/cmake-build-debug/CMakeFiles/task3_lib.dir
+C:/Users/mushka/Desktop/tp-lab-3/cmake-build-debug/CMakeFiles/task2.dir
+C:/Users/mushka/Desktop/tp-lab-3/cmake-build-debug/CMakeFiles/edit_cache.dir
