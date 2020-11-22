@@ -1,3 +1,5 @@
+#ifndef LAB_3_DATETIME_H
+#define LAB_3_DATETIME_H
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -22,3 +24,4 @@ private:
     int month = 0;
     int year = 0;
 };
+#endif
