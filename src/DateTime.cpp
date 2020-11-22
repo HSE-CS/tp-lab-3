@@ -2,11 +2,12 @@
 #include "DateTime.h"
 using namespace std;
 #include <cstring> 
+#include <string.h>
 string DateTime::getToday()
 {
 	char buffer[80];
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return _strlwr(buffer);
+	return strlwr(buffer);
 };
 
 string DateTime::getYesterday()
@@ -15,7 +16,7 @@ string DateTime::getYesterday()
 	date.tm_mday = date.tm_mday - 1;
 	mktime(&date);
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return _strlwr(buffer);
+	return strlwr(buffer);
 };
 
 string DateTime::getTomorrow()
@@ -24,7 +25,7 @@ string DateTime::getTomorrow()
 	date.tm_mday = date.tm_mday + 1;
 	mktime(&date);
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return _strlwr(buffer);
+	return strlwr(buffer);
 };
 
 string DateTime::getFuture(unsigned int N)
@@ -33,7 +34,7 @@ string DateTime::getFuture(unsigned int N)
 	date.tm_mday = date.tm_mday + N;
 	mktime(&date);
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return _strlwr(buffer);
+	return strlwr(buffer);
 };
 
 string DateTime::getPast(unsigned int N)
@@ -42,7 +43,7 @@ string DateTime::getPast(unsigned int N)
 	date.tm_mday = date.tm_mday - N;
 	mktime(&date);
 	strftime(buffer, 80, "%d %B %Y, %A", &date);
-	return _strlwr(buffer);
+	return strlwr(buffer);
 };
 
 int DateTime::getDifference(DateTime& date_other)
