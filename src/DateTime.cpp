@@ -51,6 +51,7 @@ string dayParser(int day){
     if (day > 10) {
         str = to_string(day);
         //cout << str << endl;
+        str += " ";
         return str;
     }
     else {
@@ -103,40 +104,95 @@ string DateTime::getToday(){
 }
 
 string DateTime::getTomorrow(){
-    string date;
+    return getFuture(1);
+}
 
-    int HMdays = daysInMonth(month);
-    //cout << HMdays << endl;
-
-    if (HMdays == day){
-        date += dayParser(1);
-        date += monthParser(month + 1);
-        date += to_string(year) + ", ";
-        date += dayOfWeekParser(dayOfWeek(1, month + 1, year));
-    } else {
-        date += dayParser(day + 1);
-        date += monthParser(month);
-        date += to_string(year) + ", ";
-        date += dayOfWeekParser(dayOfWeek(day + 1, month, year));
-    }
-
-    return date;
-
+string DateTime::getYesterday(){
+    return getPast(1);
 }
 
 int DateTime::getDifference(DateTime &dt) {
     int days1 = 0;
     int days2 = 0;
 
-    for (int i = 1; i <= this->month; ++i) {
+    days1 += 365 * this->year;
+    for (int i = 1; i < this->month; ++i) {
         days1 += daysInMonth(i);
     }
     days1 += this->day;
 
-    for (int i = 1; i <= dt.month; ++i) {
+
+    days2 += 365 * dt.year;
+    for (int i = 1; i < dt.month; ++i) {
         days2 += daysInMonth(i);
     }
     days2 += dt.day;
 
     return (max(days1, days2) - min(days1, days2));
+}
+
+string DateTime::getFuture(unsigned int N) {
+    string date;
+    int days = 0;
+
+    days += 365 * year;
+    for (int i = 1; i < month; ++i) {
+        days += daysInMonth(i);
+    }
+    days += day;
+    days += N;
+
+    int y = days/365;
+    days -= 365 * y;
+
+    int m = 1;
+    int HMdays = daysInMonth(1);
+    while (days > HMdays){
+        days -= HMdays;
+        m++;
+        HMdays = daysInMonth(m);
+    }
+
+    int d = days;
+
+    date += dayParser(d);
+    date += monthParser(m);
+    date += to_string(y) + ", ";
+    date += dayOfWeekParser(dayOfWeek(d, m, y));
+    return date;
+
+
+}
+
+string DateTime::getPast(unsigned int N) {
+    string date;
+    int days = 0;
+
+    days += 365 * year;
+    for (int i = 1; i < month; ++i) {
+        days += daysInMonth(i);
+    }
+    days += day;
+    days -= N;
+
+    int y = days/365;
+    days -= 365 * y;
+
+    int m = 1;
+    int HMdays = daysInMonth(1);
+    while (days > HMdays){
+        days -= HMdays;
+        m++;
+        HMdays = daysInMonth(m);
+    }
+
+    int d = days;
+
+    date += dayParser(d);
+    date += monthParser(m);
+    date += to_string(y) + ", ";
+    date += dayOfWeekParser(dayOfWeek(d, m, y));
+    return date;
+
+
 }

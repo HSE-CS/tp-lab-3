@@ -21,6 +21,7 @@ public:
     string getTomorrow();
     string getFuture(unsigned int N);
     string getPast(unsigned int N);
+    string getYesterday();
     int getDifference(DateTime &dt);
 
 DateTime(int day, int month, int year){

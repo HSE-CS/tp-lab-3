@@ -32,4 +32,9 @@ int main(){
     DateTime dt6(20,11,2018);
     DateTime dt7(20,11,2018);
     cout << dt6.getDifference(dt7) << endl << endl;
+
+    DateTime dt8(20,11,2018);
+    cout << dt8.getFuture(365) << endl << endl;
+    cout << dt8.getPast(4) << endl << endl;
+
 }
