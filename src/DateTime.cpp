@@ -1,5 +1,6 @@
 #include "DateTime.h"
-
+using namespace std;
+#include <cstring> 
 string DateTime::getToday()
 {
 	char buffer[80];
