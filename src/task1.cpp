@@ -11,5 +11,5 @@ double calcCost() {
 	Circle pool = Circle(3);
 	Circle poolPlusWalkWay = Circle(4);
 	double concreteWalkwayArea = poolPlusWalkWay.getArea() - pool.getArea();
-	return concreteWalkwayArea * 1000.0 + pool.getFerence() * 2000.0;
+	return concreteWalkwayArea * 1000.0 + concreteWalkwayArea.getFerence() * 2000.0;
 }
