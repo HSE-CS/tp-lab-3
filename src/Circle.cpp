@@ -14,7 +14,7 @@ Circle::Circle()
 void Circle::setRadius(double radius)
 {
 	this->radius = radius;
-	this->ference = (2 * PI);
+	this->ference = (2 * PI) * radius;
 	this->area = (PI) * radius * radius;
 }
 

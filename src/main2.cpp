@@ -6,14 +6,32 @@ using namespace std;
 
 int main()
 {
-	//"Бассейн"
+	Circle swimmingpool;
+	Circle road;
 
-	//	Решить с помощью класса Circle следующую задачу :
+	double radius;
+	cout << "Enter the radius of the pool (metres):" << endl;
+	cin >> radius;
+	swimmingpool.setRadius(radius);
 
-	//Необходимо рассчитать стоимость материалов для бетонной дорожки вокруг круглого бассейна, а \
-	также стоимость материалов ограды вокруг бассейна(вместе с дорожкой).Стоимость 1 квадратного метра бетонного покрытия\
-	1000 р.Стоимость 1 погонного метра ограды 2000 р.Радиус бассейна 3 м.Ширина бетонной дорожки вокруг бассейна 1 м.
+	double width;
+	cout << "Enter the width of the track (metres):" << endl;
+	cin >> width;
+	road.setRadius(swimmingpool.getRadius() + width);
 
+	double costcon;
+	cout << "Enter the cost of concrete per square meter:" << endl;
+	cin >> costcon;
+
+	double costfr;
+	cout << "Enter the cost of the fence:" << endl;
+	cin >> costfr;
+
+	double allcost = NULL;
+	allcost += (road.getArea() - swimmingpool.getArea()) * costcon;
+	allcost += (road.getFerence() * costfr);
+
+	cout << "Cost = " << allcost << " rubles" << endl;
 	return 0;
 }
 
