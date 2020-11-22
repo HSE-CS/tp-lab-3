@@ -33,7 +33,7 @@ DateTime::DateTime()
     this->year = ltm->tm_year + 1970;
 }
 
-DateTime::DateTime(const DateTime& new_date) 
+DateTime::DateTime(DateTime& new_date) 
 { 
     day = new_date.day;
     month = new_date.month;
