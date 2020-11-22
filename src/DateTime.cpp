@@ -1,42 +1,76 @@
 #include "DateTime.h"
 
-
-
 string DateTime::getToday()
 {
-	return 
+	char buffer[80];
+	strftime(buffer, 80, "%d %B %Y, %A", &date);
+	return _strlwr(buffer);
 };
 
 string DateTime::getYesterday()
 {
-	return 
+	char buffer[80];
+	date.tm_mday = date.tm_mday - 1;
+	mktime(&date);
+	strftime(buffer, 80, "%d %B %Y, %A", &date);
+	return _strlwr(buffer);
 };
 
 string DateTime::getTomorrow()
 {
-	return 
+	char buffer[80];
+	date.tm_mday = date.tm_mday + 1;
+	mktime(&date);
+	strftime(buffer, 80, "%d %B %Y, %A", &date);
+	return _strlwr(buffer);
 };
 
-DateTime getFuture(unsigned int N)
+string DateTime::getFuture(unsigned int N)
 {
+	char buffer[80];
+	date.tm_mday = date.tm_mday + N;
+	mktime(&date);
+	strftime(buffer, 80, "%d %B %Y, %A", &date);
+	return _strlwr(buffer);
 };
 
-DateTime getPast(unsigned int N)
+string DateTime::getPast(unsigned int N)
 {
+	char buffer[80];
+	date.tm_mday = date.tm_mday - N;
+	mktime(&date);
+	strftime(buffer, 80, "%d %B %Y, %A", &date);
+	return _strlwr(buffer);
 };
 
-int getDifference(DateTime&);
+int DateTime::getDifference(DateTime& date_other)
+{
+	time_t raznica = abs(mktime(&date) - mktime(&date_other.date));
+	return (raznica / (60 * 60 * 24));
+};
+
 DateTime::DateTime(DateTime& information)
 {
-
+	date = information.date;
 };
 
 DateTime::DateTime()
 {
-
+	tm* time_struct;
+	time_t time_now_in_sec;
+	time(&time_now_in_sec);
+	time_struct = localtime(&time_now_in_sec);
+	date = *time_struct;
+	mktime(&date);
 };
 
 DateTime::DateTime(unsigned day, unsigned month, unsigned year)
 {
-
+	date.tm_year = year - 1900;
+	date.tm_mon = month - 1;
+	date.tm_mday = day;
+	date.tm_sec = 0;
+	date.tm_min = 0;
+	date.tm_hour = 0;
+	mktime(&date);
 };
