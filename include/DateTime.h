@@ -8,7 +8,7 @@ using namespace std;
 class DateTime
 {
 private:
-	tm date;
+	int day = 0, month = 0, year = 0;
 public:
 	DateTime(int day, int month, int year);
 	DateTime();
