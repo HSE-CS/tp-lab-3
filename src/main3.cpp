@@ -4,5 +4,5 @@ int main()
 {
 	DateTime b(24, 07, 2000);
 	cout << b.getPast(2) << endl;
-	return;
+	return 0;
 }
