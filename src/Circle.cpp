@@ -1,9 +1,9 @@
 #include"Circle.h"
 #include<cmath>
 #define _USE_MATH_DEFINES
+# define PI  3.14159265358979323846  /* pi */
 Circle::Circle(double valueRad)
 {
-	const double PI = 3.141592653589793;
 	radius = valueRad;
 	ference = 2 * radius * PI;
 	area = PI * radius * radius;
@@ -11,7 +11,6 @@ Circle::Circle(double valueRad)
 
 void Circle::setRadius(double value) 
 {
-	const double PI = 3.141592653589793;
 	radius = value;
 	ference = 2 * radius * PI;
 	area = PI * radius * radius;
@@ -19,7 +18,6 @@ void Circle::setRadius(double value)
 
 void Circle::setFerence(double value) 
 {
-	const double PI = 3.141592653589793;
 	ference = value;
 	radius = ference / (2 * PI);
 	area = PI * radius * radius;
@@ -27,7 +25,6 @@ void Circle::setFerence(double value)
 
 void Circle::setArea(double value) 
 {
-	const double PI = 3.141592653589793;
 	area = value;
 	radius = sqrt(area / PI);
 	ference = 2 * radius * PI;
