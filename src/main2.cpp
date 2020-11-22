@@ -5,6 +5,7 @@
 
 using namespace std;
 
-void main() {
+int main() {
 	cout << calcCost();
+	return 0;
 }
