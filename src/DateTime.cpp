@@ -46,22 +46,22 @@ string DateTime::getTomorrow()
 
 int DateTime::getDifference(DateTime& dateTime)
 {
-	time_t a = time(nullptr);
-	time_t b = time(nullptr);
-	struct tm* tm1; 
-	tm1 = localtime(&a);
-	struct tm* tm2; 
-	tm2 = localtime(&b);
-	tm1->tm_year = year- 1900;
-	tm1->tm_mon = month - 1;
-	tm1->tm_mday = day;
-	tm2->tm_year = dateTime.year - 1900;
-	tm2->tm_mon = dateTime.month - 1;
-	tm2->tm_mday = dateTime.day;
-	time_t time1 = mktime(tm1);
-	time_t time2 = mktime(tm2);
+	DateTime one(day, month,  year);
+	time_t time1 = CalculateTime(one);
+	time_t time2 = CalculateTime(dateTime);
 	return abs((time1-time2)/(60*60*24));
 	
+}
+
+time_t DateTime::CalculateTime(DateTime& dateTime)
+{
+	time_t a = time(nullptr);
+	struct tm* tm1=localtime(&a);
+	tm1->tm_year = dateTime.year- 1900;
+	tm1->tm_mon = dateTime.month - 1;
+	tm1->tm_mday = dateTime.day;
+	return mktime(tm1);
+
 }
 
 string DateTime::getFuture(unsigned int N)

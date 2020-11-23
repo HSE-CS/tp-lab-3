@@ -4,6 +4,7 @@
 class DateTime
 {
 	private:
+		time_t CalculateTime(DateTime& dateTime);
 		int year,month,day;
 		std::string weekday[7] = { "sunday", "monday", "tuesday","wednesday", "thursday","friday", "saturday"};
 		std::string months[12] = { "january","february","march","april","may","june","july","august","september","october","november","december"}; 
