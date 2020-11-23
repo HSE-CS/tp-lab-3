@@ -2,7 +2,7 @@
 #include "Circle.h"
 
 double calcDelta(){
-    double r1 = 6378100;
+    double r1 = 6378.1;
     Circle c1(r1);
     c1.setFerence((c1.getFerence()+1));
     return c1.getRadius()-r1;
