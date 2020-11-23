@@ -2,8 +2,8 @@
 
 DateTime::DateTime(int day, int month, int year)
 {
-    struct tm* tmp = NULL;
-    tmp->tm_mday = day;
+    struct tm* tmp = new tm;
+    tmp->tm_mday = day+1;
     tmp->tm_mon = month - 1;
     tmp->tm_year = year - 1900;
     this->td = mktime(tmp);
