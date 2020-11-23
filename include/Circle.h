@@ -1,11 +1,13 @@
 #pragma once
-
+#define _USE_MATH_DEFINES
+#include <cmath>
 class Circle {
 private:
 	double radius;
 	double ference;
 	double area;
-	double pi = 3.1415926535897933;
+	//double pi = 3.1415926535897933;
+	double pi = M_PI;
 public:
 	Circle(double rad) {
 		this->radius = rad;
