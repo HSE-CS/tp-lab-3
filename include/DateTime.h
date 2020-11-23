@@ -8,6 +8,7 @@
 #include <iostream>
 #include <ctime>
 #include <string>
+#include<time.h>
 
 class DateTime {
 private:
