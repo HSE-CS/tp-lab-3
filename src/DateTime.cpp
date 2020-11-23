@@ -40,6 +40,8 @@ tm* DateTime::GetTimeInfo()
 string DateTime::GetDate()
 {
 	string date;
+	if (this->timeinfo->tm_mday < 10)
+		date += '0';
 	date += to_string(this->timeinfo->tm_mday);
 	date += ' ';
 	date += this->months[this->timeinfo->tm_mon];

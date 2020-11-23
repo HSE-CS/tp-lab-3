@@ -5,7 +5,7 @@ private:
 	double radius;
 	double ference;
 	double area;
-	double pi = 3.1415926535;
+	double pi = 3.1415926535897933;
 public:
 	Circle(double rad) {
 		this->radius = rad;
