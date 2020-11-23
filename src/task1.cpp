@@ -11,22 +11,19 @@ double calcDelta()
 {
 	return getGap(6378.1);
 }
-double getTrackCost()
-{
-	Circle pool(3);
-
-	double trackCost = pool.getArea()*1000;
-	return trackCost;
-}
-
-double getCostOfTheFence()
-{
-	Circle pool(3);
-	Circle poolWithTrack(4);
-	double fenceCost = (poolWithTrack.getFerence() - pool.getFerence())*2000;
-	return fenceCost;
-}
 double calcCost()
 {
-	return getTrackCost() + getCostOfTheFence();
+
+	double poolRad = 3;
+	double fenceRad = 4;
+	Circle circle(poolRad);
+	double area1 = circle.getArea();
+	circle.setRadius(fenceRad);
+	double area2 = circle.getArea();
+	double fer = circle.getFerence();
+	double a = 1000;
+	double b = 2000;
+	double result = (area2 - area1) * a;
+	result += fer*b; 
+	return result;
 }

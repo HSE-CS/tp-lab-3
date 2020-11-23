@@ -5,7 +5,7 @@ class DateTime
 {
 	private:
 		int year,month,day;
-		std::string weekday[7] = { "monday", "tuesday","wednesday", "thursday","friday", "saturday", "sunday"};
+		std::string weekday[7] = { "sunday", "monday", "tuesday","wednesday", "thursday","friday", "saturday"};
 		std::string months[12] = { "january","february","march","april","may","june","july","august","september","october","november","december"}; 
 		std::string getDay(long N);
 	public:

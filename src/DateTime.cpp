@@ -81,7 +81,7 @@ string DateTime::getDay(long N)
 	timeinfo->tm_mday = day;
 	time_t time = mktime(timeinfo) + N*60*60*24;
 	timeinfo = localtime(&time);
-	stream << "0"<<timeinfo->tm_mday<<" "<<months[timeinfo->tm_mon-1]<<" "<<timeinfo->tm_year+1900<<", "<<weekday[timeinfo->tm_wday-1];
+	stream << "0"<<timeinfo->tm_mday<<" "<<months[timeinfo->tm_mon]<<" "<<timeinfo->tm_year+1900<<", "<<weekday[timeinfo->tm_wday];
 	return stream.str();
 }
 

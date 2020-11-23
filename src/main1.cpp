@@ -3,9 +3,8 @@
 
 int main()
 {
-	std :: cout << getGap(6378.1) << std::endl;
-	std :: cout << getTrackCost() << std::endl;
-	std :: cout << getCostOfTheFence() << std::endl;
+	std :: cout << calcDelta() << std::endl;
+	std :: cout << calcCost() << std::endl;
 	
 }
 
