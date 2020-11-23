@@ -1,5 +1,5 @@
-#include "../include/task1.h"
-#include "../include/Circle.h"
+#include "task1.h"
+#include "Circle.h"
 
 double calcDelta() {
 	Circle earth(6378.1);

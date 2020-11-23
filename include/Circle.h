@@ -7,7 +7,7 @@ private:
 	double ference = 0.0;
 	double area = 0.0;
 public:
-	Circle(double);
+	Circle(double radius = 0);
 	void setRadius(double);
 	void setFerence(double);
 	void setArea(double);

@@ -1,4 +1,4 @@
-#include "../include/DateTime.h"
+#include "DateTime.h"
 
 std::string weekday[7]{ "sunday", "monday", "tuesday", "wednesday",
 		"thursday", "friday", "saturday" };
