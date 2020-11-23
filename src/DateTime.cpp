@@ -7,6 +7,9 @@ string DateTime::getToday() {
     string date;
     struct tm *struct_time = localtime(&dateAtime);
 
+    if (struct_time->tm_mday < 10)
+        date += "0";
+
     date += to_string(struct_time->tm_mday);
     date += ' ';
     date += months[struct_time->tm_mon];
