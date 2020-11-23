@@ -11,7 +11,7 @@
 
 class DateTime {
 private:
-    struct tm time_info;
+    struct tm time_info{};
 public:
     time_t getDifference(DateTime&);
     std::string  getToday();
@@ -29,11 +29,12 @@ public:
         this->time_info.tm_mday = current_time->tm_mday;
         mktime(&time_info);
      }
-    explicit DateTime(const DateTime& previous_DT){
-         this->time_info.tm_year = previous_DT.time_info.tm_year;
-         this->time_info.tm_mon = previous_DT.time_info.tm_mon;
-         this->time_info.tm_mday = previous_DT.time_info.tm_mday;
-         mktime(&time_info);
+     DateTime(const DateTime& previous_DT){
+        this->time_info = previous_DT.time_info;
+        this->time_info.tm_year = previous_DT.time_info.tm_year;
+        this->time_info.tm_mon = previous_DT.time_info.tm_mon;
+        this->time_info.tm_mday = previous_DT.time_info.tm_mday;
+        mktime(&time_info);
     }
     explicit DateTime(int _day, int _month, int _year){
         this->time_info = tm{0, 0, 0, _day, _month-1, _year-1900};

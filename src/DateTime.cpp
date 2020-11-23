@@ -4,7 +4,6 @@
 
 #include "DateTime.h"
 #include <ctime>
-#include <cstring>
 #include <algorithm>
 #include <cmath>
 using namespace std;
@@ -19,7 +18,7 @@ string DateTime::getToday(){
 string DateTime::getFuture(unsigned int N){
     DateTime future_time;
     future_time.time_info = time_info;
-    future_time.time_info.tm_mday = future_time.time_info.tm_mday + N;
+    future_time.time_info.tm_mday = (int)(future_time.time_info.tm_mday + N);
     mktime(&future_time.time_info);
     return future_time.getToday();
 }
@@ -27,7 +26,7 @@ string DateTime::getFuture(unsigned int N){
 string DateTime::getPast(unsigned int N){
     DateTime future_time;
     future_time.time_info = time_info;
-    future_time.time_info.tm_mday = future_time.time_info.tm_mday - N;
+    future_time.time_info.tm_mday = (int)(future_time.time_info.tm_mday - N);
     mktime(&future_time.time_info);
     return future_time.getToday();
 }

@@ -8,9 +8,9 @@
 
 class Circle {
 private:
-    double radius;
-    double ference;
-    double area;
+    double radius = 0;
+    double ference = 0;
+    double area = 0;
 public:
     void setRadius(double);
     void setFerence(double);
