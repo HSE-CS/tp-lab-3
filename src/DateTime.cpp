@@ -46,8 +46,12 @@ string DateTime::getTomorrow()
 
 int DateTime::getDifference(DateTime& dateTime)
 {
-	struct tm* tm1 = new tm;
-	struct tm* tm2 = new tm;
+	time_t a = time(nullptr);
+	time_t b = time(nullptr);
+	struct tm* tm1; 
+	tm1 = localtime(&a);
+	struct tm* tm2; 
+	tm2 = localtime(&b);
 	tm1->tm_year = year- 1900;
 	tm1->tm_mon = month - 1;
 	tm1->tm_mday = day;
@@ -75,7 +79,8 @@ string DateTime::getPast(unsigned int N)
 string DateTime::getDay(long N)
 {
 	std :: stringstream stream;
-	struct tm* timeinfo = new tm;
+	time_t a = time(nullptr);
+	struct tm* timeinfo = localtime(&a);
 	timeinfo->tm_year = year- 1900;
 	timeinfo->tm_mon = month - 1;
 	timeinfo->tm_mday = day;

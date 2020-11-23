@@ -4,6 +4,6 @@
 int main()
 {
 	DateTime dt(1,11,2018);
-	std::cout<<dt.getTomorrow()<<std::endl;
+	std::cout<<dt.getToday()<<std::endl;
 	
 }
