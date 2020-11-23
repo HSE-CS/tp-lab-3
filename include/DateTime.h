@@ -8,11 +8,10 @@
 #include <iostream>
 #include <ctime>
 #include <string>
-#include <time.h>
 
 class DateTime {
 private:
-    struct tm* time_info;
+    struct tm time_info;
 public:
     time_t getDifference(DateTime&);
     std::string  getToday();
@@ -22,25 +21,23 @@ public:
     std::string  getPast(unsigned int);
 //  Constructors
     DateTime(){    // -> default initialisation
-         time_t _timer;
-         time(&_timer);
-         time_info = localtime(&_timer);
-        mktime(time_info);
-     }
-    explicit DateTime(const DateTime& previous_DT){
-        time_t previous_time = mktime(previous_DT.time_info);
-        time_info = localtime(&previous_time);
-        mktime(time_info);
-    }
-    explicit DateTime(size_t day,size_t month,size_t year){
         time_t _timer;
         time(&_timer);
-        time_info = localtime(&_timer);
-        time_info->tm_year = size_t(year - 1900);
-        time_info->tm_mon = size_t(month - 1);
-        time_info->tm_mday = day;
-        mktime(time_info);
+        tm* current_time = localtime(&_timer);
+        this->time_info.tm_year = current_time->tm_year;
+        this->time_info.tm_mon = current_time->tm_mon;
+        this->time_info.tm_mday = current_time->tm_mday;
+        mktime(&time_info);
      }
+    explicit DateTime(const DateTime& previous_DT){
+         this->time_info.tm_year = previous_DT.time_info.tm_year;
+         this->time_info.tm_mon = previous_DT.time_info.tm_mon;
+         this->time_info.tm_mday = previous_DT.time_info.tm_mday;
+         mktime(&time_info);
+    }
+    explicit DateTime(int _day, int _month, int _year){
+        this->time_info = tm{0, 0, 0, _day, _month-1, _year-1900};
+    }
 };
 
 
