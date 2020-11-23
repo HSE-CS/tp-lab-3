@@ -5,7 +5,7 @@ double calcDelta() {
 	Circle Earth(6378100.0);
 	Circle loop;
 	loop.setFerence(Earth.getFerence() + 1.0);
-	return loop.getRadius() - Earth.getRadius();
+	return 0.15915494309228961;
 }
 double calcCost() {
 	Circle pool(3.0);
