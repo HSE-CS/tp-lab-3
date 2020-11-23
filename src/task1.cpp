@@ -2,16 +2,13 @@
 #include "Circle.h"
 
 double calcDelta(){
-    Circle earth, rope;
-    earth.setRadius(6378.1);
+    Circle earth(6378.1), rope(0);
     rope.setFerence(earth.getFerence()+1);
     return rope.getRadius() - earth.getRadius();
 }
 
 double calcCost(){
-    Circle pool, road;
-    pool.setRadius(3);
-    road.setRadius(4);
+    Circle pool(3), road(4);
     double fence_length = road.getFerence();
     double road_area = road.getArea() - pool.getArea();
 

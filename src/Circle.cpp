@@ -29,3 +29,11 @@ double Circle::getFerence() const {
 double Circle::getArea() const {
     return area;
 }
+
+Circle::Circle(double radius_val)
+{
+    double pi = 2 * acos(0.0);
+    radius = radius_val;
+    ference = 2 * pi * radius;
+    area = pi * pow(radius, 2);
+}

@@ -16,11 +16,5 @@ public:
 
     double getArea() const;
 
-    Circle(double radius_val)
-    {
-        double pi = 2 * acos(0.0);
-        radius = radius_val;
-        ference = 2 * pi * radius;
-        area = pi * pow(radius, 2);
-    }
+    Circle(double radius_val);
 };
