@@ -1,19 +1,19 @@
+#define _USE_MATH_DEFINES
 #include <math.h>
-#include <corecrt_math_defines.h>
 
 #ifndef TASK1_CIRCLE_H
 #define TASK1_CIRCLE_H
 
-class Circle
+class Circle 
 {
 private:
-    double rad;
-    double fer;
+    double radius;
+    double ference;
     double area;
 
 public:
-    void setRadius(double rad);
-    void setFerence(double fer);
+    void setRadius(double radius);
+    void setFerence(double ference);
     void setArea(double area);
     double getRadius();
     double getFerence();
@@ -21,12 +21,12 @@ public:
 
     Circle() = default;
 
-    explicit Circle(double rad)
+    explicit Circle(double radius) 
     {
-        this->rad = rad;
-        fer = 2 * M_PI * rad;
-        area = M_PI * rad * rad;
+        this->radius = radius;
+        ference = 2 * M_PI * radius;
+        area = M_PI * radius * radius;
     }
 };
 
-#endif 
+#endif

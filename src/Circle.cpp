@@ -1,38 +1,39 @@
+#define _USE_MATH_DEFINES
 #include <iostream>
 #include <cmath>
 #include "Circle.h"
 
 using namespace std;
 
-void Circle::setRadius(double rad) 
+void Circle::setRadius(double radius) 
 {
-    this->rad = rad;
-    fer = 2 * M_PI * rad;
-    area = M_PI * rad * rad;
+    this->radius = radius;
+    ference = 2 * M_PI * radius;
+    area = M_PI * radius * radius;
 }
 
-void Circle::setFerence(double fer) 
+void Circle::setFerence(double ference) 
 {
-    this->fer = fer;
-    rad = fer / M_PI / 2;
-    area = M_PI * rad * rad;
+    this->ference = ference;
+    radius = ference / M_PI / 2;
+    area = M_PI * radius * radius;
 }
 
 void Circle::setArea(double area) 
 {
     this->area = area;
-    rad = sqrt(area / M_PI);
-    fer = 2 * M_PI * rad;
+    radius = sqrt(area / M_PI);
+    ference = 2 * M_PI * radius;
 }
 
 double Circle::getRadius() 
 {
-    return rad;
+    return radius;
 }
 
 double Circle::getFerence() 
 {
-    return fer;
+    return ference;
 }
 
 double Circle::getArea() 

@@ -5,8 +5,10 @@
 
 using namespace std;
 
-int main() 
-{
+int main() {
+    /*const time_t timer = time(nullptr);
+    tm *ltm = localtime(&timer);
+    cout << ltm->tm_wday;*/
     DateTime dt(1, 11, 2018);
     cout << dt.getToday() << endl << endl;
 

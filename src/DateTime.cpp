@@ -6,8 +6,7 @@
 
 using namespace std;
 
-int daysInMonth(int x) 
-{
+int daysInMonth(int x) {
     return 28 + (x + (int)floor(x / 8)) % 2 + 2 % x + 2 * (int)floor(1 / x);
 }
 
@@ -24,8 +23,7 @@ int dayOfWeek(int D, int M, int Y)
 
 string dayOfWeekParser(int day) 
 {
-    switch (day) 
-    {
+    switch (day) {
     case 1:
         return "monday";
     case 2:
@@ -48,15 +46,13 @@ string dayOfWeekParser(int day)
 string dayParser(int day) 
 {
     string str;
-    if (day > 10) 
-    {
+    if (day > 10) {
         str = to_string(day);
         //cout << str << endl;
         str += " ";
         return str;
     }
-    else 
-    {
+    else {
         str += "0";
         str += to_string(day);
         str += " ";
@@ -66,8 +62,7 @@ string dayParser(int day)
 
 string monthParser(int month) 
 {
-    switch (month) 
-    {
+    switch (month) {
     case 1:
         return "january ";
     case 2:
@@ -120,25 +115,25 @@ string DateTime::getYesterday()
 
 int DateTime::getDifference(DateTime& dt) 
 {
-    int day1 = 0;
-    int day2 = 0;
+    int days1 = 0;
+    int days2 = 0;
 
-    day1 += 365 * this->year;
+    days1 += 365 * this->year;
     for (int i = 1; i < this->month; ++i) 
     {
-        day1 += daysInMonth(i);
+        days1 += daysInMonth(i);
     }
-    day1 += this->day;
+    days1 += this->day;
 
 
-    day2 += 365 * dt.year;
+    days2 += 365 * dt.year;
     for (int i = 1; i < dt.month; ++i) 
     {
-        day2 += daysInMonth(i);
+        days2 += daysInMonth(i);
     }
-    day2 += dt.day;
+    days2 += dt.day;
 
-    return (max(day1, day2) - min(day1, day2));
+    return (max(days1, days2) - min(days1, days2));
 }
 
 string DateTime::getFuture(unsigned int N) 

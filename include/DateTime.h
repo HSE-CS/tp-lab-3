@@ -33,6 +33,7 @@ public:
     {
         const time_t timer = time(nullptr);
         tm* ltm = localtime(&timer);
+
         day = ltm->tm_mday;
         month = 1 + ltm->tm_mon;
         year = 1900 + ltm->tm_year;
