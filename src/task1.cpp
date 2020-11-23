@@ -5,9 +5,10 @@ double calcDelta()
 {
 	Circle Earth(6378.1);
 	Circle Earth_with_rope(0);
-	Earth_with_rope.setFerence(Earth.getFerence() + 0.001);
-	//Circle Earth_with_rope(Earth.getFerence() + 0.001);
-	return 1000*(Earth_with_rope.getRadius()-Earth.getRadius());
+	Earth_with_rope.setFerence(Earth.getFerence() + 1);
+	double a = Earth_with_rope.getRadius();
+	double b = Earth.getRadius();
+	return (Earth_with_rope.getRadius()-Earth.getRadius());
 }
 double calcCost()
 {
