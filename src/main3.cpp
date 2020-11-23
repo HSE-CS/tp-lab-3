@@ -3,7 +3,7 @@
 
 int main()
 {
-    DateTime dt(31,10,2018);
-    std::cout << dt.getToday() << std::endl;
+    DateTime dt(1,1,2018);
     std::cout << dt.getTomorrow() << std::endl;
+    std::cout << dt.getDifference(dt) << std::endl;
 }
