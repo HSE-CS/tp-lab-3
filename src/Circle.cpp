@@ -4,6 +4,7 @@
 
 #include "Circle.h"
 #include <math.h>
+#define M_PI 3.14159265358979323846
 
 void Circle::setRadius(double R) {
     this->radius = R;
