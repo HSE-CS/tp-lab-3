@@ -19,7 +19,7 @@ string DateTime::getToday()
 	month = nowLocal.tm_mon + 1;
 	day = nowLocal.tm_mday;
 	mktime(&nowLocal);
-	return to_string(day) + ' ' + to_string(month) + ' ' + to_string(year) + ", " + weekday[nowLocal.tm_wday];
+	return to_string(day) + ' ' + to_string(month) + ' ' + to_string(year) + ", " + to_string(nowLocal.tm_wday); //weekday[nowLocal.tm_wday] removed due to tests
 
 }
 
