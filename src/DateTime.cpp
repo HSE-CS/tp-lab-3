@@ -45,6 +45,7 @@ std::string DateTime::getToday() {
 
 	char res[100];
 
+<<<<<<< HEAD
 	strftime(res, 100, "%d %B %Y, %A", &(this->time_in));
 	std::string result = res;
 
@@ -53,7 +54,16 @@ std::string DateTime::getToday() {
 	}
 
 	return result;
+=======
+	strftime(res, 100, "%d %B %Y, %A", timeinfo);
+	std::string result = res;
 
+	for (size_t i = 0; i < result.size(); i++) {
+		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
+	}
+>>>>>>> dd108601a790162a67cbccd62d38e48f450dec45
+
+	return result;
 }
 
 std::string DateTime::getYesterday() {
@@ -95,13 +105,22 @@ std::string DateTime::getPast(unsigned int N) {
 
 	strftime(res, 100, "%d %B %Y, %A", timeinfo);
 	std::string result = res;
+<<<<<<< HEAD
 
 	for (size_t i = 0; i < result.size(); i++) {
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
 	}
 
 	return result;
+=======
 
+	for (size_t i = 0; i < result.size(); i++) {
+		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
+	}
+>>>>>>> dd108601a790162a67cbccd62d38e48f450dec45
+
+	return result;
+	
 }
 
 double DateTime::getDifference(DateTime& second_in) {
