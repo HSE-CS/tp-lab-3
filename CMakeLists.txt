@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Make PROJECT_SOURCE_DIR, PROJECT_BINARY_DIR, and PROJECT_NAME available.
-set(PROJECT_NAME task1) 
+set(PROJECT_NAME task1)
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_FLAGS "-g -Wall")
@@ -19,8 +19,8 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
 set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/Circle.cpp
-               ${PROJECT_SOURCE_DIR}/src/task1.cpp)
-               
+        ${PROJECT_SOURCE_DIR}/src/task1.cpp)
+
 set(SRC_FILES3 ${PROJECT_SOURCE_DIR}/src/DateTime.cpp)
 
 
