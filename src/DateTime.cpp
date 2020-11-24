@@ -12,6 +12,10 @@ using namespace std;
 string DateTime::getToday(){
     char buffer [80];
     strftime(buffer,80,"%d %B %Y, %A", &time_info);
+    
+    for (size_t i = 0; i < 80; i++)
+ 		if (buffer[i] >= 'A' && buffer[i] <= 'Z') buffer[i] +='a' - 'A';
+    
     return std::string (buffer);
 }
 
