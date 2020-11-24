@@ -6,9 +6,15 @@ using namespace std;
 
 //time_t now = time(NULL);
 
-char * weekday[] = { (char*)"Sunday", (char*)"Monday",
-				(char*)"Tuesday", (char*)"Wednesday",
-				(char*)"Thursday", (char*)"Friday", (char*)"Saturday" };
+char * weekday[] = { (char*)"sunday", (char*)"monday",
+				(char*)"tuesday", (char*)"wednesday",
+				(char*)"thursday", (char*)"friday", (char*)"saturday" };
+
+const char* months[] = { "january", "february", "march",
+						"april", "may", "june", "july",
+						"august", "september",
+						"october","november",
+						"december" };
 
 string DateTime::getToday()
 {
@@ -19,7 +25,7 @@ string DateTime::getToday()
 	month = nowLocal.tm_mon + 1;
 	day = nowLocal.tm_mday;
 	mktime(&nowLocal);
-	return to_string(day) + ' ' + to_string(month) + ' ' + to_string(year) + ", " + to_string(nowLocal.tm_wday); //weekday[nowLocal.tm_wday] removed due to tests
+	return to_string(day) + ' ' + months[nowLocal.tm_mon] + ' ' + to_string(year) + ", " + weekday[nowLocal.tm_wday]; //weekday[nowLocal.tm_wday] removed due to tests
 
 }
 
