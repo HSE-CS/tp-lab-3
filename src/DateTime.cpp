@@ -1,6 +1,6 @@
 #include "DateTime.h"
 
-const string daysOfTheWeek[] = { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+const string daysOfTheWeek[] = { "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday" };
 const string months[] = { "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" };
 
 string DateTime::getToday() {
