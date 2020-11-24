@@ -7,17 +7,27 @@
 
 
 double calcDelta() {
-    double delta;
 
     double earthRadius = 6378.1;
 
     Circle earth{earthRadius};
     Circle modified{earth.getRadius()};
+
     modified.setFerence(modified.getFerence() + 1.);
 
 
-    delta = modified.getRadius() - earth.getRadius();
+    return modified.getRadius() - earth.getRadius();
+}
 
+double calcCost() {
 
-    return delta;
+    double poolRadius = 3;
+    double trackCost{1000.};
+    double fenceCost{2000.};
+
+    Circle pool{poolRadius};
+    Circle fence{pool.getRadius()};
+
+    return (fence.getArea() - pool.getArea()) * trackCost + fence.getFerence() * fenceCost;
+
 }

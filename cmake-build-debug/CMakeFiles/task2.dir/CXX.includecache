@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../include/Circle.h
-
-E:/Clion/HSE-CS/tp-lab-3/src/Circle.cpp
-Circle.h
-E:/Clion/HSE-CS/tp-lab-3/src/Circle.h
-cmath
+../include/task1.h
+iostream
 -
+
+E:/Clion/HSE-CS/tp-lab-3/src/main2.cpp
+task1.h
+E:/Clion/HSE-CS/tp-lab-3/src/task1.h
 

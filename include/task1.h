@@ -14,4 +14,6 @@ void print(T t) {
 
 double calcDelta();
 
+double calcCost();
+
 #endif //TASK1_TASK1_H

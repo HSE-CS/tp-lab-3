@@ -27,7 +27,7 @@ void Circle::setFerence(double value) {
 void Circle::setArea(double value) {
     this->area = value;
     this->radius = sqrt(this->area / this->__math__pi);
-    this->ference = this->ference = 2 * this->radius * __math__pi;
+    this->ference = 2 * this->radius * __math__pi;
 }
 
 double Circle::getRadius() {
@@ -41,5 +41,3 @@ double Circle::getFerence() {
 double Circle::getArea() {
     return this->area;
 }
-
-
