@@ -5,18 +5,16 @@
 
 double calcDelta()
 {
-  Circle c(6378.1);
-  c.setFerence(6378.1);
+  Circle c(6378100);
   double radius = c.getRadius();
-  c.setFerence(6378.1 + 1);
+  c.setFerence(c.getFerence() + 1);
   return c.getRadius() - radius;
 }
 
 double calcCost()
 {
-  Circle big, small;
-  small.setRadius(3);
-  big.setRadius(small.getRadius() + 1);
+  Circle small(3);
+  Circle big(small.getRadius() + 1);
   return (big.getArea() - small.getArea()) * 1000 + 2000 * big.getFerence();
 
 }
