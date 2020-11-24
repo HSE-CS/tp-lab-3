@@ -1,7 +1,7 @@
 #include "Circle.h"
 
 double calcDelta(){
-    const double EARTH_RADIUS = 6378.1*1000.0;
+    const double EARTH_RADIUS = 6378.1;
     Circle earth(EARTH_RADIUS);
     earth.setFerence(earth.getFerence()+1.0);
     return earth.getRadius()-EARTH_RADIUS;
