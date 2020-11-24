@@ -3,7 +3,5 @@
 
 int main()
 {
-	std :: cout << getTrackCost() << std::endl;
-	std :: cout << getCostOfTheFence() << std::endl;
 	
 }
