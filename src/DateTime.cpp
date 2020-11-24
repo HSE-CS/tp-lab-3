@@ -3,6 +3,7 @@
 DateTime::DateTime(int day, int month, int year)
 {
     struct tm* tmp = new tm;
+    memset(tmp, 0, sizeof(tm));
     tmp->tm_mday = day+1;
     tmp->tm_mon = month - 1;
     tmp->tm_year = year - 1900;
