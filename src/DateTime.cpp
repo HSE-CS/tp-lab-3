@@ -69,6 +69,6 @@ string DateTime::getPast(unsigned int N)
 }
 int DateTime::getDifference(DateTime& time)
 {
-	int diff = abs(difftime(mktime(&dt), mktime(&time.dt)));
+	int diff = abs(mktime(&dt) - mktime(&time.dt));
 	return int(diff / (24 * 60 * 60));
 }
