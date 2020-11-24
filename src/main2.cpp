@@ -9,3 +9,4 @@ int main() {
 	cout << calcCost() << "\n";
 
 	return 0;
+}
