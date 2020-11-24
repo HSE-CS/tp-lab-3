@@ -23,6 +23,6 @@ int main() {
     double payFence = countFence(road, costFence);
 
     std::cout << payRoad << std::endl;
-    std::cout << calcCost(payRoad, payFence) << std::endl;
+//     std::cout << calcCost(payRoad, payFence) << std::endl;
     return 0;
 }
