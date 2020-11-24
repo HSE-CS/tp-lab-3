@@ -32,9 +32,9 @@ void Circle::setArea(double area_) {
 
 double Circle::calcRadius(double ference_ = -1,
                           double area_ = -1){
-    if (ference_ > 0)
+    if (ference_ >= 0)
         return ference_/(2*M_PI);
-    else if (area_ > 0)
+    else if (area_ >= 0)
         return sqrt(area_/M_PI);
     else
         return -1;
