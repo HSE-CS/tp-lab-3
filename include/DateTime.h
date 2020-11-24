@@ -14,7 +14,7 @@ private:
 	int year, month, day;
 	time_t timer;
 public:
-	DateTime(int y, int m,int d)
+	DateTime(int d, int m,int y)
 	{
 		year = y;
 		month = m;

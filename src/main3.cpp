@@ -4,9 +4,9 @@
 
 using namespace std;
 
-/*int main()
+int main()
 {
-	DateTime today,nextweek(2020,11,25);
+	DateTime today,nextweek(31,12,2020);
 	cout << "Today is " << today.getToday() << endl;
 	cout << "Yesterday was " << today.getYesterday() << endl;
 	cout << "Tomorrow will " << today.getTomorrow() << endl;
@@ -16,4 +16,4 @@ using namespace std;
 	cout << "In week after editing programm, it will be " << nextweek.getToday() << endl;
 	cout << "The difference between first and this date is " << today.getDifference(nextweek) << " days." << endl;
 	return 0;
-}*/
+}
