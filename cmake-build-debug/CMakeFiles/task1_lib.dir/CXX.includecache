@@ -8,9 +8,13 @@
 
 ../include/Circle.h
 
-E:/Clion/HSE-CS/tp-lab-3/src/Circle.cpp
+../include/task1.h
+iostream
+-
+
+E:/Clion/HSE-CS/tp-lab-3/src/task1.cpp
+task1.h
+E:/Clion/HSE-CS/tp-lab-3/src/task1.h
 Circle.h
 E:/Clion/HSE-CS/tp-lab-3/src/Circle.h
-cmath
--
 

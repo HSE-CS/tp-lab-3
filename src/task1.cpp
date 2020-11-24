@@ -26,7 +26,7 @@ double calcCost() {
     double fenceCost{2000.};
 
     Circle pool{poolRadius};
-    Circle fence{pool.getRadius()};
+    Circle fence{pool.getRadius() + 1};
 
     return (fence.getArea() - pool.getArea()) * trackCost + fence.getFerence() * fenceCost;
 

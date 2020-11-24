@@ -16,21 +16,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fecebd30-960d-41aa-9dc9-623901d1d51a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1.dir/src/main1.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1_lib.dir/src/task1.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1_lib.dir/src/task1.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task2.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/libtask1_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libtask1_lib.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/task1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/task2.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/include/task1.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/task1.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Circle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606221599198</updated>
-      <workItem from="1606221600485" duration="4811000" />
+      <workItem from="1606221600485" duration="5266000" />
     </task>
     <servers />
   </component>

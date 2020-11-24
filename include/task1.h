@@ -9,8 +9,10 @@
 
 template<typename T>
 void print(T t) {
+    std::cout.precision(16);
     std::cout << t << '\n';
 }
+
 
 double calcDelta();
 
