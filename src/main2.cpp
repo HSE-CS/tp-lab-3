@@ -2,10 +2,10 @@
 #include "Circle.h"
 #include <iostream>
 
-//int main() {
-//
-//	std::cout << calcCost() << std::endl;
-//
-//	return 0;
-//
-//}
+int main() {
+
+	std::cout << calcCost() << std::endl;
+
+	return 0;
+
+}
