@@ -51,7 +51,7 @@ std::string DateTime::getYesterday(){
     return this->getPast(1);
 }
 
-std::string DateTime::getTommorow(){
+std::string DateTime::getTomorrow(){
     return this->getFuture(1);
 }
 

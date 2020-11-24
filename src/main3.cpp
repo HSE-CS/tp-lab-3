@@ -5,7 +5,7 @@ int main(){
     DateTime dt1(1,10,1999);
     std::cout << dt1.getYesterday() << '\n';
     DateTime dt2(31,12,2020);
-    std::cout << dt2.getTommorow() << '\n';
+    std::cout << dt2.getTomorrow() << '\n';
     DateTime dt3(1,11,2020);
     std::cout << dt3.getToday() << '\n';
     DateTime dt4(1,1,2020);
