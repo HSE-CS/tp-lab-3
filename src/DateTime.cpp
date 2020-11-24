@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "DateTime.h"
 
 std::string weekday[7]{ "sunday", "monday", "tuesday", "wednesday",
@@ -12,8 +13,7 @@ std::string month[12]{ "january", "february", "march", "april", "may", "june", "
 DateTime::DateTime()
 {
 	time(&(this->time_in_sec));
-	int error = localtime_s(&(this->timetable), &(this->time_in_sec));
-	if (error) throw 6;
+	this->timetable = *(localtime(&(this->time_in_sec)));
 }
 
 DateTime::DateTime(int day, int month, int year) {

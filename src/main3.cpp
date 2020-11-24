@@ -1,7 +1,6 @@
 #include <iostream>
 #include "DateTime.h"
 
-
 int main() {
 	DateTime today;
 	DateTime date(30,11,2019);
