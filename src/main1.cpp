@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	Circle earth(6378100);
+	Circle earth(6378.1);
 	//cout << earth.getRadius() << "\n" << earth.getFerence() << "\n" << earth.getArea() << endl;
 	//cout << endl;
 	Circle rope(earth.getRadius());

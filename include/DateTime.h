@@ -5,27 +5,24 @@
 
 #include <ctime>
 #include <string>
+#include <cstdint>
 
 using namespace std;
 
 class DateTime
 {
 private:
-	int year, month, day;
+	uint16_t year, month, day;
 	time_t timer;
 public:
-	DateTime(int d, int m,int y)
+	DateTime(uint16_t d, uint16_t m, uint32_t y)
 	{
-		year = y;
-		month = m;
-		day = d;
 		timer = time(NULL);
 		struct tm nowLocal = *localtime(&timer);
-		nowLocal.tm_year = year - 1900;
-		nowLocal.tm_mon = month - 1;
-		nowLocal.tm_mday = day;
-
-		timer = mktime(&nowLocal);
+		nowLocal.tm_year = y - 1900;
+		nowLocal.tm_mon = m - 1;
+		nowLocal.tm_mday = d;
+		this->timer = mktime(&nowLocal);
 	}
 
 	DateTime()
@@ -44,8 +41,8 @@ public:
 	string getToday();
 	string getYesterday();
 	string getTomorrow();
-	string getFuture(unsigned int N);
-	string getPast(unsigned int N);
+	string getFuture(uint16_t N);
+	string getPast(uint16_t N);
 	unsigned int getDifference(DateTime d1);
 };
 

@@ -5,7 +5,7 @@
 
 double calcDelta()
 {
-	Circle earth(6378100);
+	Circle earth(6378.1);
 	Circle rope(earth.getRadius());
 	rope.setFerence(earth.getFerence() + 1);
 	return fabs(earth.getRadius() - rope.getRadius());

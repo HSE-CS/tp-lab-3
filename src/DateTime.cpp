@@ -25,7 +25,9 @@ string DateTime::getToday()
 	month = nowLocal.tm_mon + 1;
 	day = nowLocal.tm_mday;
 	mktime(&nowLocal);
-	return to_string(day) + ' ' + months[nowLocal.tm_mon] + ' ' + to_string(year) + ", " + weekday[nowLocal.tm_wday]; //weekday[nowLocal.tm_wday] removed due to tests
+	if (day < 10)
+		return "0" + to_string(day) + ' ' + months[nowLocal.tm_mon] + ' ' + to_string(year) + ", " + weekday[nowLocal.tm_wday];
+	else return to_string(day) + ' ' + months[nowLocal.tm_mon] + ' ' + to_string(year) + ", " + weekday[nowLocal.tm_wday]; //weekday[nowLocal.tm_wday] removed due to tests
 
 }
 
@@ -43,14 +45,14 @@ string DateTime::getTomorrow()
 	return temp.getToday();
 }
 
-string DateTime::getFuture(unsigned int N)
+string DateTime::getFuture(uint16_t N)
 {
 	DateTime temp(*this);
 	temp.timer += N * 24 * 60 * 60;
 	return temp.getToday();
 }
 
-string DateTime::getPast(unsigned int N)
+string DateTime::getPast(uint16_t N)
 {
 	DateTime temp(*this);
 	temp.timer -= N * 24 * 60 * 60;
