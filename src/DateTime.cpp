@@ -27,7 +27,7 @@ int DateTime::getDifference(DateTime &date) {
     struct tm newDate = {0, 0, 0, date.day, date.month - 1, date.year - 1900};
     time_t old = mktime(&oldDate);
     time_t neww = mktime(&newDate);
-    if (old != (time_t)(-1) && neww != (time_t)(-1)) dif = (int)difftime(neww, old) / (600 * 60 * 24);
+    if (old != (time_t)(-1) && neww != (time_t)(-1)) dif = (int)difftime(neww, old) / (60 * 60 * 24);
     int result = abs(dif);
     return result;
 }
