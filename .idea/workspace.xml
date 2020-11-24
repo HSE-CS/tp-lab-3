@@ -17,11 +17,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fecebd30-960d-41aa-9dc9-623901d1d51a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1_lib.dir/src/task1.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task1_lib.dir/src/task1.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libtask1_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libtask1_lib.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/task2.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/task1.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/task1.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task3.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task3.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task3_lib.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task3_lib.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/DateTime.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/DateTime.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DateTime.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/DateTime.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main3.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +64,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="CMake Application.task2">
+  <component name="RunManager" selected="CMake Application.task3">
     <configuration name="task1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="task1" TARGET_NAME="task1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="task1" RUN_TARGET_NAME="task1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -108,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606221599198</updated>
-      <workItem from="1606221600485" duration="5266000" />
+      <workItem from="1606221600485" duration="13316000" />
     </task>
     <servers />
   </component>
