@@ -19,10 +19,10 @@ int main() {
     Circle pool(radiusPool);
     Circle road(radiusPool + widthRoad);
 
-    double payRoad = countRoad(road, pool, costConcrete);
-    double payFence = countFence(road, costFence);
+//     double payRoad = countRoad(road, pool, costConcrete);
+//     double payFence = countFence(road, costFence);
 
-    std::cout << payRoad << std::endl;
+//     std::cout << payRoad << std::endl;
 //     std::cout << calcCost(payRoad, payFence) << std::endl;
     return 0;
 }
