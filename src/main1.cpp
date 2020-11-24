@@ -19,6 +19,6 @@ int main() {
 
     newEarth.setFerence(oldEarth.getFerence() + 1);
 
-    std::cout << calcDelta(newEarth, oldEarth) << std::endl;
+    std::cout << calcDelta() << std::endl;
     return 0;
 }
