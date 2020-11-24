@@ -21,7 +21,7 @@ double calcDelta() {
     return double(new_Earth.getRadius() - Earth.getRadius());
 }
 
-double countRoad() {
+double calcCost() {
     Circle pool;
     pool.setRadius(3.);
     Circle fence;
