@@ -48,11 +48,13 @@ public:
 
     DateTime getPast(unsigned int n);
 
-    int getDifference (DateTime&other);
+    int getDifference(DateTime &other);
 
     bool isLeap();
 
     int getRawDay(int month, int day);
+
+    void reEstablishByRawDay(int rawDay, int &array);
 
 };
 

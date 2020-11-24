@@ -46,10 +46,7 @@ DateTime::DateTime() {
     this->monthDay = now->tm_mday;
     this->weekDay = now->tm_wday - 1;
     this->monthSize = new int[12]{31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int rDay = 1;
-    int rMonth = 0;
-    while (rMonth != this->month) rDay += this->monthSize[rMonth++];
-    this->rawDateDay = rDay + this->monthDay;
+    this->rawDateDay = getRawDay(this->month, this->monthDay);
 }
 
 DateTime::DateTime(int newDay, int newMonth, int newYear) {
@@ -58,10 +55,8 @@ DateTime::DateTime(int newDay, int newMonth, int newYear) {
     this->year = newYear;
     this->weekDay = yearStartsWith[this->year];
     this->monthSize = new int[12]{31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int rDay = 1;
-    int rMonth = 0;
-    while (rMonth != this->month) rDay += this->monthSize[rMonth++];
-    this->rawDateDay = rDay + this->monthDay;
+    this->rawDateDay = getRawDay(this->month, this->monthDay);
+
 }
 
 DateTime::DateTime(const DateTime *other) {
@@ -70,10 +65,7 @@ DateTime::DateTime(const DateTime *other) {
     this->year = other->year;
     this->weekDay = other->weekDay;
     this->monthSize = new int[12]{31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int rDay = 1;
-    int rMonth = 0;
-    while (rMonth != this->month) rDay += this->monthSize[rMonth++];
-    this->rawDateDay = rDay + this->monthDay;
+    this->rawDateDay = getRawDay(this->month, this->monthDay);
 }
 
 std::string DateTime::getToday() {
@@ -128,7 +120,6 @@ DateTime DateTime::getFuture(unsigned int n) {
 
     int nextDay = this->monthDay;
 
-    int rawMDay = rawDay;
     unsigned int remaining{n};
 
     while (true) {
@@ -153,7 +144,8 @@ DateTime DateTime::getFuture(unsigned int n) {
 }
 
 DateTime DateTime::getPast(unsigned int n) {
-    return DateTime();
+
+    return Dat;
 }
 
 bool DateTime::isLeap() {
@@ -161,12 +153,16 @@ bool DateTime::isLeap() {
 }
 
 int DateTime::getDifference(DateTime &other) {
-    return 0;
+    return std::abs(getRawDay(this->month, this->monthDay) - getRawDay(other.month, other.monthDay));
 }
 
-int DateTime::getRawDay(int month, int day) {
+int DateTime::getRawDay(int curMonth, int curDay) {
     int rDay = 1;
     int rMonth = 0;
-    while (rMonth != month) rDay += this->monthSize[rMonth++];
-    return rDay + day;
+    while (rMonth != curMonth) rDay += this->monthSize[rMonth++];
+    return rDay + curDay;
+}
+
+void DateTime::reEstablishByRawDay(int rawDay, int &array) {
+    int remaining = rawDay;
 }
