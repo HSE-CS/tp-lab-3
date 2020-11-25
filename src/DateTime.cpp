@@ -25,11 +25,16 @@ DateTime::DateTime()     {
 std::string datetime_to_string(int day, int month, int year){
     tm in = {0, 0, 0, day, month - 1, year - 1900};
     auto tmp = mktime(&in);
-    auto out = *localtime(&tmp);
+    auto *out = localtime(&tmp);
+    char buffer[80];
 
-    std::ostringstream oss;
-    oss << std::put_time(&out, "%d %m %Y, %A");
-    return oss.str();
+    strftime(buffer,sizeof(buffer),"%d %m %Y, %A",out);
+    std::string str(buffer);
+
+    return str;
+//    std::ostringstream oss;
+//    oss << std::put_time(&out, "%d %m %Y, %A");
+//    return oss.str();
 }
 
 std::string DateTime::getToday() {
