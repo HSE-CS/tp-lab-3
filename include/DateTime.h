@@ -2,6 +2,7 @@
 #define TASK1_DATETIME_H
 
 #include <string>
+#include <cstring>
 
 class DateTime {
 private:
