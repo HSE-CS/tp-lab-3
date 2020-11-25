@@ -7,22 +7,20 @@
 
 DateTime::DateTime() {
 
-	time_t rtime;
-	time(&rtime);
-	struct tm* timeinfo = localtime(&rtime);
-
-	time_in.tm_mday = timeinfo->tm_mday;
-	time_in.tm_mon = timeinfo->tm_mon;
-	time_in.tm_year = timeinfo->tm_year;
-	time_in.tm_wday = timeinfo->tm_wday;
-	mktime(&time_in);
+	time_in = time(nullptr);
 
 }
 
 DateTime::DateTime(int day, int month, int year) {
 
-	time_in = { 0, 0, 0, day, month - 1, year - 1900 };
-	mktime(&time_in);
+	time_t rtime = time(nullptr);
+	struct tm* timeinfo = localtime(&rtime);
+
+	timeinfo->tm_mday = day;
+	timeinfo->tm_mon = month - 1;
+	timeinfo->tm_year = year - 1900;
+
+	time_in = mktime(timeinfo);
 
 }
 
@@ -35,27 +33,18 @@ DateTime::DateTime(DateTime& inform) {
 std::string DateTime::getToday() {
 
 	char res[100];
-<<<<<<< HEAD
+	struct tm* timeinfo = localtime(&time_in);
 
-	strftime(res, 100, "%d %B %Y, %A", &(this->time_in));
-	std::string result = res;
-
-	for (size_t i = 0; i < result.size(); i++) {
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-	}
-
-	return result;
-=======
-	
 	strftime(res, 100, "%d %B %Y, %A", timeinfo);
 	std::string result = res;
 
 	for (size_t i = 0; i < result.size(); i++) {
-		
+
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-		
+
 	}
->>>>>>> f8719ae9b82ea997a4426d5e02c090766d25e71a
+
+	return result;
 
 }
 
@@ -73,64 +62,22 @@ std::string DateTime::getTomorrow() {
 
 std::string DateTime::getFuture(unsigned int N) {
 
-	char res[100];
-	time_t rtime;
-	tm* timeinfo;
-
-	rtime = mktime(&this->time_in);
-	rtime += N * 60 * 60 * 24;
-	timeinfo = localtime(&rtime);
-
-	strftime(res, 100, "%d %B %Y, %A", timeinfo);
-	std::string result = res;
-
-	for (size_t i = 0; i < result.size(); i++) {
-		
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-		
-	}
-
-	return result;
+	DateTime temp(*this);
+	temp.time_in += (60 * 60 * 24) * (long)N;
+	return temp.getToday();
 
 }
 
 std::string DateTime::getPast(unsigned int N) {
 
-	char res[100];
-	time_t rtime;
-	tm* timeinfo;
+	DateTime temp(*this);
+	temp.time_in -= (60 * 60 * 24) * (long)N;
+	return temp.getToday();
 
-	rtime = mktime(&this->time_in);
-	rtime -= N * 60 * 60 * 24;
-	timeinfo = localtime(&rtime);
-
-	strftime(res, 100, "%d %B %Y, %A", timeinfo);
-	std::string result = res;
-<<<<<<< HEAD
-
-	for (size_t i = 0; i < result.size(); i++) {
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-	}
-
-	return result;
-
-=======
-
-	for (size_t i = 0; i < result.size(); i++) {
-		
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-		
-	}
-
-	return result;
-	
->>>>>>> f8719ae9b82ea997a4426d5e02c090766d25e71a
 }
 
 double DateTime::getDifference(DateTime& second_in) {
 
-	time_t first = mktime(&this->time_in);
-	time_t second = mktime(&second_in.time_in);
-	return (abs(first - second) / (60 * 60 * 24));
+	return abs(time_in - second_in.time_in) / (60 * 60 * 24);
 
 }
