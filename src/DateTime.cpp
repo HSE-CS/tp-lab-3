@@ -21,15 +21,6 @@ DateTime::DateTime() {
 
 DateTime::DateTime(int day, int month, int year) {
 
-	/*time_t rtime = time(NULL);
-	struct tm* timeinfo = localtime(&rtime);
-
-	timeinfo->tm_mday = day;
-	timeinfo->tm_mon = month - 1;
-	timeinfo->tm_year = year - 1900;
-
-	time_in = mktime(timeinfo);*/
-
 	time_in = { 0, 0, 0, day, month - 1, year - 1900 };
 	mktime(&time_in);
 
@@ -44,24 +35,13 @@ DateTime::DateTime(DateTime& inform) {
 std::string DateTime::getToday() {
 
 	char res[100];
-
-<<<<<<< HEAD
-	strftime(res, 100, "%d %B %Y, %A", &(this->time_in));
-	std::string result = res;
-
-	for (size_t i = 0; i < result.size(); i++) {
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-	}
-
-	return result;
-=======
+	
 	strftime(res, 100, "%d %B %Y, %A", timeinfo);
 	std::string result = res;
 
 	for (size_t i = 0; i < result.size(); i++) {
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
 	}
->>>>>>> dd108601a790162a67cbccd62d38e48f450dec45
 
 	return result;
 }
@@ -105,19 +85,10 @@ std::string DateTime::getPast(unsigned int N) {
 
 	strftime(res, 100, "%d %B %Y, %A", timeinfo);
 	std::string result = res;
-<<<<<<< HEAD
 
 	for (size_t i = 0; i < result.size(); i++) {
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
 	}
-
-	return result;
-=======
-
-	for (size_t i = 0; i < result.size(); i++) {
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-	}
->>>>>>> dd108601a790162a67cbccd62d38e48f450dec45
 
 	return result;
 	
