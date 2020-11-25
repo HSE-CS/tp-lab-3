@@ -8,9 +8,9 @@
 DateTime::DateTime() {
 
 	time_t rtime;
+	time(&rtime);
 	struct tm* timeinfo = localtime(&rtime);
 
-	time(&rtime);
 	time_in.tm_mday = timeinfo->tm_mday;
 	time_in.tm_mon = timeinfo->tm_mon;
 	time_in.tm_year = timeinfo->tm_year;
@@ -20,15 +20,6 @@ DateTime::DateTime() {
 }
 
 DateTime::DateTime(int day, int month, int year) {
-
-	/*time_t rtime = time(NULL);
-	struct tm* timeinfo = localtime(&rtime);
-
-	timeinfo->tm_mday = day;
-	timeinfo->tm_mon = month - 1;
-	timeinfo->tm_year = year - 1900;
-
-	time_in = mktime(timeinfo);*/
 
 	time_in = { 0, 0, 0, day, month - 1, year - 1900 };
 	mktime(&time_in);
@@ -45,7 +36,6 @@ std::string DateTime::getToday() {
 
 	char res[100];
 
-<<<<<<< HEAD
 	strftime(res, 100, "%d %B %Y, %A", &(this->time_in));
 	std::string result = res;
 
@@ -54,16 +44,7 @@ std::string DateTime::getToday() {
 	}
 
 	return result;
-=======
-	strftime(res, 100, "%d %B %Y, %A", timeinfo);
-	std::string result = res;
 
-	for (size_t i = 0; i < result.size(); i++) {
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-	}
->>>>>>> dd108601a790162a67cbccd62d38e48f450dec45
-
-	return result;
 }
 
 std::string DateTime::getYesterday() {
@@ -81,9 +62,12 @@ std::string DateTime::getTomorrow() {
 std::string DateTime::getFuture(unsigned int N) {
 
 	char res[100];
-	time_t rtime = mktime(&this->time_in);
+	time_t rtime;
+	tm* timeinfo;
+
+	rtime = mktime(&this->time_in);
 	rtime += N * 60 * 60 * 24;
-	struct tm* timeinfo = localtime(&rtime);
+	timeinfo = localtime(&rtime);
 
 	strftime(res, 100, "%d %B %Y, %A", timeinfo);
 	std::string result = res;
@@ -99,28 +83,22 @@ std::string DateTime::getFuture(unsigned int N) {
 std::string DateTime::getPast(unsigned int N) {
 
 	char res[100];
-	time_t rtime = mktime(&this->time_in);
+	time_t rtime;
+	tm* timeinfo;
+
+	rtime = mktime(&this->time_in);
 	rtime -= N * 60 * 60 * 24;
-	struct tm* timeinfo = localtime(&rtime);
+	timeinfo = localtime(&rtime);
 
 	strftime(res, 100, "%d %B %Y, %A", timeinfo);
 	std::string result = res;
-<<<<<<< HEAD
 
 	for (size_t i = 0; i < result.size(); i++) {
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
 	}
 
 	return result;
-=======
 
-	for (size_t i = 0; i < result.size(); i++) {
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-	}
->>>>>>> dd108601a790162a67cbccd62d38e48f450dec45
-
-	return result;
-	
 }
 
 double DateTime::getDifference(DateTime& second_in) {
