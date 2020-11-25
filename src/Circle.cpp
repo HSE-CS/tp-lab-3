@@ -1,5 +1,11 @@
 #include "Circle.h"
 
+Circle::Circle(double radius_) {
+    radius = radius_;
+    ference = calcFerence(radius_);
+    area = calcArea(radius_);
+}
+
 double Circle::getRadius() const {
     return radius;
 }

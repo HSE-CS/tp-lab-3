@@ -14,12 +14,7 @@ private:
     double area;
 
 public:
-    Circle(double radius_)
-    {
-        radius = radius_;
-        ference = calcFerence(radius_);
-        area = calcArea(radius_);
-    }
+    Circle(double radius_);
 
     void setRadius(double radius_);
     void setFerence(double ference_);
