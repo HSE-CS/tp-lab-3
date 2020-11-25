@@ -33,24 +33,15 @@ DateTime::DateTime(DateTime& inform) {
 std::string DateTime::getToday() {
 
 	char res[100];
-<<<<<<< HEAD
 	struct tm* timeinfo = localtime(&time_in);
-=======
->>>>>>> 820389665ee723471871dddb5829cbaa1f869f07
 
 	strftime(res, 100, "%d %B %Y, %A", timeinfo);
 	std::string result = res;
 
 	for (size_t i = 0; i < result.size(); i++) {
-<<<<<<< HEAD
-
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-
-=======
 		
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
 		
->>>>>>> 820389665ee723471871dddb5829cbaa1f869f07
 	}
 
 	return result;
@@ -82,21 +73,7 @@ std::string DateTime::getPast(unsigned int N) {
 	DateTime temp(*this);
 	temp.time_in -= (60 * 60 * 24) * (long)N;
 	return temp.getToday();
-
-<<<<<<< HEAD
-=======
-	strftime(res, 100, "%d %B %Y, %A", timeinfo);
-	std::string result = res;
-
-	for (size_t i = 0; i < result.size(); i++) {
-		
-		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
-		
-	}
-
-	return result;
 	
->>>>>>> 820389665ee723471871dddb5829cbaa1f869f07
 }
 
 double DateTime::getDifference(DateTime& second_in) {
