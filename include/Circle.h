@@ -1,5 +1,6 @@
 #ifndef TASK1_CIRCLE_H
 #define TASK1_CIRCLE_H
+#define pi 3.14159265358979323846
 
 class Circle {
 private:

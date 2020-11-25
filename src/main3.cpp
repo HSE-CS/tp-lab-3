@@ -11,5 +11,4 @@ int main(){
     std::cout<<dateTime3.getFuture(77)<<"\n";
     std::cout<<dateTime3.getPast(134)<<"\n";
     std::cout<<dateTime3.getDifference(dateTime2)<<"\n";
-
 }
