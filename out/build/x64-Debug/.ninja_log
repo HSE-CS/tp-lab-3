@@ -1,0 +1,10 @@
+# ninja log v5
+42	550	628010973	CMakeFiles/task2.dir/src/main2.cpp.obj	76be70d05467062d
+25	557	628010973	CMakeFiles/task3.dir/src/main3.cpp.obj	81655e742d56e9
+17	558	628010973	CMakeFiles/task1.dir/src/main1.cpp.obj	69f89bbbae8c71ba
+34	594	628010973	CMakeFiles/task3_lib.dir/src/DateTime.cpp.obj	235b8539a1ebf8cd
+594	736	628010973	task3_lib.lib	b806ec45b8e0fe41
+11	768	628010973	CMakeFiles/task1_lib.dir/src/Circle.cpp.obj	5e0d20ce944d048f
+15	1676	628015128	CMakeFiles/task1.dir/src/main1.cpp.obj	69f89bbbae8c71ba
+31	912	628028713	CMakeFiles/task2.dir/src/main2.cpp.obj	76be70d05467062d
+10	1164	628029021	CMakeFiles/task1.dir/src/main1.cpp.obj	69f89bbbae8c71ba
