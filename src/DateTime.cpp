@@ -40,7 +40,9 @@ std::string DateTime::getToday() {
 	std::string result = res;
 
 	for (size_t i = 0; i < result.size(); i++) {
+		
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
+		
 	}
 
 	return result;
@@ -69,7 +71,9 @@ std::string DateTime::getFuture(unsigned int N) {
 	std::string result = res;
 
 	for (size_t i = 0; i < result.size(); i++) {
+		
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
+		
 	}
 
 	return result;
@@ -87,7 +91,9 @@ std::string DateTime::getPast(unsigned int N) {
 	std::string result = res;
 
 	for (size_t i = 0; i < result.size(); i++) {
+		
 		if (result[i] >= 'A' && result[i] <= 'Z') result[i] += 'a' - 'A';
+		
 	}
 
 	return result;
