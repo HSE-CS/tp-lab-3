@@ -39,6 +39,7 @@ public:
     }
     explicit DateTime(int _day, int _month, int _year){
         this->time_info = tm{0, 0, 0, _day, _month-1, _year-1900};
+        mktime(&time_info);
     }
 };
 
