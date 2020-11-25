@@ -2,7 +2,7 @@
 #include "Circle.h"
 
 double calcDelta() {
-    double earthRadius = 6378100;
+    double earthRadius = 6378.1;
     double wireDeltaFerence = 1;
     Circle earth(earthRadius);
     Circle circle(0);
