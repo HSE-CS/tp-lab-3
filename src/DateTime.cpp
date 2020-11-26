@@ -72,7 +72,7 @@ std::string DateTime::getToday() {
     return repr(this);
 }
 
-std::string DateTime::repr(const DateTime *date) {
+std::string DateTime::repr(DateTime *date) {
     std::string dateString;
 
     if (date->monthDay < 10) dateString += std::string("0");
@@ -89,10 +89,6 @@ std::string DateTime::repr(const DateTime *date) {
 }
 
 std::string DateTime::getYesterday() {
-    return std::__cxx11::string();
-}
-
-std::string DateTime::getTomorrow() {
     return std::__cxx11::string();
 }
 
@@ -143,9 +139,14 @@ DateTime DateTime::getFuture(unsigned int n) {
     return newDate;
 }
 
-DateTime DateTime::getPast(unsigned int n) {
+std::string DateTime::getTomorrow() {
+    auto date = getFuture(1);
+    return date.repr(&date);
+}
 
-    return Dat;
+DateTime DateTime::getPast(unsigned int n) {
+    DateTime Past{};
+    return Past;
 }
 
 bool DateTime::isLeap() {

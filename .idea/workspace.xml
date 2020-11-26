@@ -2,11 +2,11 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="task1" targetName="task1_lib" />
-      <config projectName="task1" targetName="task3_lib" />
       <config projectName="task1" targetName="task3" />
       <config projectName="task1" targetName="task2" />
       <config projectName="task1" targetName="task1" />
+      <config projectName="task1" targetName="task3_lib" />
+      <config projectName="task1" targetName="task1_lib" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -105,7 +105,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606221599198</updated>
-      <workItem from="1606221600485" duration="15801000" />
+      <workItem from="1606221600485" duration="16401000" />
+      <workItem from="1606423606179" duration="539000" />
     </task>
     <servers />
   </component>
@@ -117,7 +118,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

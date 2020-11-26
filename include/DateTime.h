@@ -38,7 +38,7 @@ public:
 
     std::string getToday();
 
-    std::string repr(const DateTime *date);
+    std::string repr( DateTime *date);
 
     std::string getYesterday();
 
