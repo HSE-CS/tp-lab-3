@@ -28,7 +28,7 @@ TEST(circle,circle_get_ference2)
 TEST(date,datetime_gettomorrow1)
 {
     DateTime dt(31,10,2018);
-    std::string expect="01 november 2018, thursday";
+    std::string expect="1 november 2018, thursday";
     EXPECT_EQ(expect,dt.getTomorrow());
 }
 TEST(date,datetime_gettomorrow2)

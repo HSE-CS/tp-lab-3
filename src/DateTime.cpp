@@ -59,7 +59,7 @@ string makeDate(time_t t)
 	string weekday[] = {"sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"};
 	tm* T = localtime(&t);
   string date = "";
-  date = to_string(T->tm_mday) + " " + months[T->tm_mon] + " " + to_string(1900 + T->tm_year) + ", " + weekday[T->tm_wday];
+  date = to_string(T->tm_mday) + " " + months[T->tm_mon] + " " + to_string(T->tm_year) + ", " + weekday[T->tm_wday];
 	// date << setw(2) << setfill('0') << T->tm_mday << " " << months[T->tm_mon] << " " << 1900 + T->tm_year << ", " << weekday[T->tm_wday];
   return date;
 }
