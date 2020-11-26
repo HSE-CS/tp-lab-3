@@ -89,7 +89,7 @@ std::string DateTime::repr(DateTime *date) {
 }
 
 std::string DateTime::getYesterday() {
-    return std::__cxx11::string();
+    return std::string("");
 }
 
 DateTime DateTime::getFuture(unsigned int n) {
