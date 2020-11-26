@@ -5,6 +5,7 @@
 #include <iostream>;
 #include <ctime>;
 #include <cstring>
+#include <cstdlib>
 
 class DateTime
 {

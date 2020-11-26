@@ -75,7 +75,7 @@ std::string DateTime::getToday()
 	ind++;
 	char year[10];
 
-	_itoa((str_time.tm_year + 1900), year, 10);
+	itoa((str_time.tm_year + 1900), year, 10);
 
 	len = 0;
 	while (year[len] >= '0' && year[len] <= '9' && len < strlen(year))
