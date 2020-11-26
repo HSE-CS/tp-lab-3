@@ -17,10 +17,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fecebd30-960d-41aa-9dc9-623901d1d51a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libtask1_lib.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libtask3_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libtask3_lib.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/task2.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/task3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/task3.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/DateTime.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/DateTime.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DateTime.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/DateTime.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main3.cpp" afterDir="false" />
     </list>
@@ -110,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606221599198</updated>
       <workItem from="1606221600485" duration="16401000" />
-      <workItem from="1606423606179" duration="3046000" />
+      <workItem from="1606423606179" duration="4946000" />
     </task>
     <servers />
   </component>

@@ -123,7 +123,7 @@ DateTime DateTime::getFuture(unsigned int n) {
             remaining -= monthSize[nextMonth];
             nextMonth = (nextMonth + 1) % 12;
         } else {
-            nextDay += remaining;
+            nextDay += (int)remaining;
             if (nextDay > monthSize[nextMonth]) {
                 nextDay -= monthSize[nextMonth++];
             }
