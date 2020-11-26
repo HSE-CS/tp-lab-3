@@ -3,12 +3,12 @@
 #include "stdio.h"
 
 double calcDelta(){
-    Circle Earth(63781000);
+    double r = 6378.1;
+    Circle Earth(r);
 
-    double r = Earth.getRadius();
-    double new_r = Circle::calcRadius(Earth.getFerence() + 1, -1);
+    Earth.setFerence((Earth.getFerence() + 1));
 
-    return new_r - r;
+    return Earth.getRadius() - r;
 }
 
 double calcCost(){

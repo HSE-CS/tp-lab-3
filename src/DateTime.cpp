@@ -1,5 +1,6 @@
 #include <iomanip>
 #include <sstream>
+#include <algorithm>
 #include "DateTime.h"
 
 DateTime::DateTime(int day_, int month_, int year_)     {
@@ -28,8 +29,10 @@ std::string datetime_to_string(int day, int month, int year){
     auto *out = localtime(&tmp);
     char buffer[80];
 
-    strftime(buffer,sizeof(buffer),"%d %m %Y, %A",out);
+    strftime(buffer,sizeof(buffer),"%d %B %Y, %A",out);
     std::string str(buffer);
+    std::transform(str.begin(), str.end(), str.begin(),
+                   [](unsigned char c){ return std::tolower(c); });
 
     return str;
 //    std::ostringstream oss;
