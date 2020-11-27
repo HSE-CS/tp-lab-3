@@ -22,7 +22,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task3_lib.dir/src/DateTime.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task3_lib.dir/src/DateTime.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/libtask3_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libtask3_lib.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/task3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/task3.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/DateTime.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/DateTime.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DateTime.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/DateTime.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main3.cpp" afterDir="false" />
     </list>
@@ -113,7 +112,7 @@
       <updated>1606221599198</updated>
       <workItem from="1606221600485" duration="16401000" />
       <workItem from="1606423606179" duration="6058000" />
-      <workItem from="1606463048929" duration="6133000" />
+      <workItem from="1606463048929" duration="6533000" />
     </task>
     <servers />
   </component>

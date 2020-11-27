@@ -45,7 +45,7 @@ DateTime::DateTime() {
     this->year = now->tm_year + 1900;
     this->month = now->tm_mon;
     this->monthDay = now->tm_mday;
-    this->weekDay = now->tm_wday - 1;
+    this->weekDay = now->tm_wday;
     this->monthSize = new int[12]{31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     this->rawDateDay = getRawDay(this->month, this->monthDay);
 }
@@ -84,7 +84,7 @@ std::string DateTime::repr(DateTime *date) {
     dateString += std::string(" ");
     dateString += std::to_string(date->year);
     dateString += std::string(", ");
-    dateString += days[date->weekDay];
+    dateString += days[(date->weekDay + 0) % 7];
 
     return dateString;
 }

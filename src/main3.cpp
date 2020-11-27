@@ -8,15 +8,15 @@
 
 signed main() {
 
-    DateTime a{};
+    DateTime a{1, 11, 2018};
     DateTime b{31, 10, 2018};
 
 //    print__(a.repr(&a));
 //    print__(a.getToday());
 
-    print__(b.getFuture(0).getToday());
-    print__(b.getFuture(1).getToday());
-    print__(b.getFuture(2).getToday());
+    print__(b.getTomorrow());
+    print__(a.getTomorrow());
+    print__(a.getToday());
 
 //
 //    print__(a.getDifference(b));
