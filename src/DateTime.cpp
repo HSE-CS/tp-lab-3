@@ -27,7 +27,7 @@ std::string months[12]{
         "december",
 };
 
-std::string days[7]{
+std::string days[8]{
         "monday",
         "tuesday",
         "wednesday",
@@ -35,6 +35,7 @@ std::string days[7]{
         "friday",
         "saturday",
         "sunday",
+        "monday",
 };
 
 
@@ -51,11 +52,11 @@ DateTime::DateTime() {
 
 DateTime::DateTime(int newDay, int newMonth, int newYear) {
     this->monthDay = newDay;
-    this->month = newMonth;
+    this->month = newMonth - 1;
     this->year = newYear;
-    this->weekDay = yearStartsWith[this->year];
     this->monthSize = new int[12]{31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     this->rawDateDay = getRawDay(this->month, this->monthDay);
+    this->weekDay = (yearStartsWith[this->year] + 7 + this->rawDateDay) % 7;
 
 }
 
@@ -123,7 +124,7 @@ DateTime DateTime::getFuture(unsigned int n) {
             remaining -= monthSize[nextMonth];
             nextMonth = (nextMonth + 1) % 12;
         } else {
-            nextDay += (int)remaining;
+            nextDay += (int) remaining;
             if (nextDay > monthSize[nextMonth]) {
                 nextDay -= monthSize[nextMonth++];
             }
@@ -134,7 +135,7 @@ DateTime DateTime::getFuture(unsigned int n) {
     newDate.month = nextMonth;
     newDate.monthDay = nextDay;
 
-    newDate.weekDay = (this->getRawDay(newDate.month, newDate.monthDay) + 7 - yearStartsWith[newDate.year]);
+    newDate.weekDay = (this->getRawDay(newDate.month, newDate.monthDay) + 7 - yearStartsWith[newDate.year]) % 7;
 
     return newDate;
 }
