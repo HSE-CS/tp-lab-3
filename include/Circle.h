@@ -1,8 +1,8 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 #define _CRT_SECURE_NO_WARNINGS
-#include <cmath>;
-#include <iostream>;
+#include <cmath>
+#include <iostream>
 
 const double PI = 3.141592653589793;
 
