@@ -56,7 +56,7 @@ DateTime::DateTime(int newDay, int newMonth, int newYear) {
     this->year = newYear;
     this->monthSize = new int[12]{31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     this->rawDateDay = getRawDay(this->month, this->monthDay);
-    this->weekDay = (yearStartsWith[this->year] + 7 + this->rawDateDay) % 7;
+    this->weekDay = (yearStartsWith[this->year] + 7 - 1 + this->rawDateDay) % 7;
 
 }
 
@@ -135,7 +135,7 @@ DateTime DateTime::getFuture(unsigned int n) {
     newDate.month = nextMonth;
     newDate.monthDay = nextDay;
 
-    newDate.weekDay = (this->getRawDay(newDate.month, newDate.monthDay) + 7 - 1 - yearStartsWith[newDate.year]) % 7;
+    newDate.weekDay = (this->getRawDay(newDate.month, newDate.monthDay) + 7 - yearStartsWith[newDate.year]) % 7;
 
     return newDate;
 }
