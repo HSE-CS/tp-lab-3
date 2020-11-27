@@ -543,7 +543,7 @@ $$   // show up in the generated code.
 //
 // Sometimes the matcher description alone isn't enough to explain why
 // the match has failed or succeeded.  For example, when expecting a
-// long string, it can be very helpful to also print the diff between
+// long string, it can be very helpful to also print__ the diff between
 // the expected string and the actual one.  To achieve that, you can
 // optionally stream additional information to a special variable
 // named result_listener, whose type is a pointer to class

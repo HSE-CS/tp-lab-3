@@ -2006,7 +2006,7 @@ void TestFooDoesBar() {
 }
 ```
 
-If a Google Test assertion fails, it will print an error message and
+If a Google Test assertion fails, it will print__ an error message and
 throw an exception, which will be treated as a failure by your host
 testing framework.  If you compile your code with exceptions disabled,
 a failed Google Test assertion will instead exit your program with a

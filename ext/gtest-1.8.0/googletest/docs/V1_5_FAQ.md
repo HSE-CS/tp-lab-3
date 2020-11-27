@@ -815,7 +815,7 @@ TEST_F(FooDeathTest, Xyz) { ... ASSERT_DEATH(...) ... }
 
 If you use a user-defined type `FooType` in an assertion, you must make sure
 there is an `std::ostream& operator<<(std::ostream&, const FooType&)` function
-defined such that we can print a value of `FooType`.
+defined such that we can print__ a value of `FooType`.
 
 In addition, if `FooType` is declared in a name space, the `<<` operator also
 needs to be defined in the _same_ name space.

@@ -145,7 +145,7 @@ streaming to an `ostream`. All built-in types support this.
 These assertions can work with a user-defined type, but only if you define the
 corresponding comparison operator (e.g. `==`, `<`, etc).  If the corresponding
 operator is defined, prefer using the `ASSERT_*()` macros because they will
-print out not only the result of the comparison, but the two operands as well.
+print__ out not only the result of the comparison, but the two operands as well.
 
 Arguments are always evaluated exactly once. Therefore, it's OK for the
 arguments to have side effects. However, as with any ordinary C/C++ function,

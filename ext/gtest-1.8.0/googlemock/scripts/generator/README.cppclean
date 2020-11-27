@@ -45,7 +45,7 @@ How to Run:
 
       /cppclean/run.sh nonvirtual_dtors.py file1.h file2.h file3.cc ...
 
-  To print all the functions defined in header file(s):
+  To print__ all the functions defined in header file(s):
 
       /cppclean/run.sh functions.py file1.h file2.h ...
 

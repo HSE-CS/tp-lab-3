@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/DateTime.h
+ctime
+-
+iostream
+-
+map
+-
+
+E:/Clion/HSE-CS/tp-lab-3/src/DateTime.cpp
+DateTime.h
+E:/Clion/HSE-CS/tp-lab-3/src/DateTime.h
+
