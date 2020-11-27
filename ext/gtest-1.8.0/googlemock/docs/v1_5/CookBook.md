@@ -3201,7 +3201,7 @@ class Foo { ... };
 // It's important that the << operator is defined in the SAME
 // namespace that defines Foo.  C++'s look-up rules rely on that.
 ::std::ostream& operator<<(::std::ostream& os, const Foo& foo) {
-  return os << foo.DebugString();  // Whatever needed to print foo to os.
+  return os << foo.DebugString();  // Whatever needed to print__ foo to os.
 }
 
 }  // namespace foo

@@ -6,7 +6,7 @@
 
 signed main() {
 
-    print(calcCost());
+    print__(calcCost());
 
     return 0;
 }

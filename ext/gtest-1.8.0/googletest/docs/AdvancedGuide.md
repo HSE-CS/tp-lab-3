@@ -598,7 +598,7 @@ TEST(MyDeathTest, KillMyself) {
 verifies that:
 
   * calling `Foo(5)` causes the process to die with the given error message,
-  * calling `NormalExit()` causes the process to print `"Success"` to stderr and exit with exit code 0, and
+  * calling `NormalExit()` causes the process to print__ `"Success"` to stderr and exit with exit code 0, and
   * calling `KillMyself()` kills the process with signal `SIGKILL`.
 
 The test function body may contain other assertions and statements as well, if

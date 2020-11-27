@@ -8,7 +8,7 @@
 #include <iostream>
 
 template<typename T>
-void print(T t) {
+void print__(T t) {
     std::cout.precision(16);
     std::cout << t << '\n';
 }

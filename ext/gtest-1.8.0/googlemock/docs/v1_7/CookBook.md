@@ -3423,7 +3423,7 @@ macros like `EXPECT_THAT` and `EXPECT_EQ` also print the values in
 question when the assertion fails.  Google Mock and Google Test do this using
 Google Test's user-extensible value printer.
 
-This printer knows how to print built-in C++ types, native arrays, STL
+This printer knows how to print__ built-in C++ types, native arrays, STL
 containers, and any type that supports the `<<` operator.  For other
 types, it prints the raw bytes in the value and hopes that you the
 user can figure it out.

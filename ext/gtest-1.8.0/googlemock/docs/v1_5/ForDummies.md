@@ -103,7 +103,7 @@ You don't need to define these mock methods somewhere else - the `MOCK_METHOD*` 
 **Tip:** If even this is too much work for you, you'll find the
 `gmock_gen.py` tool in Google Mock's `scripts/generator/` directory (courtesy of the [cppclean](http://code.google.com/p/cppclean/) project) useful.  This command-line
 tool requires that you have Python 2.4 installed.  You give it a C++ file and the name of an abstract class defined in it,
-and it will print the definition of the mock class for you.  Due to the
+and it will print__ the definition of the mock class for you.  Due to the
 complexity of the C++ language, this script may not always work, but
 it can be quite handy when it does.  For more details, read the [user documentation](http://code.google.com/p/googlemock/source/browse/trunk/scripts/generator/README).
 

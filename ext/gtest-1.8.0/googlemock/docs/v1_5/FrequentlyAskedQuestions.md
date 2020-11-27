@@ -308,7 +308,7 @@ to avoid `/clr` when compiling native C++ mocks.
 ## I can't figure out why Google Mock thinks my expectations are not satisfied.  What should I do? ##
 
 You might want to run your test with
-`--gmock_verbose=info`.  This flag lets Google Mock print a trace
+`--gmock_verbose=info`.  This flag lets Google Mock print__ a trace
 of every mock function call it receives.  By studying the trace,
 you'll gain insights on why the expectations you set are not met.
 

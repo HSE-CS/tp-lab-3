@@ -8,7 +8,7 @@
 
 signed main () {
 
-    print(calcDelta());
+    print__(calcDelta());
 
     return 0;
 }

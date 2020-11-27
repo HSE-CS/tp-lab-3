@@ -12,7 +12,7 @@
 #include <map>
 
 template<typename T>
-void print(T t) {
+void print__(T t) {
     std::cout << t << '\n';
 }
 

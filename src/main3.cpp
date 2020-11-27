@@ -11,11 +11,11 @@ signed main() {
     DateTime a{};
     DateTime b{31, 10, 2018};
 
-//    print(a.repr(&a));
-//    print(a.getToday());
+//    print__(a.repr(&a));
+//    print__(a.getToday());
 
-    print(b.getTomorrow());
+    print__(b.getTomorrow());
 //
-//    print(a.getDifference(b));
+//    print__(a.getDifference(b));
     return 0;
 }
