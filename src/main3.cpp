@@ -14,9 +14,9 @@ signed main() {
 //    print__(a.repr(&a));
 //    print__(a.getToday());
 
-    print__(b.getTomorrow());
-    print__(a.getTomorrow());
-    print__(a.getToday());
+//    print__(b.getTomorrow());
+//    print__(a.getTomorrow());
+//    print__(a.getToday());
 
 //
 //    print__(a.getDifference(b));
