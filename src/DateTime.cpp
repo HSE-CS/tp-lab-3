@@ -38,6 +38,8 @@ DateTime::DateTime(const DateTime& dt) {
 }
 
 string DateTime::getToday() const {
+    if (day < 10)
+    return '0' + to_string(day) + getMonth(month - 1) + to_string(year) + getWeekday(day, month, year);
     return to_string(day) + getMonth(month - 1) + to_string(year) + getWeekday(day, month, year);
 }
 
@@ -46,6 +48,8 @@ string DateTime::getYesterday() const {
     time_t tmp = mktime(&date);
     tmp -= 24 * 60 * 60;
     tm* t = localtime(&tmp);
+    if (t->tm_mday < 10)
+    return '0' + to_string(t->tm_mday) + getMonth(t->tm_mon) + to_string(1900 + t->tm_year) + getWeekday(t->tm_mday, t->tm_mon + 1, 1900 + t->tm_year);
     return to_string(t->tm_mday) + getMonth(t->tm_mon) + to_string(1900 + t->tm_year) + getWeekday(t->tm_mday, t->tm_mon + 1, 1900 + t->tm_year);
 }
 
@@ -54,6 +58,8 @@ string DateTime::getTomorrow() const {
     time_t tmp = mktime(&date);
     tmp += 24 * 60 * 60;
     tm* t = localtime(&tmp);
+    if (t->tm_mday < 10)
+        return '0' + to_string(t->tm_mday) + getMonth(t->tm_mon) + to_string(1900 + t->tm_year) + getWeekday(t->tm_mday, t->tm_mon + 1, 1900 + t->tm_year);
     return to_string(t->tm_mday) + getMonth(t->tm_mon) + to_string(1900 + t->tm_year) + getWeekday(t->tm_mday, t->tm_mon + 1, 1900 + t->tm_year);
 }
 
@@ -62,6 +68,8 @@ string DateTime::getFuture(unsigned int N) const {
     time_t tmp = mktime(&date);
     tmp += 24 * 60 * 60 * N;
     tm* t = localtime(&tmp);
+    if (t->tm_mday < 10)
+    return '0' + to_string(t->tm_mday) + getMonth(t->tm_mon) + to_string(1900 + t->tm_year) + getWeekday(t->tm_mday, t->tm_mon + 1, 1900 + t->tm_year);
     return to_string(t->tm_mday) + getMonth(t->tm_mon) + to_string(1900 + t->tm_year) + getWeekday(t->tm_mday, t->tm_mon + 1, 1900 + t->tm_year);
 }
 
@@ -70,6 +78,8 @@ string DateTime::getPast(unsigned int N) const {
     time_t tmp = mktime(&date);
     tmp -= 24 * 60 * 60 * N;
     tm* t = localtime(&tmp);
+    if (t->tm_mday < 10)
+    return '0' + to_string(t->tm_mday) + getMonth(t->tm_mon) + to_string(1900 + t->tm_year) + getWeekday(t->tm_mday, t->tm_mon + 1, 1900 + t->tm_year);
     return to_string(t->tm_mday) + getMonth(t->tm_mon) + to_string(1900 + t->tm_year) + getWeekday(t->tm_mday, t->tm_mon + 1, 1900 + t->tm_year);
 }
 
