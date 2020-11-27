@@ -11,10 +11,10 @@
 #include <iostream>
 #include <map>
 
-template<typename T>
-void print__(T t) {
-    std::cout << t << '\n';
-}
+//template<typename T>
+//void print__(T t) {
+//    std::cout << t << '\n';
+//}
 
 // {31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
