@@ -7,7 +7,7 @@
 std::map<int, int> yearStartsWith{
         {2020, 2},
         {2019, 2},
-        {2018, 3},
+        {2018, 4},
         {2017, 4},
         {2016, 5}
 };
@@ -135,7 +135,7 @@ DateTime DateTime::getFuture(unsigned int n) {
     newDate.month = nextMonth;
     newDate.monthDay = nextDay;
 
-    newDate.weekDay = (this->getRawDay(newDate.month, newDate.monthDay) + 7 - yearStartsWith[newDate.year]) % 7;
+    newDate.weekDay = (this->getRawDay(newDate.month, newDate.monthDay) + 7 - 1 - yearStartsWith[newDate.year]) % 7;
 
     return newDate;
 }
