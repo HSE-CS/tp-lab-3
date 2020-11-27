@@ -1,6 +1,12 @@
 #include "Circle.h"
 #include <math.h>
 
+Circle::Circle(double radius) {
+    this->radius = radius;
+    ference = radius * 2 * M_PI;
+    area = M_PI * pow(radius, 2);
+}
+
 void Circle::setRadius(double radius) {
     this->radius = radius;
     ference = radius * 2 * M_PI;
