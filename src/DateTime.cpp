@@ -90,7 +90,8 @@ std::string DateTime::repr(DateTime *date) {
 }
 
 std::string DateTime::getYesterday() {
-    return std::string("");
+    auto date = this->getPast(1);
+    return repr(&date);
 }
 
 DateTime DateTime::getFuture(unsigned int n) {
@@ -146,8 +147,17 @@ std::string DateTime::getTomorrow() {
 }
 
 DateTime DateTime::getPast(unsigned int n) {
-    DateTime Past{};
-    return Past;
+    DateTime yesterday{};
+
+    int d = n, m;
+    m = this->month - d / 30;
+    d = 30 - this->monthDay;
+
+    yesterday.monthDay = d;
+    yesterday.month = m;
+    yesterday.year = this->year;
+
+    return yesterday;
 }
 
 bool DateTime::isLeap() {
