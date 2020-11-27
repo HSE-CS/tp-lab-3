@@ -3,10 +3,10 @@
 
 double calcDelta(){
     double earth_radius = 6378.1;
-    double added = 0.001;
+    double added = 1;
     Circle earth(earth_radius);
     earth.setFerence(earth.getFerence()+ added);
-    return (earth.getRadius()-earth_radius) * 1000;
+    return earth.getRadius()-earth_radius;
 }
 
 double calcCost(){
