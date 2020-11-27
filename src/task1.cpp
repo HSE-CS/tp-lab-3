@@ -9,8 +9,8 @@ double calcDelta() {
     Circle* Earth = new Circle;
     Circle* rope = new Circle;
 
-    Earth->setRadius(6378.1);
-    rope->setFerence(Earth->getFerence() + 0.001);
+    Earth->setRadius(6378100);
+    rope->setFerence(Earth->getFerence() + 1);
     double breach = rope->getRadius() - Earth->getRadius();
 
     delete Earth;

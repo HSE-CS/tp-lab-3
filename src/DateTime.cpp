@@ -11,30 +11,32 @@ DateTime::DateTime(int _day, int _month, int _year) {
     year = _year;
 
     struct tm *s_time;
-    tm time_in{0, 0, 0, day, month - 1, year - 1900};
-    time_t time_temp = mktime(&time_in);
+    tm f_time{0, 0, 0, day, month - 1, year - 1900};
+    time_t time_temp = mktime(&f_time);
     s_time = localtime(&time_temp);
     wday = s_time->tm_wday;
 }
 DateTime::DateTime() {
     struct tm *s_time;
-    const time_t time1 = time(nullptr);
-    s_time = localtime(&time1);
+    const time_t f_time = time(nullptr);
+    s_time = localtime(&f_time);
     day = s_time->tm_mday;
     month = s_time->tm_mon + 1;
     year = s_time->tm_year + 1900;
     wday = s_time->tm_wday;
 }
 DateTime::DateTime(const DateTime &_datetime) :
-day(_datetime.day), month(_datetime.month), year(_datetime.year), wday(_datetime.wday) {}
+        day(_datetime.day), month(_datetime.month), year(_datetime.year), wday(_datetime.wday) {}
 
 std::string DateTime::getToday() const {
     std::string date_time;
+
     if(day > 0 && day < 10) {
         date_time = '0' + std::to_string(day) + ' ';
     } else {
         date_time = std::to_string(day) + ' ';
     }
+
     switch(month) {
         case 1:
             date_time += "january ";
@@ -72,8 +74,12 @@ std::string DateTime::getToday() const {
         case 12:
             date_time += "december ";
             break;
+        default:
+            break;
     }
+
     date_time = date_time + std::to_string(year) + ", ";
+
     switch(wday) {
         case 0:
             date_time += "sunday";
@@ -96,25 +102,28 @@ std::string DateTime::getToday() const {
         case 6:
             date_time += "saturday";
             break;
+        default:
+            break;
     }
-    date_time += '\0';
 
     return date_time;
 }
 std::string DateTime::getYesterday() const {
     std::string date_time;
 
-    int _day = (day - 1 <= 0) ? 31 : day - 1;
-    int _month = (day - 1 == 0) ? month - 1 : month;
-    int _wday = (wday - 1 == -1) ? 6 : wday - 1;
-    int _year = (day == 1 && month == 1) ? year - 1 : year;
+    time_t time_temp;
+    struct tm f_time{0, 0, 0, day, month - 1, year - 1900};
+    time_temp = mktime(&f_time);
+    time_temp -= 24 * 60 * 60;
+    struct tm *s_time = localtime(&time_temp);
 
-    if( _day > 0 && _day < 10) {
-        date_time = '0' + std::to_string(_day) + ' ';
+    if( s_time->tm_mday > 0 && s_time->tm_mday < 10) {
+        date_time = '0' + std::to_string(s_time->tm_mday) + ' ';
     } else {
-        date_time = std::to_string(_day) + ' ';
+        date_time = std::to_string(s_time->tm_mday) + ' ';
     }
-    switch((_month == 0) ? 12 : _month) {
+
+    switch(s_time->tm_mon + 1) {
         case 1:
             date_time += "january ";
             break;
@@ -152,9 +161,10 @@ std::string DateTime::getYesterday() const {
             date_time += "december ";
             break;
     }
-    date_time = date_time + std::to_string(_year) + ", ";
 
-    switch(_wday) {
+    date_time = date_time + std::to_string(s_time->tm_year + 1900) + ", ";
+
+    switch(s_time->tm_wday) {
         case 0:
             date_time += "sunday";
             break;
@@ -177,24 +187,25 @@ std::string DateTime::getYesterday() const {
             date_time += "saturday";
             break;
     }
-    date_time += '\0';
 
     return date_time;
 }
 std::string DateTime::getTomorrow() const {
     std::string date_time;
 
-    int _day = (day + 1 == 32) ? 1 : day + 1;
-    int _month = (day + 1 == 32) ? month + 1 : month;
-    int _wday = (wday + 1 == 7) ? 0 : wday + 1;
-    int _year = (day == 31 && month == 12) ? year + 1 : year;
+    time_t time_temp;
+    struct tm f_time{0, 0, 0, day, month - 1, year - 1900};
+    time_temp = mktime(&f_time);
+    time_temp += 24 * 60 * 60;
+    struct tm *s_time = localtime(&time_temp);
 
-    if( _day > 0 && _day < 10) {
-        date_time = '0' + std::to_string(_day) + ' ';
+    if( s_time->tm_mday > 0 && s_time->tm_mday < 10) {
+        date_time = '0' + std::to_string(s_time->tm_mday) + ' ';
     } else {
-        date_time = std::to_string(_day) + ' ';
+        date_time = std::to_string(s_time->tm_mday) + ' ';
     }
-    switch((_month == 13) ? 1 : _month) {
+
+    switch(s_time->tm_mon + 1) {
         case 1:
             date_time += "january ";
             break;
@@ -232,9 +243,10 @@ std::string DateTime::getTomorrow() const {
             date_time += "december ";
             break;
     }
-    date_time = date_time + std::to_string(_year) + ", ";
 
-    switch(_wday) {
+    date_time = date_time + std::to_string(s_time->tm_year + 1900) + ", ";
+
+    switch(s_time->tm_wday) {
         case 0:
             date_time += "sunday";
             break;
@@ -257,28 +269,25 @@ std::string DateTime::getTomorrow() const {
             date_time += "saturday";
             break;
     }
-    date_time += '\0';
 
     return date_time;
 }
 std::string DateTime::getFuture(unsigned int N) {
     std::string date_time;
-    time_t time_temp;
-    struct tm _time{0, 0, 0, day, month - 1, year - 1900};
-    time_temp = mktime(&_time);
-    time_temp += N * 24 * 60 * 60;
-    struct tm *time_out = localtime(&time_temp);
-    int _day = time_out->tm_mday;
-    int _month = time_out->tm_mon + 1;
-    int _year = time_out->tm_year + 1900;
-    int _wday = time_out->tm_wday;
 
-    if(_day > 0 && _day < 10) {
-        date_time = '0' + std::to_string(_day) + ' ';
+    time_t time_temp;
+    struct tm f_time{0, 0, 0, day, month - 1, year - 1900};
+    time_temp = mktime(&f_time);
+    time_temp += N * 24 * 60 * 60;
+    struct tm *s_time = localtime(&time_temp);
+
+    if( s_time->tm_mday > 0 && s_time->tm_mday < 10) {
+        date_time = '0' + std::to_string(s_time->tm_mday) + ' ';
     } else {
-        date_time = std::to_string(_day) + ' ';
+        date_time = std::to_string(s_time->tm_mday) + ' ';
     }
-    switch(_month) {
+
+    switch(s_time->tm_mon + 1) {
         case 1:
             date_time += "january ";
             break;
@@ -316,8 +325,10 @@ std::string DateTime::getFuture(unsigned int N) {
             date_time += "december ";
             break;
     }
-    date_time = date_time + std::to_string(_year) + ", ";
-    switch(_wday) {
+
+    date_time = date_time + std::to_string(s_time->tm_year + 1900) + ", ";
+
+    switch(s_time->tm_wday) {
         case 0:
             date_time += "sunday";
             break;
@@ -340,28 +351,25 @@ std::string DateTime::getFuture(unsigned int N) {
             date_time += "saturday";
             break;
     }
-    date_time += '\0';
 
     return date_time;
 }
 std::string DateTime::getPast(unsigned int N) {
     std::string date_time;
-    time_t time_temp;
-    struct tm _time{0, 0, 0, day, month - 1, year - 1900};
-    time_temp = mktime(&_time);
-    time_temp -= N * 24 * 60 * 60;
-    struct tm *time_out = localtime(&time_temp);
-    int _day = time_out->tm_mday;
-    int _month = time_out->tm_mon + 1;
-    int _year = time_out->tm_year + 1900;
-    int _wday = time_out->tm_wday;
 
-    if(_day > 0 && _day < 10) {
-        date_time = '0' + std::to_string(_day) + ' ';
+    time_t time_temp;
+    struct tm f_time{0, 0, 0, day, month - 1, year - 1900};
+    time_temp = mktime(&f_time);
+    time_temp -= N * 24 * 60 * 60;
+    struct tm *s_time = localtime(&time_temp);
+
+    if( s_time->tm_mday > 0 && s_time->tm_mday < 10) {
+        date_time = '0' + std::to_string(s_time->tm_mday) + ' ';
     } else {
-        date_time = std::to_string(_day) + ' ';
+        date_time = std::to_string(s_time->tm_mday) + ' ';
     }
-    switch(_month) {
+
+    switch(s_time->tm_mon + 1) {
         case 1:
             date_time += "january ";
             break;
@@ -399,8 +407,10 @@ std::string DateTime::getPast(unsigned int N) {
             date_time += "december ";
             break;
     }
-    date_time = date_time + std::to_string(_year) + ", ";
-    switch(_wday) {
+
+    date_time = date_time + std::to_string(s_time->tm_year + 1900) + ", ";
+
+    switch(s_time->tm_wday) {
         case 0:
             date_time += "sunday";
             break;
@@ -423,20 +433,19 @@ std::string DateTime::getPast(unsigned int N) {
             date_time += "saturday";
             break;
     }
-    date_time += '\0';
 
     return date_time;
 }
 int DateTime::getDifference(DateTime& _date) {
     time_t time_temp1;
-    struct tm _time1{0, 0, 0, day, month - 1, year - 1900};
-    time_temp1 = mktime(&_time1);
+    struct tm f_time1{0, 0, 0, day, month - 1, year - 1900};
+    time_temp1 = mktime(&f_time1);
     struct tm *time_out1 = localtime(&time_temp1);
     int _yday1 = time_out1->tm_yday + 1;
 
     time_t time_temp2;
-    struct tm _time2{0, 0, 0, _date.day, _date.month - 1, _date.year - 1900};
-    time_temp2 = mktime(&_time2);
+    struct tm f_time2{0, 0, 0, _date.day, _date.month - 1, _date.year - 1900};
+    time_temp2 = mktime(&f_time2);
     struct tm *time_out2 = localtime(&time_temp2);
     int _yday2 = time_out2->tm_yday + 1;
 

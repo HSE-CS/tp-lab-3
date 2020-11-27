@@ -24,7 +24,5 @@ public:
     std::string getFuture(unsigned int N);
     std::string getPast(unsigned int N);
     int getDifference(DateTime& _date);
-
-
 };
 #endif //LAB3_DATETIME_H

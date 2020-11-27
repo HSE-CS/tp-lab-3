@@ -4,13 +4,13 @@
 
 #ifndef LAB3_CIRCLE_H
 #define LAB3_CIRCLE_H
-const double pi = 3.14;
+const double pi = 3.141592653589793;
 
 class Circle{
 private:
     double radius;
-    double ference{};
-    double area{};
+    double ference;
+    double area;
 public:
 
     Circle(double _radius);
