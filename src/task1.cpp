@@ -2,9 +2,9 @@
 #include "Circle.h"
 
 double calcDelta() {
-    Circle Earth(6381.1), Rope(0);
-    Rope.setFerence(Earth.getFerence() + 0.001);
-    return Rope.getRadius() - 6381.1;
+    Circle Earth(6378.1), Rope(0);
+    Rope.setFerence(Earth.getFerence() + 1);
+    return Rope.getRadius() - 6378.1;
 }
 
 double calcCost() {
