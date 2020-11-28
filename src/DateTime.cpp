@@ -25,9 +25,9 @@ DateTime::DateTime(DateTime& info)
 
 string DateTime::getToday()
 {
-    char date[20];
+    char date[30];
     struct tm* info = localtime(&infotime);
-    strftime(date, 20, "%d %b %Y %a", info);
+    strftime(date, 30, "%d %B %Y, %A", info);
     return date;
 }
 
