@@ -1,18 +1,18 @@
 #include "task1.h"
 #include "Circle.h"
 
-double calcDelta(int piece = 1, double EarthRadius = 6378100.0)
+double calcDelta(int piece, double EarthRadius)
 {
 	Circle Earth, ropeBasedCircle;
 
 	Earth.setRadius(EarthRadius);
 	ropeBasedCircle.setFerence(Earth.getFerence() + piece);
 
-	return ropeBasedCircle.setRadius - Earth.getRadius();
+	return ropeBasedCircle.getRadius() - Earth.getRadius();
 }
 
-double calcCost(double poolRadius = 3.0, int concretePrice = 1000,
-		int fencePrice = 2000, double roadWidth = 1.0)
+double calcCost(double poolRadius, int concretePrice,
+		int fencePrice, double roadWidth)
 {
 	Circle road, pool;
 
