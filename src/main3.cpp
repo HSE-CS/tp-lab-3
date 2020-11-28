@@ -22,6 +22,9 @@ int main(){
 
     cout << test.getDifference(test2) << endl;
 
+    DateTime dt(31,10,2018);
+    cout << dt.getTomorrow();
+
 
 //    DateTime test2(28,11,2020);
 //     cout << test2.getYesterday() << endl;
