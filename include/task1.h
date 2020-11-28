@@ -4,7 +4,7 @@
 
 #include "Circle.h"
 
-double calcDelta(); //-расчет зазора между землей и веревкой
-double calcCost(); //-расчет стоимости бассейна
+double calcDelta();
+double calcCost();
 
 #endif
