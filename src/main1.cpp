@@ -8,5 +8,6 @@ int main() {
     double old_ference = earth.getFerence();
     earth.setFerence(old_ference + 1);
     double new_radius = earth.getRadius();
-    return new_radius - old_radius;
+    std::cout << new_radius - old_radius << '\n';
+    return 0;
 }
