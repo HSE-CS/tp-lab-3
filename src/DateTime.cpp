@@ -28,7 +28,15 @@ string DateTime::getToday()
     char date[30];
     struct tm* info = localtime(&infotime);
     strftime(date, 30, "%d %B %Y, %A", info);
-    return date;
+    string result = date;
+    for(size_t i =0;result[i];i++)
+    {
+        if(isupper(result[i]))
+        {
+            result[i]=tolower(result[i]);
+        }
+    }
+    return result;
 }
 
 string DateTime::getYesterday()
