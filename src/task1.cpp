@@ -1,7 +1,5 @@
 #include "../include/Circle.h"
 #include "../include/task1.h"
-#include <iostream>
-using namespace std;
 
 double calcDelta () {
     const int earthRadius = 6378.1 * 1000;
