@@ -4,6 +4,8 @@ using namespace std;
 
 
 int main(){
+    cout << fixed;
+    cout.precision(15);
     cout << calcDelta() << endl;
 
     return 0;
