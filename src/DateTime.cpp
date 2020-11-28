@@ -56,7 +56,7 @@ unsigned int DateTime::getDifference(DateTime& D)
 string makeDate(time_t t)
 {
   string months [] = {"january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"};
-	string weekday[] = {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
+	string weekday[] = {"tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "monday"};
 	tm* T = localtime(&t);
   string date = "";
   date = to_string(T->tm_mday) + " " + months[T->tm_mon] + " " + to_string(T->tm_year) + ", " + weekday[T->tm_wday];
