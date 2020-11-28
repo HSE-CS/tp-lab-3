@@ -33,28 +33,28 @@ string DateTime::getToday()
 
 string DateTime::getYesterday()
 {
-    DateTime date;
+    DateTime date(*this);
     date.infotime -= (86400);
     return date.getToday();
 }
 
 string DateTime::getTomorrow()
 {
-    DateTime date;
+    DateTime date(*this);
     date.infotime += (86400);
     return date.getToday();
 }
 
 string DateTime::getFuture(unsigned int N)
 {
-    DateTime date;
+    DateTime date(*this);
     date.infotime += (86400) * (double)N;
     return date.getToday();
 }
 
 string DateTime::getPast(unsigned int N)
 {
-    DateTime date;
+    DateTime date(*this);
     date.infotime -= (86400) * (double)N;
     return date.getToday();
 }
