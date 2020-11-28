@@ -15,5 +15,5 @@ double calcCost () {
     Circle poolNRoad = Circle(3 + 1);
     double roadCost = (poolNRoad.getArea() - pool.getArea()) * 1000;
     double fenceCost = poolNRoad.getFerence() * 2000;
-    return roadCost + fenceCost<<;
+    return roadCost + fenceCost;
 }
