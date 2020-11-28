@@ -11,33 +11,15 @@ class Circle {
             setRadius(radius);
         }
 
-        void setRadius(double radius) {
-            this->radius = radius;
-            this->area = pow(radius, 2) * M_PI;
-            this->ference = 2 * M_PI * radius;
-        }
+        void setRadius(double radius);
 
-        void setFerence(double ference) {
-            this->ference = ference;
-            this->radius = ference / 2 / M_PI;
-            this->area = pow(this->radius, 2) * M_PI;
-        }
+        void setFerence(double ference);
 
-        void setArea(double area) {
-            this->area = area;
-            this->radius = sqrt(area / M_PI);
-            this->ference = 2 * M_PI * this->radius;
-        }
+        void setArea(double area);
 
-        double getRadius() {
-            return this->radius;
-        }
+        double getRadius();
 
-        double getFerence() {
-            return this->ference;
-        }
+        double getFerence();
 
-        double getArea() {
-            return this->area;
-        }
+        double getArea();
 };
