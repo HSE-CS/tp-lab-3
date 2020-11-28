@@ -14,9 +14,9 @@ public:
     DateTime();
     DateTime(int, int, int);
     DateTime(const DateTime &);
-    std::string GetToday();
-    std::string GetYesterday();
-    std::string GetTomorrow();
+    std::string getToday();
+    std::string getYesterday();
+    std::string getTomorrow();
     std::string getFuture(unsigned int n);
     std::string getPast(unsigned int n);
     unsigned int getDifference(DateTime &);

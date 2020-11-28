@@ -25,7 +25,7 @@ DateTime::DateTime(const DateTime &copiedElement)
     date = copiedElement.date;
 };
 
-std::string DateTime::GetToday()
+std::string DateTime::getToday()
 {
     const std::string MONTH[] = {"january", "february", "march", "april", "may", "june", "july", "august",
                                  "september", "october", "november", "decemeber"};
@@ -40,7 +40,7 @@ std::string DateTime::GetToday()
     return result;
 };
 
-std::string DateTime::GetYesterday()
+std::string DateTime::getYesterday()
 {
     time_t yesterday = mktime(&date);
 
@@ -60,7 +60,7 @@ std::string DateTime::GetYesterday()
     return result;
 };
 
-std::string DateTime::GetTomorrow()
+std::string DateTime::getTomorrow()
 {
     time_t tomorrow = mktime(&date);
 
