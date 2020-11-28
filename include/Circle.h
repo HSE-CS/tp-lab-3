@@ -3,41 +3,41 @@
 
 class Circle {
     private:
-        unsigned double radius;
-        unsigned double ference;
-        unsigned double area;
+        double radius;
+        double ference;
+        double area;
     public:
-        Circle(unsigned double radius) {
-            this->radius = radius;
+        Circle(double radius = 0) {
+            setRadius(radius);
         }
 
-        void setRadius(unsigned double radius) {
+        void setRadius(double radius) {
             this->radius = radius;
             this->area = pow(radius, 2) * M_PI;
             this->ference = 2 * M_PI * radius;
         }
 
-        void setFerence(unsigned double ference) {
+        void setFerence(double ference) {
             this->ference = ference;
             this->radius = ference / 2 / M_PI;
             this->area = pow(this->radius, 2) * M_PI;
         }
 
-        void setArea(unsigned double area) {
+        void setArea(double area) {
             this->area = area;
             this->radius = sqrt(area / M_PI);
             this->ference = 2 * M_PI * this->radius;
         }
 
-        unsigned double getRadius() {
+        double getRadius() {
             return this->radius;
         }
 
-        unsigned double getFenence() {
-            return this->fenence;
+        double getFerence() {
+            return this->ference;
         }
 
-        unsigned double getArea() {
+        double getArea() {
             return this->area;
         }
-}
+};
