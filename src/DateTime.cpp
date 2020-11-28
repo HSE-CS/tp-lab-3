@@ -43,7 +43,7 @@ std::string DateTime::toString(struct tm time13) {
     strftime(buffer, sizeof(buffer), "%d %B %Y", &time13);
 
     int weekday = time13.tm_wday;
-    sprintf_s(buffer, "%s, %s", buffer, weekdays[weekday]);
+    sprintf(buffer, "%s, %s", buffer, weekdays[weekday]);
 
     for (size_t i = 0; i < strlen(buffer); i++) {
         buffer[i] = tolower(buffer[i]);
