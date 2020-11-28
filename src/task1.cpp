@@ -9,7 +9,7 @@ double calcDelta() {
     double new_radius = earth.getRadius();
     return new_radius - old_radius;
 }
-
+S
 double calcCost() {
     Circle pool(3);
     Circle pool_with_road(4);
