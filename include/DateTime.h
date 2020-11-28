@@ -1,47 +1,31 @@
-#include <iostream>
+#pragma once
+#include <cmath>
 #include <ctime>
-#include <cstdio>
 #include <string>
-using namespace std;
 
 #ifndef DATETIME_H
 #define DATETIME_H
 
-const char *weekdays[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-
 class DateTime{
 private:
-    struct tm time;
+    struct tm *time_x;
+    time_t seconds;
+    std::string toString(struct tm time13);
 public:
+    DateTime();
     DateTime(int day, int month, int year);
-    // DateTime();
-//    DateTime(DateTime *datetime);
-    string getToday();
+    DateTime(DateTime &datetime);
+
+    struct tm getDayByDelta(long long N);
+
+    std::string getToday();
+    std::string getYesterday();
+    std::string getTomorrow();
+
+    std::string getFuture(unsigned int N);
+    std::string getPast(unsigned int N);
+
+    unsigned int getDifference(DateTime& datetime);
 };
-
-DateTime::DateTime(int day, int month, int year)
-{
-    this->time.tm_mday = day;
-    this->time.tm_mon = month;
-    this->time.tm_year = year - 1901;
-    mktime(&(this->time));
-}
-
-string DateTime::getToday(){
-    char buffer[80];
-
-    strftime(buffer, sizeof(buffer), "%d %B %Y,", &(this->time));
-    sprintf(buffer, "%s %s", buffer, weekdays[this->time.tm_wday]);
-//    cout <<  << endl;
-
-//    cout << this->time;
-    //std::string str(buffer);
-
-    //cin >> str;
-    // scanf("%s", &buffer);
-    string str(buffer);
-
-    return str;
-}
 
 #endif // DATETIME_H
