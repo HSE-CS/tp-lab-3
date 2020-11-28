@@ -15,21 +15,34 @@ DateTime::DateTime(){
 
 DateTime::DateTime(int day, int month, int year){
     year = year < 1900 ? 1900 : year;
-    struct tm init = {
-        .tm_mday = day,
-        .tm_mon = month - 1,
-        .tm_year = year - 1900
-    };
+//    struct tm init = {
+//        .tm_mday = day,
+//        .tm_mon = month - 1,
+//        .tm_year = year - 1900
+//    };
+
+    struct tm init{};
+    init.tm_mday = day;
+    init.tm_mon = month - 1;
+    init.tm_year = year - 1900;
+
     this->seconds = mktime(&init);
     this->time_x = &init;
 }
 
 DateTime::DateTime(DateTime &datetime){
-    struct tm init = {
-        .tm_mday = datetime.time_x->tm_mday,
-        .tm_mon = datetime.time_x->tm_mon,
-        .tm_year = datetime.time_x->tm_year
-    };
+//    struct tm init = {
+//        .tm_mday = datetime.time_x->tm_mday,
+//        .tm_mon = datetime.time_x->tm_mon,
+//        .tm_year = datetime.time_x->tm_year
+//    };
+
+    struct tm init{};
+    init.tm_mday = datetime.time_x->tm_mday;
+    init.tm_mon = datetime.time_x->tm_mon;
+    init.tm_year = datetime.time_x->tm_year;
+
+
     this->seconds = mktime(&init);
     this->time_x = &init;
 }
