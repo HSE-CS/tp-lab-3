@@ -2,6 +2,7 @@
 #define DATE_TIME_H
 #include <ctime>
 #include <string>
+#include <cstring>
 using namespace std;
 
 class DateTime {

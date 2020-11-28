@@ -20,9 +20,9 @@ string DateTime::getFuture(unsigned int N){
     DateTime tmp_date(date.tm_mday, date.tm_mon + 1, date.tm_year + 1900);
     tmp_date.date.tm_mday += N;
     mktime(&tmp_date.date);
-    char str[80];
+    char str[100];
     strftime(str,80,"%d %B %Y, %A", &tmp_date.date);
-    for (int i = 0; i < 100; i++){
+    for (int i = 0; i < strlen(str); i++){
 		if (str[i] >= 'A') str[i] = tolower(str[i]);
 	}
     return str;
