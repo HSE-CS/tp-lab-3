@@ -9,7 +9,7 @@ private:
 	double area;
 public:
 	Circle();
-	Circle(newRadius);
+	Circle(double newRadius);
 	void setRadius(double newRadius);
 	void setFerence(double newFerence);
 	void setArea(double newArea);
