@@ -29,18 +29,21 @@ TEST(date,datetime_gettomorrow1)
 {
     DateTime dt(31,10,2018);
     std::string expect="01 november 2018, thursday";
+    std::string expect="01 November 2018, Thursday";
     EXPECT_EQ(expect,dt.getTomorrow());
 }
 TEST(date,datetime_gettomorrow2)
 {
     DateTime dt(1,11,2018);
     std::string expect="02 november 2018, friday";
+    std::string expect="02 November 2018, Friday";
     EXPECT_EQ(expect,dt.getTomorrow());
 }
 TEST(date,datetime_gettoday)
 {
     DateTime dt(1,11,2018);
     std::string expect="01 november 2018, thursday";
+    std::string expect="01 November 2018, Thursday";
     EXPECT_EQ(expect,dt.getToday());
 }
 TEST(date,datetime_getdiff1)
