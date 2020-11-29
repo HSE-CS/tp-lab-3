@@ -1,85 +1,75 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DateTime.h"
-#include <time.h>
+#include <ctime>
 #include <string>
 #include <iostream>
-#include <sstream>
-#include <vector>
 #include <cmath>
-#include <iomanip>
-using namespace std;
 
-DateTime::DateTime(int day, int month, int year)
-{
-    struct tm* tmp = new tm;
-    memset(tmp, 0, sizeof(tm));
-    tmp->tm_mday = day;
-    tmp->tm_mon = month - 1;
-    tmp->tm_year = year - 1900;
-    this->td = mktime(tmp);
+DateTime::DateTime(int day, int month, int year) {
+	this->day = day;
+	this->month = month;
+	this->year = year;
 }
 
-DateTime::DateTime()
-{
-    this->td = time(NULL);
+DateTime::DateTime() {
+	time_t rawtime;
+	struct tm* timeinfo;
+
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+
+	this->day = timeinfo->tm_mday;
+	this->month = 1 + timeinfo->tm_mon;
+	this->year = 1900 + timeinfo->tm_year;
 }
 
-DateTime::DateTime(const DateTime& b)
-{
-    this->td = b.td;
+DateTime::DateTime(const DateTime& date) {
+	this->day = date.day;
+	this->month = date.month;
+	this->year = date.year;
 }
 
-std::string DateTime::getToday()
-{
-    char time[100];
-    strftime(time, 100, "%d %B %Y, %A", gmtime(&(this->td)));
-    std::string tmp;
-    tmp.append(time);
-    return tmp;
+string resultDate(int day, int month, int year) {
+	tm date = { 0, 0, 0, day, month - 1, year - 1900 };
+	time_t rawtime = mktime(&date);
+	struct tm* timeinfo = localtime(&rawtime);
+	char buffer[100] = { 0 };
+	strftime(buffer, 100, "%d %B %Y, %A", timeinfo);
+
+	string result = buffer;
+	for (auto& a : result) {
+		a = tolower(a);
+	}
+
+	return result;
 }
 
-std::string DateTime::getYesterday()
-{
-    time_t yesterday = this->td - 60 * 60 * 24;
-    char time[100];
-    strftime(time, 100, "%d %B %Y, %A", gmtime(&(yesterday)));
-    std::string tmp;
-    tmp.append(time);
-    return tmp;
+string DateTime::getToday() {
+	return resultDate(this->day, this->month, this->year);
 }
 
-std::string DateTime::getTomorrow()
-{
-    time_t tomorrow = this->td + 60 * 60 * 24;
-    char time[100];
-    strftime(time, 100, "%d %B %Y, %A", gmtime(&(tomorrow)));
-    std::string tmp;
-    tmp.append(time);
-    return tmp;
+string DateTime::getYesterday() {
+	return resultDate(this->day - 1, this->month, this->year);
 }
 
-std::string DateTime::getPast(int n)
-{
-    time_t yesterday = this->td - 60 * 60 * 24 * n;
-    char time[100];
-    strftime(time, 100, "%d %B %Y, %A", gmtime(&(yesterday)));
-    std::string tmp;
-    tmp.append(time);
-    return tmp;
+string DateTime::getTomorrow() {
+	return resultDate(this->day + 1, this->month, this->year);
 }
 
-std::string DateTime::getFuture(int n)
-{
-    time_t tomorrow = this->td + 60 * 60 * 24 * n;
-    char time[100];
-    strftime(time, 100, "%d %B %Y, %A", gmtime(&(tomorrow)));
-    std::string tmp;
-    tmp.append(time);
-    return tmp;
+string DateTime::getFuture(unsigned int N) {
+	return resultDate(this->day + N, this->month, this->year);
 }
 
-int DateTime::getDifference(DateTime& b)
-{
-    time_t tmp = abs(this->td - b.td);
-    return (int)(tmp / 60 / 60 / 24);
+string DateTime::getPast(unsigned int N) {
+	return resultDate(this->day - N, this->month, this->year);
+}
+
+int DateTime::getDifference(DateTime& date) {
+	tm first = { 0, 0, 0, this->day, this->month - 1, this->year - 1900 };
+	tm second = { 0, 0, 0, date.day, date.month - 1, date.year - 1900 };
+	time_t date1 = mktime(&first);
+	time_t date2 = mktime(&second);
+
+	int result = abs(difftime(date1, date2)) / (60 * 60 * 24);
+	return result;
 }

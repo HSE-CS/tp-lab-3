@@ -1,24 +1,24 @@
-#ifndef DATATIME_H
-#define DATATIME_H
-
-#include <string>
+#ifndef DATETIME_H
+#define DATETIME_H
 #include <ctime>
-#include <cstring>
+#include <string>
+
+using namespace std;
 
 class DateTime
 {
 private:
-    time_t td;
+	int day = 0, month = 0, year = 0;
 public:
-    DateTime(int day, int month, int year);
-    DateTime();
-    DateTime(const DateTime&);
-    std::string getToday();
-    std::string getYesterday();
-    std::string getTomorrow();
-    std::string getPast(int);
-    std::string getFuture(int);
-    int getDifference(DateTime&);
+	DateTime(int day, int month, int year);
+	DateTime();
+	DateTime(const DateTime&);
+	string getToday();
+	string getYesterday();
+	string getTomorrow();
+	string getFuture(unsigned int N);
+	string getPast(unsigned int N);
+	int getDifference(DateTime&);
 };
 
 #endif 
