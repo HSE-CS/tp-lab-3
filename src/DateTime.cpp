@@ -62,9 +62,9 @@ string makeDate(time_t t)
 	vector<string>  weekday{"saturday", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday"};
 	tm* T = localtime(&t);
   string date = "";
-  cout << to_string(T->tm_mday) << " " << to_string(T->tm_mon) << " " << to_string(T->tm_year) << ", "  << to_string(T->tm_wday)<< " " << weekday[T->tm_wday] << endl;
+  // cout << to_string(T->tm_mday) << " " << to_string(T->tm_mon) << " " << to_string(T->tm_year) << ", "  << to_string(T->tm_wday)<< " " << weekday[T->tm_wday] << endl;
   date = to_string(T->tm_mday) + " " + months[T->tm_mon] + " " + to_string(T->tm_year) + ", " + weekday[T->tm_wday];
-  cout << date << endl;
+  // cout << date << endl;
   return date;
 }
 
