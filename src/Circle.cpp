@@ -1,4 +1,4 @@
-#include "circle.h"
+#include "Circle.h"
 #include <math.h>
 
 const double PI = acos(-1.0);

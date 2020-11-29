@@ -1,8 +1,8 @@
-#define datetime_h
-#ifdef datetime_h
 #include <string>
 #include <ctime>
+
 using namespace std;
+
 class DateTime
 {
 private:
@@ -18,6 +18,3 @@ public:
 	string getPast(unsigned int);
 	int getDifference(DateTime&);
 };
-
-
-#endif 

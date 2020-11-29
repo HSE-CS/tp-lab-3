@@ -1,7 +1,7 @@
 #include <iostream>
 #include "task1.h"
 
-int main1() {
+int main() {
 	 std::cout << calcDelta()<< "\n";
 	 return 0;
 }
