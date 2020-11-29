@@ -9,8 +9,8 @@ using namespace std;
 
 string DateTime::getToday()
 {
-	const string days[] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
-	const string months[] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+	const string days[] = { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+	const string months[] = { "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" };
 	string str;
 	struct tm* struct_time;
 	struct_time = localtime(&time_i);
