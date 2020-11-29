@@ -4,6 +4,8 @@
 #include <string>
 #include <cctype>
 
+using namespace std;
+
 DateTime::DateTime() {
 	f_time = time(nullptr);
 }
