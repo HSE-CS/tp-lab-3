@@ -1,8 +1,9 @@
 #include "Circle.h"
+#include <math.h>
 
 void Circle::setRadius(double R)
 {
-	double pi = 2 * acos(0.0);
+	double pi = acos(-1.0);
 	radius = R;
 	ference = 2 * pi * radius;
 	area = pi * radius * radius;

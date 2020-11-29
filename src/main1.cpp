@@ -5,6 +5,7 @@
 int main()
 {
    
+    std::cout << calcDelta()<< "\n";
     return 0;
     
 }

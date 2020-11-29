@@ -1,5 +1,5 @@
 #ifndef _TASK1_H
-#define _TASK1_H_
+#define _TASK1_H
 
 
 double calcDelta();
