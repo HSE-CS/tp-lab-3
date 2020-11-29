@@ -8,9 +8,9 @@ private:
   time_t now;
 public:
 
-  DateTime(const int day, const int month, const int year);
+  DateTime(int day, int month, int year);
   DateTime();
-  DateTime(const DateTime &) = default;
+  DateTime(const DateTime &);
 	string getToday();
 	string getYesterday();
 	string getTomorrow();
