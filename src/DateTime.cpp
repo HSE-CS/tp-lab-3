@@ -30,8 +30,9 @@ tm DateTime::getdata()
 
 std::string DateTime::getToday()
 {
-	char temp[40];
-	strftime(temp, 80, "%d %B %Y, %A", &(this->data));
+	char temp[100];
+	tm data1 = this->data;
+	strftime(temp, 80, "%d %B %Y, %A", &data1);
 	std::string res;
 	for (size_t i = 0; i < res.size(); i++) {
 		if (res[i] >= 'A' && res[i] <= 'Z') res[i] += 'a' - 'A';
@@ -64,8 +65,10 @@ std::string DateTime::getPast(size_t N)
 }
 size_t DateTime::getDifference(DateTime& day2)
 {
-	time_t day_1 = mktime(&(this->data));
-	time_t day_2 = mktime(&day2.getdata());
+	tm data1 = this->data;
+	time_t day_1 = mktime(&data1);
+	tm data2 = day2.getdata();
+	time_t day_2 = mktime(&data2);
 	day_1 = difftime(day_1, day_2);
 	return abs(int(day_1 / SECONDS_AT_DAY));
 }
