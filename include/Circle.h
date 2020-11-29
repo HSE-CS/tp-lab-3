@@ -4,6 +4,7 @@
 #define _USE_MATH_DEFINES
 #include <iostream>
 #include <cmath>
+#define M_PI 3.1415926535897933
 
 class Circle {
 private:
