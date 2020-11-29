@@ -1,7 +1,7 @@
 #include "Circle.h"
 #include "task1.h"
 
-double calcDela()
+double calcDelta()
 {
     Circle Earth(6378100);
     Circle newEarth(1);
