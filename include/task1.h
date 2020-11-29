@@ -7,4 +7,4 @@ double calcDelta();
 double calcCost();
 
 
-#endif 
+#endif
