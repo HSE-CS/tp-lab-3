@@ -54,7 +54,7 @@ string makeDate(time_t t) {
 	tm* T = localtime(&t);
   string date = "";
 	//mktime(T);
-	date = to_string(T->tm_mday) + " " + months[T->tm_mon] + " " + to_string(T->tm_year) + ", " + weekday[T->tm_wday];
+	date = to_string(T->tm_mday) + " " + months[T->tm_mon] + " " + to_string(T->tm_year + 1900) + ", " + weekday[T->tm_wday];
 	return date;
 }
 
