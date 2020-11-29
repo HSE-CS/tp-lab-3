@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-const double pi = 3.141592653589793238462643383279502884;
+const double pi = 3.141592653589793;
 
 Circle::Circle(const double radius)
 {
@@ -12,14 +12,14 @@ Circle::Circle(const double radius)
 void Circle::setRadius(const double r)
 {
 	radius = r;
-	ference = 2 * pi * r;
+	ference = 2.0 * pi * r;
 	area = pi * r * r;
 }
 
 void Circle::setFerence(const double l)
 {
 	ference = l;
-	radius = l / (2 * pi);
+	radius = l / (2.0 * pi);
 	area = pi * radius * radius;
 }
 
@@ -27,7 +27,7 @@ void Circle::setArea(const double area)
 {
 	this->area = area;
 	radius = std::sqrt(area / pi);
-	ference = 2 * pi * radius;
+	ference = 2.0 * pi * radius;
 }
 
 double Circle::getRadius() const

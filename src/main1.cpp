@@ -5,6 +5,6 @@
 
 int main()
 {
-	std::cout << std::setprecision(16) << calcDelta() << std::endl;
+	std::cout << std::setprecision(15) << calcDelta() << " " << std::endl;
 	return 0;
 }
