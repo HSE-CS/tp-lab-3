@@ -3,7 +3,7 @@
 #include <ctime>
 #include <iostream>
 #include <algorithm>
-
+ 
 struct tm* make_time_struct(int day, int month, int year) {
 	tm time_in = { 0, 0, 0,day ,month - 1, year - 1900 };
 
