@@ -8,6 +8,8 @@ private:
 	double ference;
 	double area;
 public:
+	Circle();
+	Circle(newRadius);
 	void setRadius(double newRadius);
 	void setFerence(double newFerence);
 	void setArea(double newArea);
