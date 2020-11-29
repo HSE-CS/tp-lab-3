@@ -9,4 +9,5 @@ int main()
 	DateTime datetime1(31, 12, 2020);
 
 	std::cout << datetime.getDifference(datetime1);
+	return 0;
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "task1.h"
 
-int main2() {
+int main() {
 	std::cout << calcCost() << "\n";
 	return 0;
 }
