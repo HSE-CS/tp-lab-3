@@ -4,5 +4,5 @@
 
 int main()
 {
-    cout << calcCost() << endl;
+    return 0;
 } 

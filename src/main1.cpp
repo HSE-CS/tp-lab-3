@@ -5,6 +5,6 @@
 int main()
 {
    
-    cout<<calcDelta()<<endl;
+    return 0;
     
 }
