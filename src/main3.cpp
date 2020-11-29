@@ -2,7 +2,6 @@
 #include <string>
 #include <ctime>
 #include <stdio.h>
-#include <windows.h>
 #include "DateTime.h"
 using namespace std;
 
