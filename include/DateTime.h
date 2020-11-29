@@ -1,9 +1,14 @@
 #pragma once
 #ifndef DATETIME_H
 #define DATETIME_H
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
 #include <ctime>
 #include <string>
 #include <vector>
+
+#define SECONDS_AT_DAY 60*60*24
+
 class DateTime
 {
 private:
@@ -12,6 +17,8 @@ public:
 	DateTime();
 	DateTime(int, int, int);
 	DateTime(DateTime&);
+
+	tm getdata();
 
 	std::string getToday();
 	std::string getYesterday();
@@ -22,5 +29,4 @@ public:
 
 };
 
-std::string makeData(time_t time);
 #endif // DATETIME_H
