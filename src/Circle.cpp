@@ -21,7 +21,7 @@ void Circle::setFerence(double x)
 {
 
 
-	f = f;
+	f = x;
 	r = f / (2 * M_PI);
 	a = 2 * M_PI * pow(r, 2);
 
@@ -30,7 +30,7 @@ void Circle::setFerence(double x)
 void Circle::setArea(double x)
 {
 
-	a = a;
+	a = x;
 	r = sqrt(a / M_PI);
 	f = 2 * M_PI * r;
 
