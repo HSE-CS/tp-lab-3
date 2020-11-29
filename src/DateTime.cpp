@@ -1,6 +1,7 @@
 #include "DateTime.h"
 #include "time.h"
 #include <math.h>
+#include <string.h>
 
 string toStr(tm *date)
 {
@@ -57,27 +58,27 @@ DateTime::DateTime(const DateTime& other)
 	this->year = other.year;
 }
 
-string DateTime::getToday()// возвращение текущей даты в виде строки, с указанием дня недели и названия месяца(например 07 november 2018, wedensday);
+string DateTime::getToday()// ГўГ®Г§ГўГ°Г Г№ГҐГ­ГЁГҐ ГІГҐГЄГіГ№ГҐГ© Г¤Г ГІГ» Гў ГўГЁГ¤ГҐ Г±ГІГ°Г®ГЄГЁ, Г± ГіГЄГ Г§Г Г­ГЁГҐГ¬ Г¤Г­Гї Г­ГҐГ¤ГҐГ«ГЁ ГЁ Г­Г Г§ГўГ Г­ГЁГї Г¬ГҐГ±ГїГ¶Г (Г­Г ГЇГ°ГЁГ¬ГҐГ° 07 november 2018, wedensday);
 {
 	return makeOtherDay(day, month, year, 0);
 }
 
-string DateTime::getYesterday()//возвращение даты вчерашнего дня в виде строки.
+string DateTime::getYesterday()//ГўГ®Г§ГўГ°Г Г№ГҐГ­ГЁГҐ Г¤Г ГІГ» ГўГ·ГҐГ°Г ГёГ­ГҐГЈГ® Г¤Г­Гї Гў ГўГЁГ¤ГҐ Г±ГІГ°Г®ГЄГЁ.
 {
 	return makeOtherDay(day, month, year, -1);
 }
 
-string DateTime::getTomorrow()//возвращение даты завтрашнего дня в виде строки.
+string DateTime::getTomorrow()//ГўГ®Г§ГўГ°Г Г№ГҐГ­ГЁГҐ Г¤Г ГІГ» Г§Г ГўГІГ°Г ГёГ­ГҐГЈГ® Г¤Г­Гї Гў ГўГЁГ¤ГҐ Г±ГІГ°Г®ГЄГЁ.
 {
 	return makeOtherDay(day, month, year, 1);
 }
 
-string DateTime::getFuture(unsigned int N)//возвращение даты через N дней в будущем;
+string DateTime::getFuture(unsigned int N)//ГўГ®Г§ГўГ°Г Г№ГҐГ­ГЁГҐ Г¤Г ГІГ» Г·ГҐГ°ГҐГ§ N Г¤Г­ГҐГ© Гў ГЎГіГ¤ГіГ№ГҐГ¬;
 {
 	return makeOtherDay(day, month, year, N);
 }
 
-string DateTime::getPast(unsigned int N) // возвращение даты через N дней в прошлом;
+string DateTime::getPast(unsigned int N) // ГўГ®Г§ГўГ°Г Г№ГҐГ­ГЁГҐ Г¤Г ГІГ» Г·ГҐГ°ГҐГ§ N Г¤Г­ГҐГ© Гў ГЇГ°Г®ГёГ«Г®Г¬;
 {
 	return makeOtherDay(day, month, year, -N);
 }
