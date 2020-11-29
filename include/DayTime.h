@@ -1,4 +1,9 @@
+#ifndef DATETIME_H
+#define DATETIME_H
+
 #define _CRT_SECURE_NO_WARNINGS
+#include <cmath>
+#include <iostream>
 #include <ctime>
 #include <string>
 using namespace std;
@@ -17,3 +22,4 @@ public:
 	string getPast(unsigned int N);
 	double getDifference(DateTime& a);
 };
+#endif //DATETIME_H
