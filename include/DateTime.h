@@ -9,7 +9,7 @@ private:
 	tm date_time;
 
 public:
-	DateTime(int d, int m, int y);
+	DateTime(int x, int y, int z);
 	DateTime();
 	DateTime( DateTime* dt);
 	string getToday();
