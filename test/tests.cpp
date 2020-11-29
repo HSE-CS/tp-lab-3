@@ -58,8 +58,8 @@ TEST(date,datetime_getdiff2)
     EXPECT_EQ(diff,dt2.getDifference(dt1));
 }
 TEST(calc,delta)
-{    
-    EXPECT_DOUBLE_EQ(0.159154943,calcDelta());
+{
+    ASSERT_NEAR(0.159154943,calcDelta(),0.000000001);
 }
 TEST(calc,pool_cost)
 {    
