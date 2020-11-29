@@ -1,6 +1,17 @@
 #include "Circle.h"
 #include <math.h>
 
+
+Circle::Circle()
+{
+	setRadius(0.0);
+}
+
+Circle::Circle(double newRadius)
+{
+	setRadius(newRadius);
+}
+
 void Circle::setRadius(double newRadius)
 {
 	radius = newRadius;
