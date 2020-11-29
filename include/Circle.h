@@ -22,4 +22,4 @@ public:
 	double getFerence();
 	double getArea();
 };
-#endif
+#endif //CIRCLE_H

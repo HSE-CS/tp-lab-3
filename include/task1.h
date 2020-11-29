@@ -6,4 +6,4 @@
 
 double calcDelta();
 double calcCost();
-#endif 
+#endif // !TASK1_H

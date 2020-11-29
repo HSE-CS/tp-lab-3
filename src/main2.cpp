@@ -2,7 +2,7 @@
 #include "task1.h"
 
 int main() {
-	double answer = calcDelta();
+	double answer = calcCost();
 
 	std::cout << answer << std::endl;
 
