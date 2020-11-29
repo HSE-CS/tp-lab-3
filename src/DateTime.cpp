@@ -57,5 +57,5 @@ int DateTime::getDifference(DateTime& dt2) {
  
     n2 +=  years / 4 - years / 100 + years / 400;
 
-    return (n2 - n1);
+    return abs(n2 - n1);
 }

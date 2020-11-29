@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    calcDelta();
+    cout<<calcDelta()<<endl;
     return 0;
 }

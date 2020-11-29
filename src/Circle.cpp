@@ -1,7 +1,7 @@
 #include "../include/Circle.h"
 
-void Circle::setRadius(double radius) {
-    radius = radius;
+void Circle::setRadius(double radius_inp) {
+    radius = radius_inp;
     area = pow(radius, 2) * M_PI;
     ference = 2 * M_PI * radius;
 }
