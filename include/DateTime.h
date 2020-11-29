@@ -1,6 +1,6 @@
 #pragma once
-#ifndef DateTime_H
-#define DateTime_H
+#ifndef DATETIME_H
+#define DATETIME_H
 #include <string>
 using namespace std;
 class DateTime {
@@ -18,4 +18,4 @@ public:
 	int getDifference(DateTime&);
 };
 
-#endif 
+#endif
