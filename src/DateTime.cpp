@@ -73,6 +73,6 @@ std::string DateTime::getFuture(unsigned int N)
 
 int DateTime::getDifference(DateTime &b)
 {
-    time_t tmp = abs(this->td - b.td);
+    time_t tmp = abs(this->time_input - b.time_input);
     return (int)(tmp/60/60/24);
 }
