@@ -10,7 +10,7 @@ string toStr(tm *date)
 	strftime(newStr, 30, "%d %B %Y, %A", date);
 	for (int i = 0; i < strlen(newStr); i++)
 	{
-		tolower(newStr[i]);
+		newStr[i] = tolower(newStr[i]);
 	}
 
 	return newStr;
