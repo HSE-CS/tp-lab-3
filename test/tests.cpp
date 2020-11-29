@@ -60,7 +60,6 @@ TEST(date,datetime_getdiff2)
 
 TEST(calc,delta)
 {    
-    EXPECT_DOUBLE_EQ(0.15915494309228961,calcDelta());
     EXPECT_DOUBLE_EQ(0.15915494319051504,calcDelta());
 }
 
