@@ -25,8 +25,8 @@ public:
     void setRadius(double R);
     void setFerence(double F);
     void setArea(double A);
-    double getRadius() const;
-    double getFerence() const;
-    double getArea() const;
+    double getRadius();
+    double getFerence();
+    double getArea();
 };
 #endif 
