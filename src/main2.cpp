@@ -2,5 +2,5 @@
 #include <iostream>
 
 int main(){
-    std::cout << calcCost() << endl;
+    std::cout << calcCost();
 } 
