@@ -28,19 +28,19 @@ TEST(circle,circle_get_ference2)
 TEST(date,datetime_gettomorrow1)
 {
     DateTime dt(31,10,2018);
-    std::string expect="01 november 2018, thursday";
+    std::string expect="01 November 2018, Thursday";
     EXPECT_EQ(expect,dt.getTomorrow());
 }
 TEST(date,datetime_gettomorrow2)
 {
     DateTime dt(1,11,2018);
-    std::string expect="02 november 2018, friday";
+    std::string expect="02 November 2018, Friday";
     EXPECT_EQ(expect,dt.getTomorrow());
 }
 TEST(date,datetime_gettoday)
 {
     DateTime dt(1,11,2018);
-    std::string expect="01 november 2018, thursday";
+    std::string expect="01 November 2018, Thursday";
     EXPECT_EQ(expect,dt.getToday());
 }
 TEST(date,datetime_getdiff1)
@@ -57,11 +57,14 @@ TEST(date,datetime_getdiff2)
     int diff=1;
     EXPECT_EQ(diff,dt2.getDifference(dt1));
 }
+
 TEST(calc,delta)
 {    
-    EXPECT_DOUBLE_EQ(0.15915494309228961,calcDelta());
+    EXPECT_DOUBLE_EQ(0.15915494319051504,calcDelta());
 }
+
 TEST(calc,pool_cost)
 {    
     EXPECT_DOUBLE_EQ(72256.63103256523,calcCost());
 }
+
