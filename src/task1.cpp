@@ -5,7 +5,7 @@
 #include "Circle.h"
 
 double calcDelta() {
-    double R = 6378100.0;
+    double R = 6378.1;
     Circle* earth = new Circle(R);
     earth->setFerence(earth->getFerence() + 1.0);
     return earth->getRadius() - R;
