@@ -7,7 +7,6 @@
 
 using namespace std;
 
-
 class Circle
 {
 private:
