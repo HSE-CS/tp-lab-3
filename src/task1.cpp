@@ -22,7 +22,8 @@ double calcCost()
 	dorosh.setArea((dorosh.getArea() - bas.getArea()));
 	st_dorosh = dorosh.getArea() * 1000.0;
 	st_zabora = 2000.0 * zabor.getFerence();
-	return long double(st_dorosh + st_zabora);
+	long double sum = st_dorosh + st_zabora
+	return sum;
 
 
 
