@@ -4,10 +4,10 @@
 
 double calcDelta()
 {
-	constexpr double initialRadius = 6378.1 * 1000;
+	constexpr double initialRadius = 6378.1;
 	Circle rope(initialRadius);
-	rope.setFerence(rope.getFerence() + 1);
-	return rope.getRadius() - initialRadius;
+	rope.setFerence(rope.getFerence() + 1 / 1000.0);
+	return rope.getRadius() * 1000.0 - initialRadius * 1000.0;
 }
 
 double calcCost()
