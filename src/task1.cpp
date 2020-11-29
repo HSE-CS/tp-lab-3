@@ -8,7 +8,7 @@ double calcDelta()
 	Circle c1(6378.1), c2(0);
 	double l = c1.getFerence();
 	c2.setFerence((l + 0.001));
-	return long double((c2.getRadius() - c1.getRadius())) * 1000.0;
+	return long double(((c2.getRadius() - c1.getRadius())) * 1000.0);
 
 
 }
