@@ -7,8 +7,8 @@ double calcDelta()
 
 	Circle c1(6378.1), c2(0);
 	double l = c1.getFerence();
-	c2.setFerence((l + 0.001));
-	return long double(((c2.getRadius() - c1.getRadius())) * 1000.0);
+	c2.setFerence((l + 1.0));
+	return (((c2.getRadius() - c1.getRadius())) * 1000.0);
 
 
 }
@@ -22,7 +22,7 @@ double calcCost()
 	dorosh.setArea((dorosh.getArea() - bas.getArea()));
 	st_dorosh = dorosh.getArea() * 1000.0;
 	st_zabora = 2000.0 * zabor.getFerence();
-	long double sum = st_dorosh + st_zabora
+	double sum = st_dorosh + st_zabora
 	return sum;
 
 
