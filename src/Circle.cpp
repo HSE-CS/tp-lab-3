@@ -32,5 +32,5 @@ double Circle::getFerence() {
 	return this->ference;
 }
 double Circle::getArea() {
-	return this->radius;
+	return this->area;
 }

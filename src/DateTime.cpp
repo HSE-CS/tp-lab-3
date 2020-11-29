@@ -12,9 +12,7 @@ DateTime::DateTime()
 }
 DateTime::DateTime(int date, int mounth, int year)
 {
-	this->data.tm_year = year - 1900;
-	this->data.tm_mday = date;
-	this->data.tm_mon = mounth-1;
+	data = tm{ 0,0, 0, date, mounth - 1, year - 1900 };
 	mktime(&(this->data));
 }
 DateTime::DateTime(DateTime& from)
@@ -32,7 +30,7 @@ std::string DateTime::getToday()
 {
 	char temp[100];
 	tm data1 = this->data;
-	strftime(temp, 80, "%d %B %Y, %A", &data1);
+	strftime(temp, 80, "%d %B %Y, %A", &data);
 	std::string res;
 	for (size_t i = 0; i < res.size(); i++) {
 		if (res[i] >= 'A' && res[i] <= 'Z') res[i] += 'a' - 'A';
