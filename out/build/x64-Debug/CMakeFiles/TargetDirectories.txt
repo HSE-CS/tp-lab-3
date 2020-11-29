@@ -1,7 +1,0 @@
-C:/Users/kdash/tp-Lab-3/out/build/x64-Debug/CMakeFiles/task1.dir
-C:/Users/kdash/tp-Lab-3/out/build/x64-Debug/CMakeFiles/task1_lib.dir
-C:/Users/kdash/tp-Lab-3/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/kdash/tp-Lab-3/out/build/x64-Debug/CMakeFiles/task3.dir
-C:/Users/kdash/tp-Lab-3/out/build/x64-Debug/CMakeFiles/task3_lib.dir
-C:/Users/kdash/tp-Lab-3/out/build/x64-Debug/CMakeFiles/task2.dir
-C:/Users/kdash/tp-Lab-3/out/build/x64-Debug/CMakeFiles/edit_cache.dir
