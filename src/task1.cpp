@@ -15,7 +15,7 @@ double calcDelta(){
 double calcCost() {
 	Circle pool(3.0);
 	Circle path(4.0);
-	double res = (path.getArea() - pool.getArea) * 1000.0 + path.getFerence() * 2000.0;
+	double res = (path.getArea() - pool.getArea()) * 1000.0 + path.getFerence() * 2000.0;
 
 	return res;
 }
