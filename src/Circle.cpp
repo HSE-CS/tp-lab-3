@@ -14,7 +14,7 @@ double Circle::getRadius() const {
 void Circle::setRadius(double _radius) {
 	Circle::radius = _radius;
 	Circle::ference = 2 * PI * radius;
-	Circle::area = 3.14 * pow(radius, 2);
+	Circle::area = PI * pow(radius, 2);
 }
 
 double Circle::getFerence() const {
