@@ -3,35 +3,35 @@
 #include <string>
 
 std::string DateTime::getToday() {
-    return std::to_string(time_struct.tm_mday) + " "+ month[time_struct.tm_mon] + " " + std::to_string(time_struct.tm_year + 1900) + ", " + weekday[time_struct.tm_wday];
+    return ((time_struct.tm_mday < 10) ? "0":"") + std::to_string(time_struct.tm_mday) + " "+ month[time_struct.tm_mon] + " " + std::to_string(time_struct.tm_year + 1900) + ", " + weekday[time_struct.tm_wday];
 }
 
 std::string DateTime::getYesterday() {
     std::time_t time_temp = std::mktime(&time_struct);
     time_temp -= (24*60*60);
     const std::tm * time_out = std::localtime(&time_temp);
-    return std::to_string(time_out->tm_mday) + " "+ month[time_out->tm_mon] + " " + std::to_string(time_out->tm_year + 1900) + ", " + weekday[time_out->tm_wday];
+    return ((time_struct.tm_mday < 10) ? "0":"") + std::to_string(time_out->tm_mday) + " "+ month[time_out->tm_mon] + " " + std::to_string(time_out->tm_year + 1900) + ", " + weekday[time_out->tm_wday];
 }
 
 std::string DateTime::getTomorrow() {
     std::time_t time_temp = std::mktime(&time_struct);
     time_temp += (24*60*60);
     const std::tm * time_out = std::localtime(&time_temp);
-    return std::to_string(time_out->tm_mday) + " "+ month[time_out->tm_mon] + " " + std::to_string(time_out->tm_year + 1900) + ", " + weekday[time_out->tm_wday];
+    return ((time_struct.tm_mday < 10) ? "0":"") + std::to_string(time_out->tm_mday) + " "+ month[time_out->tm_mon] + " " + std::to_string(time_out->tm_year + 1900) + ", " + weekday[time_out->tm_wday];
 }
 
 std::string DateTime::getFuture(unsigned int N) {
     std::time_t time_temp = std::mktime(&time_struct);
     time_temp += (24*60*60) * N;
     const std::tm * time_out = std::localtime(&time_temp);
-    return std::to_string(time_out->tm_mday) + " "+ month[time_out->tm_mon] + " " + std::to_string(time_out->tm_year + 1900) + ", " + weekday[time_out->tm_wday];
+    return ((time_struct.tm_mday < 10) ? "0":"") + std::to_string(time_out->tm_mday) + " "+ month[time_out->tm_mon] + " " + std::to_string(time_out->tm_year + 1900) + ", " + weekday[time_out->tm_wday];
 }
 
 std::string DateTime::getPast(unsigned int N) {
     std::time_t time_temp = std::mktime(&time_struct);
     time_temp -= N * (24*60*60);
     const std::tm * time_out = std::localtime(&time_temp);
-    return std::to_string(time_out->tm_mday) + " "+ month[time_out->tm_mon] + " " + std::to_string(time_out->tm_year + 1900) + ", " + weekday[time_out->tm_wday];
+    return ((time_struct.tm_mday < 10) ? "0":"") + std::to_string(time_out->tm_mday) + " "+ month[time_out->tm_mon] + " " + std::to_string(time_out->tm_year + 1900) + ", " + weekday[time_out->tm_wday];
 }
 
 int DateTime::getDifference(DateTime& dt2) { 
