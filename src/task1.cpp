@@ -1,7 +1,7 @@
 #include "Circle.h"
 #include "task1.h"
 
-double calc1()
+double calcDelta()
 {
 	Circle Earth(6378.1);
 	Circle Earth_rope(0);
@@ -11,7 +11,7 @@ double calc1()
 	return (Earth_rope.getRadius()-Earth.getRadius());
 }
 
-double calc2()
+double calcCost()
 {
 	Circle Pool(3);
 	Circle Pool_track(Pool.getRadius()+1);
