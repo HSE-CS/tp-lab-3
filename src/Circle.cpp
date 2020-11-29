@@ -19,7 +19,7 @@ void Circle::setArea(double newArea)
 {
 	area = newArea;
 	radius = sqrt(area / M_PI);
-	ference = 2 * PI * radius;
+	ference = 2 * M_PI * radius;
 }
 
 double Circle::getRadius() //returns only copy of the value -> user cant change it without method set
