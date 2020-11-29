@@ -18,7 +18,7 @@ double getPoolPrice(double poolRad, double walkWayWidth, double walkWayPrice, do
 
 double calcDelta()
 {
-	Circle earth(6378100);
+	Circle earth(6378.1);
 	return getDelta(earth, 1);
 }
 
