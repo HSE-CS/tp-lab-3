@@ -1,5 +1,5 @@
-#ifndef Cicle_h
-#define Ñircle_h
+#ifndef CIRCLE_h
+#define CIRCLE_H
 
 typedef unsigned int count_t;
 
