@@ -31,8 +31,8 @@ DateTime::DateTime(const DateTime& b)
 
 std::string DateTime::getToday()
 {
-    char time[50];
-    strftime(time, 50, "%d %B %Y, %A", gmtime(&(this->td)));
+    char time[100];
+    strftime(time, 100, "%d %B %Y, %A", gmtime(&(this->td)));
     std::string tmp;
     tmp.append(time);
     return tmp;
@@ -41,8 +41,8 @@ std::string DateTime::getToday()
 std::string DateTime::getYesterday()
 {
     time_t yesterday = this->td - 60 * 60 * 24;
-    char time[50];
-    strftime(time, 50, "%d %B %Y, %A", gmtime(&(yesterday)));
+    char time[100];
+    strftime(time, 100, "%d %B %Y, %A", gmtime(&(yesterday)));
     std::string tmp;
     tmp.append(time);
     return tmp;
@@ -51,8 +51,8 @@ std::string DateTime::getYesterday()
 std::string DateTime::getTomorrow()
 {
     time_t tomorrow = this->td + 60 * 60 * 24;
-    char time[50];
-    strftime(time, 50, "%d %B %Y, %A", gmtime(&(tomorrow)));
+    char time[100];
+    strftime(time, 100, "%d %B %Y, %A", gmtime(&(tomorrow)));
     std::string tmp;
     tmp.append(time);
     return tmp;
@@ -61,8 +61,8 @@ std::string DateTime::getTomorrow()
 std::string DateTime::getPast(int n)
 {
     time_t yesterday = this->td - 60 * 60 * 24 * n;
-    char time[50];
-    strftime(time, 50, "%d %B %Y, %A", gmtime(&(yesterday)));
+    char time[100];
+    strftime(time, 100, "%d %B %Y, %A", gmtime(&(yesterday)));
     std::string tmp;
     tmp.append(time);
     return tmp;
@@ -71,8 +71,8 @@ std::string DateTime::getPast(int n)
 std::string DateTime::getFuture(int n)
 {
     time_t tomorrow = this->td + 60 * 60 * 24 * n;
-    char time[50];
-    strftime(time, 50, "%d %B %Y, %A", gmtime(&(tomorrow)));
+    char time[100];
+    strftime(time, 100, "%d %B %Y, %A", gmtime(&(tomorrow)));
     std::string tmp;
     tmp.append(time);
     return tmp;
