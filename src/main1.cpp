@@ -6,8 +6,6 @@
 #include <ctime>
 using namespace std;
 
-
-
 int main() {
 	Circle c(0.0);
 	cout << 0.0 << "-" << c.getArea() << endl;
@@ -16,9 +14,5 @@ int main() {
 	cout << fixed << setprecision(14) << 314.15926535897933 << "-" << c2.getArea() << endl;
 	cout << fixed << setprecision(14) << 62.831853071795862 << "-" << c2.getFerence() << endl;
 	cout << fixed << setprecision(16) << 0.15915494309228961 << "-" << calcDelta() << endl;
-
-
-
-
 	return 0;
 }
