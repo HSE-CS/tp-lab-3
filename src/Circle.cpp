@@ -17,7 +17,7 @@ void Circle::setRadius(double x)
 	a = M_PI * pow(r, 2);
 
 }
-void Circle::setFerence(double f)
+void Circle::setFerence(double x)
 {
 
 
@@ -27,7 +27,7 @@ void Circle::setFerence(double f)
 
 
 }
-void Circle::setArea(double a)
+void Circle::setArea(double x)
 {
 
 	a = a;
