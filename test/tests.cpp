@@ -58,8 +58,9 @@ TEST(date,datetime_getdiff2)
     EXPECT_EQ(diff,dt2.getDifference(dt1));
 }
 TEST(calc,delta)
-{    
-    EXPECT_DOUBLE_EQ(0.15915494309228961,calcDelta());
+{
+    const double pi = 3.141592653589793;
+    EXPECT_DOUBLE_EQ((6378100 * 2 * pi + 1) / (2.0 * pi) - 6378100, calcDelta());
 }
 TEST(calc,pool_cost)
 {    
