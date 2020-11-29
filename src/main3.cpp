@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-	// DateTime Now;
-	// cout << Now.getToday() << '\n';
+	DateTime Now;
+	cout << Now.getToday() << '\n';
   // cout << Now.getTomorrow() << '\n';
   // cout << Now.getYesterday() << '\n';
 	// cout << Now.getFuture(10) << '\n';
