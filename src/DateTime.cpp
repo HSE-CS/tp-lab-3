@@ -1,12 +1,21 @@
 #include "DateTime.h"
 
+#include <vector>
+#include <string>
+
 namespace
 {
 	std::string timeToString(const std::time_t t)
 	{
-		char buf[32];
-		std::strftime(buf, 256, "%d.%m.%Y (%a)", std::localtime(&t));
-		return std::string(buf);
+		std::vector<std::string> daysOfWeek{ "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday" };
+		std::vector<std::string> monthNames{ "january", "february", "march", "april", "may", "june", "july", "september", "october", "november", "december" };
+		const auto tm = *std::localtime(&t);
+		std::string date;
+		date += (tm.tm_mday >= 10 ? "" : "0") + std::to_string(tm.tm_mday) + " ";
+		date += monthNames[tm.tm_mon - 1] + " ";
+		date += std::to_string(tm.tm_year + 1900) + ", ";
+		date += daysOfWeek[tm.tm_wday];
+		return date;
 	}
 }
 
