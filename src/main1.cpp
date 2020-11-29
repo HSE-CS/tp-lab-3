@@ -8,4 +8,5 @@ int main()
 	cout << calcDelta();
 	return 0;
 
+
 }
