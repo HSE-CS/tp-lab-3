@@ -34,7 +34,7 @@ std::string DateTime::getToday() {
 
 	for (size_t i = 0; i < res1.size(); i++) {
 
-		if (res1[i] >= 'A') {
+		if ((res1[i] >= 'A') && (res1[i] <= 'Z')) {
 			res1[i] += 'a' - 'A';
 		}
 	}
