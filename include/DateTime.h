@@ -6,9 +6,9 @@
 using namespace std;
 class DateTime{
 private:
-    int year;
-    int month;
-    int day;
+    int year = 0;
+    int month = 0;
+    int day = 0;
 public:
     DateTime(int year, int month, int day);
     DateTime();

@@ -31,13 +31,13 @@ void Circle::setRadius(double input_radius) {
 }
 
 double Circle::getArea() {
-    return area;
+    return this->area;
 }
 
 double Circle::getFerence() {
-    return ference;
+    return this->ference;
 }
 
 double Circle::getRadius() {
-    return radius;
+    return this->radius;
 }
