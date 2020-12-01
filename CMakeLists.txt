@@ -19,9 +19,9 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
 set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/Circle.cpp
-               ${PROJECT_SOURCE_DIR}/src/task1.cpp)
+               ${PROJECT_SOURCE_DIR}/src/task1.cpp src/Circle.cpp include/Circle.h)
                
-set(SRC_FILES3 ${PROJECT_SOURCE_DIR}/src/DateTime.cpp)
+set(SRC_FILES3 ${PROJECT_SOURCE_DIR}/src/DateTime.cpp src/DateTime.cpp include/DateTime.h)
 
 
 set(CMAKE_CXX_STANDARD 11)
