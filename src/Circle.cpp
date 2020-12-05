@@ -1,12 +1,5 @@
-#include <iostream>
-#include "Circle.h"
 
-Circle::Circle(double r)
-{
-	radius = r;
-	ference = ference_from_radius(radius);
-	area = area_from_radius(radius);
-}
+#include "Circle.h"
 
 double Circle::ference_from_radius(double r) {
 	return 2 * PI * r;

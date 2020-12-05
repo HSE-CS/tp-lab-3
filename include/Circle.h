@@ -14,7 +14,11 @@ private:
 	double radius_from_ference(double f);
 	double radius_from_area(double a);
 public:
-	Circle(double r);
+	Circle(double r) {
+		radius = r;
+		ference = ference_from_radius(radius);
+		area = area_from_radius(radius);
+	};
 	void setRadius(double); 
 	void setFerence(double); 
 	void setArea(double); 
