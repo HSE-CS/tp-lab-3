@@ -1,7 +1,5 @@
+#include <iostream>
 #include "Circle.h"
-#include <math.h>
-
-#define M_PI 3.14159265358979323846
 
 double Circle::ference_from_radius(double r) {
 	return 2 * M_PI * r;

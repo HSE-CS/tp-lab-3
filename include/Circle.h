@@ -1,5 +1,9 @@
-#include <cmath>
 #include <iostream>
+#include <cmath>
+#include <math.h>
+#define _USE_MATH_DEFINES 
+
+#define M_PI 3.14159265358979323846
 
 class Circle
 {
@@ -16,7 +20,7 @@ public:
 		radius = r;
 		ference = ference_from_radius(radius);
 		area = area_from_radius(radius);
-	};
+	}
 	void setRadius(double); 
 	void setFerence(double); 
 	void setArea(double); 
