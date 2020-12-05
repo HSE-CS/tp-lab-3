@@ -1,20 +1,22 @@
-
 #include "Circle.h"
+#include <math.h>
+
+#define M_PI 3.14159265358979323846
 
 double Circle::ference_from_radius(double r) {
-	return 2 * PI * r;
+	return 2 * M_PI * r;
 }
 
 double Circle::area_from_radius(double r) {
-	return PI * pow(r, 2);
+	return M_PI * pow(r, 2);
 }
 
 double Circle::radius_from_ference(double f) {
-	return f / (2 * PI);
+	return f / (2 * M_PI);
 }
 
 double Circle::radius_from_area(double a) {
-	return sqrt(a / PI);
+	return sqrt(a / M_PI);
 }
 
 void Circle::setRadius(double num) {
