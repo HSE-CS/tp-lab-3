@@ -6,7 +6,7 @@ double calcCost() {
     double f_r = p.getRadius() + 1;
     Circle l(f_r);
     Circle f(f_r);
-    return (lane.getArea() - p.getArea()) * 1000 + f.getFerence() * 2000;
+    return (l.getArea() - p.getArea()) * 1000 + f.getFerence() * 2000;
 }
 
 double calcDelta() {
