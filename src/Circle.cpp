@@ -2,9 +2,6 @@
 #include "Circle.h"
 #include <iostream>
 
-#include <iostream>
-#include <math.h>
-
 
 Circle::Circle(double radius) {
     this->radius = radius;
