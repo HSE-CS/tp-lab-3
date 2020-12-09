@@ -2,26 +2,45 @@
 
 using namespace std;
 
-string getToday(){
-
+string DateTime::getToday(){
+    char date[30];
+    struct tm* info = localtime(&timeInf);
+    strftime(date, 30, "%d %B %Y, %A", info);
+    string result = date;
+    for(size_t i =0;result[i];i++)
+    {
+        if(isupper(result[i]))
+        {
+            result[i]=tolower(result[i]);
+        }
+    }
+    return result;
 }
 
-string getYesterday(){
-
+string DateTime::getYesterday(){
+    DateTime date(*this);
+    date.timeInf -= (86400);
+    return date.getToday();
 }
 
-string getTomorrow(){
-
+string DateTime::getTomorrow(){
+    DateTime date(*this);
+    date.timeInf += (86400);
+    return date.getToday();
 }
 
-string getFuture(unsigned int N){
-
+string DateTime::getFuture(unsigned int N){
+    DateTime date(*this);
+    date.timeInf += (86400) * (double)N;
+    return date.getToday();
 }
 
-string getPast(unsigned int N){
-
+string DateTime::getPast(unsigned int N){
+    DateTime date(*this);
+    date.timeInf -= (86400) * (double)N;
+    return date.getToday();
 }
 
-double getDifference(DateTime&){
-
+double DateTime::getDifference(DateTime& date){
+    return abs(timeInf - date.timeInf) / (86400);
 }
