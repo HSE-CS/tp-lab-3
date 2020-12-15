@@ -19,7 +19,7 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
 set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/Circle.cpp
-               ${PROJECT_SOURCE_DIR}/src/task1.cpp)
+               ${PROJECT_SOURCE_DIR}/src/task1.cpp include/Circle.h include/DateTime.h include/task1.h src/Circle.cpp src/DateTime.cpp src/task1.cpp src/main1.cpp src/main2.cpp src/main3.cpp)
                
 set(SRC_FILES3 ${PROJECT_SOURCE_DIR}/src/DateTime.cpp)
 
