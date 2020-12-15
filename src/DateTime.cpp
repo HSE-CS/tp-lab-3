@@ -23,13 +23,7 @@ DateTime::DateTime(DateTime const &object) {
     dateTime = object.dateTime;
 }
 
-std::string DateTime::getTomorrow() {
-    return getFuture(1);
-}
 
-std::string DateTime::getYesterday() {
-    return getPast(1);
-}
 
 std::string DateTime::getDateTimeStr(tm timeToShow) {
     char date[100] = {'\0'};
@@ -54,6 +48,13 @@ std::string DateTime::getPast(unsigned int N) {
     pastTime.tm_mday = pastTime.tm_mday - N;
     mktime(&pastTime);
     return getDateTimeStr(pastTime);
+}
+std::string DateTime::getTomorrow() {
+    return getFuture(1);
+}
+
+std::string DateTime::getYesterday() {
+    return getPast(1);
 }
 
 unsigned int DateTime::getDifference(DateTime &object) {

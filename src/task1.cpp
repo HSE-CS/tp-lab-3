@@ -5,16 +5,16 @@
 #include "task1.h"
 
 double calcDelta() {
-    Circle earth(6378100);
-    double ference = earth.getFerence();
-    double radius = earth.getRadius();
-    earth.setFerence(ference + 1);
-    return earth.getRadius() - radius;
+    Circle a(0), b(0);
+    a.setFerence(63781);
+    b.setFerence(a.getFerence() + 1);
+    return b.getRadius() - a.getRadius();
 }
 
 double calcCost() {
-    Circle pool(3);
-    double area = pool.getArea();
-    pool.setRadius(4);
-    return (pool.getArea() - area) * 1000 + pool.getFerence() * 2000;
+    Circle p(3);
+    double f_r = p.getRadius() + 1;
+    Circle l(f_r);
+    Circle f(f_r);
+    return (l.getArea() - p.getArea()) * 1000 + f.getFerence() * 2000;
 }
