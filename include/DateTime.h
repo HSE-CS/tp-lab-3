@@ -37,7 +37,6 @@ public:
         time(&current);
 
         data = *localtime(&current);
-
     }
 
     //конструктор копирования (создаём копию другого объекта);

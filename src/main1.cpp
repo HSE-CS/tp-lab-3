@@ -1,8 +1,8 @@
 //main1.cpp - решение задачи **Земля и веревка**
 #include "Circle.h"
-//#include "task1.h"
+#include "task1.h"
 #include <iostream>
-//#include <cstring>
+#include <cstring>
 #include <cmath>
 
 /*
@@ -26,7 +26,7 @@ int main()
     //Circle c(0.0);
     //1
     //EXPECT_DOUBLE_EQ(0.0,c.getArea());
-    //std::cout << c.getArea() << " - 0.0 \n";
+    //std::cout << c.getArea();// << " - 0.0 \n";
 
     //2
     //EXPECT_DOUBLE_EQ(0.0,c.getFerence());
@@ -35,11 +35,11 @@ int main()
     //3
     Circle c(10.0);
     //EXPECT_DOUBLE_EQ(314.15926535897933,c.getArea());
-    //std::cout << c.getArea() << " - 314.15926535897933 \n";
+    std::cout << c.getArea() << " - 314.15926535897933 \n";
 
     //4
     //EXPECT_DOUBLE_EQ(62.831853071795862,c.getFerence());
-    std::cout << c.getFerence() << " - 62.831853071795862 \n";
+    //std::cout << c.getFerence() << " - 62.831853071795862 \n";
 }
 
 

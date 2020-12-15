@@ -3,7 +3,7 @@
 #include "Circle.h"
 #include "task1.h"
 #include <iostream>
-//#include <cstring>
+#include <cstring>
 #include <cmath>
 #include <iomanip>
 
@@ -32,6 +32,7 @@
  Примем за радиус земли расстояние в 6378.1 км
 */
 
+
 int main()
 {
 
@@ -43,7 +44,8 @@ int main()
     double delta = calcCost();
 
     //EXPECT_DOUBLE_EQ(72256.63103256523,calcCost());
-    std::cout << std::fixed << std::setprecision(17) <<  delta << " - 72256.63103256523 \n";
+    std::cout << std::fixed << std::setprecision(17) <<  delta ;//<< " - 72256.63103256523 \n";
 }
+
 
 

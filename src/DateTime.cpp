@@ -6,15 +6,17 @@
 #include <cmath>
 #include "DateTime.h"
 
-const std::string month [] = { "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" };
-
-const std::string week [] = { "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday" };
-
 std::string transform(struct tm data)
 {
     std::string str = {};
+    str = std::to_string(data.tm_mday) + ' ';
 
-    str = std::to_string(data.tm_mday) + ' ' + month[data.tm_mon] + ' ' + std::to_string(data.tm_year + 1900) + ',' + ' ' + week[data.tm_wday];
+    const std::string month [] = { "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" };
+    str += month[data.tm_mon] + ' ';
+    str += std::to_string(data.tm_year + 1900) + ',' + ' ';
+
+    const std::string week [] = { "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday" };
+    str += week[data.tm_wday];
 
     return str;
 }
