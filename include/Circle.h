@@ -8,6 +8,7 @@ private:
     double area;
     double pi = M_PI;
 public:
+    Circle (double radius);
     void setRadius(double);
     void setFerence(double);
     void setArea(double);
