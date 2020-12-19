@@ -3,7 +3,7 @@
 DateTime::DateTime(int day, int month, int year) {
     dateTime.tm_mday = day;
     dateTime.tm_mon = month - 1;
-    dateTime.tm_year = year;
+    dateTime.tm_year = year - 1900;
     mktime(&dateTime);
 }
 
@@ -26,20 +26,12 @@ string DateTime::getToday() {
 }
 
 string DateTime::getYesterday() {
-    dateTime.tm_mday = dateTime.tm_mday - 1;
-    mktime(&dateTime);
-    string yesterday = this->getToday();
-    dateTime.tm_mday = dateTime.tm_mday + 1;
-    mktime(&dateTime);
+    string yesterday = this->getPast(1);
     return yesterday;
 }
 
 string DateTime::getTomorrow() {
-    dateTime.tm_mday = dateTime.tm_mday + 1;
-    mktime(&dateTime);
-    string tomorrow = this->getToday();
-    dateTime.tm_mday = dateTime.tm_mday - 1;
-    mktime(&dateTime);
+    string tomorrow = this->getFuture(1);
     return tomorrow;
 }
 
