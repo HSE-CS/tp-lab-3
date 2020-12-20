@@ -19,19 +19,19 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
 set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/Circle.cpp
-               ${PROJECT_SOURCE_DIR}/src/task1.cpp)
+        src/Circle.cpp src/main3.cpp src/main2.cpp src/main1.cpp src/task1.cpp include/task1.h include/Circle.h)
                
-set(SRC_FILES3 ${PROJECT_SOURCE_DIR}/src/DateTime.cpp)
+set(SRC_FILES3 ${PROJECT_SOURCE_DIR}/src/DateTime.cpp src/main3.cpp src/DateTime.cpp include/DateTime.h)
 
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(task1_lib ${SRC_FILES1})
-add_library(task3_lib ${SRC_FILES3})
+add_library(task1_lib ${SRC_FILES1} src/Circle.cpp src/main2.cpp src/main1.cpp src/task1.cpp include/task1.h include/Circle.h)
+add_library(task3_lib ${SRC_FILES3} src/main3.cpp src/DateTime.cpp include/DateTime.h)
 
-add_executable(task1 ${PROJECT_SOURCE_DIR}/src/main1.cpp )
-add_executable(task2 ${PROJECT_SOURCE_DIR}/src/main2.cpp )
-add_executable(task3 ${PROJECT_SOURCE_DIR}/src/main3.cpp )
+add_executable(task1 ${PROJECT_SOURCE_DIR}/src/main1.cpp src/Circle.cpp src/main1.cpp src/task1.cpp include/task1.h include/Circle.h)
+add_executable(task2 ${PROJECT_SOURCE_DIR}/src/main2.cpp src/main2.cpp src/task1.cpp include/task1.h include/Circle.h)
+add_executable(task3 ${PROJECT_SOURCE_DIR}/src/main3.cpp src/main3.cpp src/DateTime.cpp include/DateTime.h)
 
 target_link_libraries(task1 task1_lib)
 target_link_libraries(task2 task1_lib)
