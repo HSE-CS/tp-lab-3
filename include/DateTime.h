@@ -1,9 +1,7 @@
 #ifndef TASK1_DATETIME_H
 #define TASK1_DATETIME_H
-
 #include <string>
 #include <ctime>
-
 #define SIZE 100
 
 
@@ -14,6 +12,7 @@ public:
     DateTime() {
         time_t now = time(nullptr);
         data_info = *localtime(&now);
+
         mktime(&data_info);
     }
 
@@ -24,6 +23,7 @@ public:
         data_info.tm_hour = 0;
         data_info.tm_min = 0;
         data_info.tm_sec = 0;
+
         mktime(&data_info);
     }
 
@@ -37,3 +37,5 @@ public:
     std::string getFuture(unsigned int N);
     std::string getPast(unsigned int N);
     int getDifference(DateTime&);
+};
+#endif //TASK1_DATETIME_H

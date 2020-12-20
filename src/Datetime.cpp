@@ -1,78 +1,59 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "DateTime.h"
-#include <ctime>
-#include <iostream>
-#include <algorithm>
-//-----------help_func-------------------------------
-struct tm* make_time_struct(int day,int month,int year) {
-	tm time_in = { 0, 0, 0,day ,month - 1, year - 1900 };
+#include <string>
+#include <ctype.h>
+#include <cmath>
 
-	time_t time_temp = mktime(&time_in);
 
-	tm* time_out = localtime(&time_temp);
-	return time_out;
+std::string makeString(struct tm *new_date) {
+    char buf_date[SIZE] = {0};
+    std::string str_date;
+
+    strftime(buf_date, SIZE, "%d %B %Y, %A", new_date);
+    str_date = buf_date;
+
+    for (auto& c: str_date){
+        c = tolower(c);
+    }
+
+    return str_date;
 }
 
-string make_date_string(struct tm * time_out) {
-	char s1[40] = { 0 };
-
-	strftime(s1, 40, "%d %B %Y, %A", time_out);
-
-	string s = s1;
-	for (char& c : s) c = tolower(c);
-	return s;
-}
-//--------------------------methods----------------------------
-
-DateTime::DateTime() {
-	time_t now = time(0);
-	tm* ltm = localtime(&now);
-	this->day = ltm->tm_mday;
-	this->month = 1 + ltm->tm_mon;
-	this->year = 1970 + ltm->tm_year;
+std::string DateTime::getToday() {
+    return makeString(&data_info);
 }
 
-DateTime::DateTime(const DateTime&obj){
-	this->day = obj.day;
-	this->month = obj.month;
-	this->year = obj.year;
+std::string DateTime::getYesterday() {
+    return getPast(1);
 }
 
-DateTime::DateTime(int day, int month, int year) {
-	this->day = day;
-	this->month = month;
-	this->year = year;
+std::string DateTime::getTomorrow() {
+    return getFuture(1);
 }
 
-string DateTime::getToday() {
+std::string DateTime::getFuture(unsigned int N) {
+    DateTime new_date;
 
-	tm* time_out = make_time_struct(this->day,this->month,this->year);
+    new_date.data_info = data_info;
+    new_date.data_info.tm_mday = new_date.data_info.tm_mday + N;
+    mktime(&new_date.data_info);
 
-	return make_date_string(time_out);
+    return makeString(&new_date.data_info);
 }
 
-string DateTime::getTomorrow() {
-	tm* time_out = make_time_struct(this->day + 1 , this->month , this->year);
+std::string DateTime::getPast(unsigned int N) {
+    DateTime new_date;
 
-	return make_date_string(time_out);
+    new_date.data_info = data_info;
+    new_date.data_info.tm_mday = new_date.data_info.tm_mday - N;
+    mktime(&new_date.data_info);
 
+    return makeString(&new_date.data_info);
 }
 
-string DateTime::getFuture(unsigned int N) {
-	tm* time_out = make_time_struct(this->day + N, this->month, this->year);
-	return make_date_string(time_out);
-}
+int DateTime::getDifference(DateTime& new_date) {
+    time_t date_1 = mktime(&data_info);
+    time_t date_2 = mktime(&new_date.data_info);
+    int diff = int(abs(date_2 - date_1) / (60 * 60 * 24));
 
-string DateTime::getPast(unsigned int N) {
-	tm* time_out = make_time_struct(this->day - N, this->month, this->year);
-	return make_date_string(time_out);
-}
-
-int DateTime::getDifference(DateTime& obj) {
-	tm temp_time1 = { 0, 0, 0, this->day, this->month - 1, this->year - 1900 };
-	time_t time1 = mktime(&temp_time1);
-	tm temp_time2 = { 0, 0, 0, obj.day, obj.month - 1, obj.year - 1900 }; 
-	time_t time2 = mktime(&temp_time2);
-	double sek = time2 > time1 ? difftime( time2,  time1) : difftime( time1,  time2);
-	return sek / 86400;
-}
+    return diff;
+} 
