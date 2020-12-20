@@ -24,7 +24,7 @@ DateTime::DateTime(DateTime &timee) {
 std::string DateTime::getToday() {
     char time[100];
     struct tm* tmp = localtime(&new_time);
-    strftime(time, 100, "%d %B %Y, %A", tmp);
+    strftime(time, 100, "%d %b %y, %a", tmp);
     std::string result;
     result.append(time);
     return result;
@@ -42,7 +42,7 @@ std::string DateTime::getTomorrow() const {
 std::string DateTime::getPast(unsigned int N) const {
     time_t past = this->new_time - 60*60*24*N;
     char time[100];
-    strftime(time,100, "%d %B %Y, %A", gmtime(&(past)));
+    strftime(time,100, "%d %b %y, %a", gmtime(&(past)));
     std::string tmp;
     tmp.append(time);
     return tmp;
@@ -51,13 +51,13 @@ std::string DateTime::getPast(unsigned int N) const {
 std::string DateTime::getFuture(unsigned int N) const {
     time_t future = this->new_time + 60*60*24*N;
     char time[100];
-    strftime(time,100, "%d %B %Y, %A", gmtime(&(future)));
+    strftime(time,100, "%d %b %y, %a", gmtime(&(future)));
     std::string tmp;
     tmp.append(time);
     return tmp;
 }
 
 int DateTime::getDifference(DateTime &timee) const {
-    time_t tmp = abs(this->new_time - timee.new_time);
+    time_t tmp = std::abs(this->new_time - timee.new_time);
     return (int)(tmp / 60 / 60 / 24);
 }
