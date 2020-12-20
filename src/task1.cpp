@@ -3,7 +3,7 @@
 
 double calcDelta()
 {
-	double earthRadius = 6378.1;
+	double earthRadius = 6378100.0;
 	double ropeLength = 1.0;
 	Circle Earth(earthRadius);
 	double length = Earth.getFerence() + ropeLength;
