@@ -3,6 +3,7 @@
 //
 
 #include "DateTime.h"
+#include <string>
 
 DateTime::DateTime(unsigned day, unsigned month, unsigned year) {
     time_t timee = time(nullptr);
@@ -24,7 +25,10 @@ DateTime::DateTime(DateTime &timee) {
 std::string DateTime::getToday() {
     char time[100];
     struct tm* tmp = localtime(&new_time);
-    strftime(time, 100, "%d %b %y, %a", tmp);
+    strftime(time, 100, "%d %B %Y, %A", tmp);
+    for (int i = 0; i < strlen(time); i++) {
+        time[i] = tolower(time[i]);
+    }
     std::string result;
     result.append(time);
     return result;
@@ -42,7 +46,10 @@ std::string DateTime::getTomorrow() const {
 std::string DateTime::getPast(unsigned int N) const {
     time_t past = this->new_time - 60*60*24*N;
     char time[100];
-    strftime(time,100, "%d %b %y, %a", gmtime(&(past)));
+    strftime(time,100, "%d %B %Y, %A", gmtime(&(past)));
+    for (int i = 0; i < strlen(time); i++) {
+        time[i] = tolower(time[i]);
+    }
     std::string tmp;
     tmp.append(time);
     return tmp;
@@ -51,7 +58,10 @@ std::string DateTime::getPast(unsigned int N) const {
 std::string DateTime::getFuture(unsigned int N) const {
     time_t future = this->new_time + 60*60*24*N;
     char time[100];
-    strftime(time,100, "%d %b %y, %a", gmtime(&(future)));
+    strftime(time,100, "%d %B %Y, %A", gmtime(&(future)));
+    for (int i = 0; i < strlen(time); i++) {
+        time[i] = tolower(time[i]);
+    }
     std::string tmp;
     tmp.append(time);
     return tmp;
