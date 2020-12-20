@@ -1,23 +1,15 @@
 #include "DateTime.h"
 #include <iostream>
 
-using namespace std;
-
 int main() {
-	DateTime dt(31, 10, 2018);
-	cout << dt.getToday() << endl;
-	cout << "01 november 2018, thursday   -  " << dt.getTomorrow() << endl;
-	DateTime dt2(1, 11, 2018);
-	cout << "02 november 2018, friday  -   " << dt2.getTomorrow() << endl;
-	DateTime dt3(1, 11, 2018);
-	cout << "01 november 2018, thursday   -  " << dt3.getToday() << endl;
-	DateTime dt4(20, 11, 2018);
-	DateTime dt5(20, 11, 2018);
-	cout << 0 << " - " << dt4.getDifference(dt5) << endl;
-	DateTime dt6(20, 11, 2018);
-	DateTime dt7(21, 11, 2018);
+    DateTime dt;
+    std::cout << "Yesterday was " << dt.getYesterday() << std::endl;
+    std::cout << "Today is " << dt.getToday() << std::endl;
+    std::cout << "Tommorow would be " << dt.getTomorrow() << std::endl;
+    std::cout << "30 days ago was " << dt.getPast(30) << std::endl;
+    std::cout << "In 30 days would be " << dt.getFuture(30) << std::endl;
 
-	cout << 1 << " - " << dt7.getDifference(dt6) << endl;
-
-	return 0;
+    DateTime dt1(20, 11, 2020);
+    DateTime dt2(21, 11, 2020);
+    std::cout << "The difference is " << dt1.getDifference(dt2) << " day('s)" << std::endl;
 } 
