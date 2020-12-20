@@ -1,17 +1,31 @@
-#define _USE_MATH_DEFINES 
-#include "task1.h"
 #include "Circle.h"
-double calcDelta() {
-	double earth_radius = 6378.1;
-	int roup_len = 1;
-	Circle c1(earth_radius), c2(earth_radius);
-	c2.setFerence((c1.getFerence()) + roup_len);
-	return (c2.getRadius() - c1.getRadius());
-}
+#include "task1.h"
 
 double calcCost() {
-	double r1 = 3.0, r2 = 3.0 + 1.0;
-	int cost_path = 1000, cost_pool = 2000;
-	Circle pool(r1), path(r2);
-	return cost_pool * path.getFerence() + cost_path * (path.getArea() - pool.getArea());
+    int cost_concrete = 100.0;
+    int cost_fence = 150.0;
+    double total = 0.0;
+
+    int pool_radius = 5;
+    int lane_width = 1;
+
+    Circle pool(pool_radius);
+    Circle lane(pool_radius + lane_width);
+
+    total = (lane.getArea()-pool.getArea()) * cost_concrete; //calculate the cost of lane
+
+    total += (lane.getFerence() * cost_fence); //calculate the cost of fence
+
+    return total;
 } 
+
+double calcDelta() {
+    double r = 6000.0;
+    double add = 1.0;
+
+    Circle new_Earth(r);
+
+    new_Earth.setFerence(new_Earth.getFerence() + add);
+
+    return new_Earth.getRadius() - r;
+}

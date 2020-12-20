@@ -1,27 +1,29 @@
-#pragma once
-#ifndef CIRCLE_CIRCLE_H
-#define CIRCLE_CIRCLE_H
+#ifndef TASK1_CIRCLE_H
+#define TASK1_CIRCLE_H
 
-#include <iostream>
-
-using namespace std;
+#define _USE_MATH_DEFINES
+#define _CRT_SECURE_NO_WARNINGS
+#include <math.h>
 
 class Circle {
 private:
-	double radius;
-	double ference;
-	double area;
+    double radius;  
+    double area;
+    double ference;
+
 public:
-	Circle();
-	Circle(double radius);
-	void setRadius(double radius);
-	void setFerence(double ference);
-	void setArea(double area);
-	const double getRadius() const;
-	const double getFerence() const;
-	const double  getArea() const;
+    explicit Circle(const double r):radius{r} {
+        area = M_PI * pow(radius, 2);
+	ference = 2 * M_PI * radius;
+    }
+
+    void setRadius(double r);
+    void setFerence(double f);
+    void setArea(double a);
+    double getRadius();
+    double getFerence();
+    double getArea();
 
 };
 
-
-#endif //CIRCLE_CIRCLE_H
+#endif //TASK1_CIRCLE_H

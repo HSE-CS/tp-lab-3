@@ -1,21 +1,39 @@
-#pragma once
-#ifndef DATA_TIME_H
-#define DATA_TIME_H
+#ifndef TASK1_DATETIME_H
+#define TASK1_DATETIME_H
+
 #include <string>
-using namespace std;
+#include <ctime>
+
+#define SIZE 100
+
+
 class DateTime {
 private:
-	int day, month, year;
-
+    struct tm data_info;
 public:
-	DateTime();
-	DateTime(const DateTime& obj);
-	DateTime(int day, int month, int year);
-	string getToday();
-	string getTomorrow();
-	string getFuture(unsigned int N);
-	string getPast(unsigned int N);
-	int getDifference(DateTime&);
-};
+    DateTime() {
+        time_t now = time(nullptr);
+        data_info = *localtime(&now);
+        mktime(&data_info);
+    }
 
-#endif 
+    DateTime(int day, int month, int year) {
+        data_info.tm_year = year - 1900;
+        data_info.tm_mon = month - 1;
+        data_info.tm_mday = day;
+        data_info.tm_hour = 0;
+        data_info.tm_min = 0;
+        data_info.tm_sec = 0;
+        mktime(&data_info);
+    }
+
+    DateTime(DateTime& new_date) {
+        data_info = new_date.data_info;
+    }
+
+    std::string getToday();
+    std::string getYesterday();
+    std::string getTomorrow();
+    std::string getFuture(unsigned int N);
+    std::string getPast(unsigned int N);
+    int getDifference(DateTime&);

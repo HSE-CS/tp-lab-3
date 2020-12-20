@@ -1,12 +1,9 @@
 #include Circle.h
-#include task1.h
-#include iostream
-#include iomanip
-
-using namespace std;
+#include <iostream>
+#include <iomanip>
+#include "task1.h"
 
 int main() {
-    cout  fixed  setprecision(16)  72256.63103256523  -  calcCost()  endl;
-
+    std::cout << calcCost() << std::endl;
     return 0;
-} 
+}
