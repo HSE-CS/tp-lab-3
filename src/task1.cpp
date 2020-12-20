@@ -6,7 +6,7 @@
 #include "task1.h"
 
 double calcDelta() {
-    Circle Earth(6378100);
+    Circle Earth(6371);
     Circle newEarth(1);
     newEarth.setFerence(Earth.getFerence() + 1);
     return newEarth.getRadius() - Earth.getRadius();
